@@ -1,0 +1,536 @@
+@font-face {
+    font-family: 'OpenSans';
+    src: url('fonts/opensans-regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'OpenSansItalic';
+    src: url('fonts/opensans-italic.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'OpenSansBold';
+    src: url('fonts/opensans-bold.ttf') format('truetype');
+}
+
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+    text-decoration: none;
+}
+* {
+    outline: none;
+}
+
+
+
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-attachment:fixed;
+    font-family:"OpenSans";
+    height:100%;
+    margin:0px;
+    padding:0px;
+    width:100%;
+    background-color:transparent;
+/*    color:#fff;*/
+}
+/* .default{
+    background: #0feaac;
+}
+.clicked{
+    background: red;
+} */
+button,
+select,
+html,
+textarea,
+input {
+  font-family: "OpenSans"; 
+}
+
+.primary {
+  background: #0feaac !important;
+  color: #fff !important; }
+  .primary:hover {
+    background-color: #0feaac !important; }
+
+p{
+	margin:0 !important;
+	text-transform:none !important;
+}
+p, span{
+	color:white!important;
+	text-align:center;
+}
+button span{
+	color:white!important;
+	
+}
+
+
+/* Login page styles */
+.login-overlay {
+  position: relative;
+  text-align: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding-bottom: 200px;
+  min-height: 70vh;
+  background: #f5f5f5;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.335, 1.05); 
+ }
+ .login-overlay:after {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 250px;
+    left: 0;
+    right: 0;
+    background-image: url("../img/MillaMobilityWhite.png");
+    background-color:#111111;
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    content: "";
+    box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.14); 
+ }
+  .login-overlay .logo {
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    text-transform: uppercase;
+    color: white;
+    font-size: 27px;
+    letter-spacing: 1px;
+    top: 10px; }
+    .login-overlay .logo .smaller {
+      font-size: 16px;
+      letter-spacing: 5px;
+      margin-left: -8px; }
+  .login-overlay .form-container {
+    position: absolute;
+    z-index: 1;
+    left:0;
+    right:0;
+    background: #ffffff;
+    width: 50%;
+    margin: auto;
+    padding:10px;
+    margin-top:160px;
+     }
+    .login-overlay .form-container .icon {
+      padding-top: 20px; }
+      .login-overlay .form-container .icon .mdi {
+        color: #0feaac;
+        font-size: 80px; }
+      .login-overlay .form-container .icon .header {
+        margin-top: 10px;
+        font-size: 20px;
+        text-transform: uppercase; }
+    .login-overlay .form-container .inputs {
+      margin-top: 4px; }
+      .login-overlay .form-container .inputs .mdl-textfield {
+        width: 75%;
+        margin:4px auto!important;
+        padding: 0; }
+      .login-overlay .form-container .inputs .buttons {
+        width: 75%;
+        margin: 5px auto; }
+        .login-overlay .form-container .inputs .buttons md-checkbox {
+          text-align: initial;
+          float: left;
+          display: inline-block; }
+        .login-overlay .form-container .inputs .buttons .signup {
+          float: right;
+          margin-top: 15px; }
+          .login-overlay .form-container .inputs .buttons .signup a {
+            text-decoration: none;
+            color: #0feaac; }
+        .login-overlay .form-container .inputs .buttons .link {
+          padding-top: 40px;
+          padding-bottom: 30px; }
+          .login-overlay .form-container .inputs .buttons .link .mdl-button {
+            background: #0feaac;
+            color: white;
+            width: 25%;
+            font-size: 15px; }
+            
+@media screen and (max-width: 990px) {
+  .form-container {
+    width: 75% !important; } }
+
+@media screen and (max-width: 490px) {
+  .logo {
+    top: 40px !important; }
+  .form-container {
+    top: 60px !important;
+    width: 90% !important; }
+    .form-container .mdl-textfield {
+      width: 85% !important; }
+  .login-footer {
+    text-decoration: center;
+    padding-top: 10px;
+    padding-bottom: 10px; }
+    .login-footer .left-section, .login-footer .right-section {
+      width: 100%;
+      display: block; } }
+
+/* Styles for form */
+.forms .mdl-textfield {
+  width: 95%; }
+            
+.shadow {
+  box-shadow: 1px 1px 7px 0px rgba(145, 145, 145, 0.5); }
+  
+  md-input-container {
+  width: 100%; }
+  
+  
+  svg{
+  fill:white
+ }
+ 
+ 
+ md-sidenav, md-backdrop {
+	position: fixed !important;
+	background-color:transparent;
+}
+md-sidenav{
+	max-width:300px;
+    box-shadow: 0 0px 10px 10px rgba(55, 55, 55, 0.27) !important;
+}
+
+hr {
+	background-color:#0feaac;
+	height:10px;
+	margin:0;
+	padding:0;	
+	border:none;
+}
+
+md-toolbar  {
+	background-color:#0feaac!important;
+	font-size:4vw!important;
+}
+.md-toolbar-tools {
+    padding: 8px;
+	font-size:4vw!important;
+}
+#menuButton{
+	margin-top:5px;
+	padding:20px 20px 20px 0px;
+	
+}
+
+
+#requestContainer{
+	width:100%;
+	position:absolute;
+	top:0;
+	padding-bottom:10px;
+}
+
+#requestContainer .request {
+	margin:10px 15px 0px;	
+	color:white;
+	background:rgba(125,202,41,1);
+	padding:8px;
+	border-style:solid;
+    border-width: 2px;
+    border-color:white;
+    font-size:0.9em;
+    /* box-shadow: 0px 1px 4px -2px #0feaac; */
+/*    font-weight:bold;*/
+}
+#requestContainer .mybutton {
+	
+	color:white;
+	background:#0feaac;
+	border-radius: 8px;
+    border-color:white;
+    margin:10px 15px 0px;	
+	
+	padding:8px;
+	border-style:solid;
+    border-width: 2px;
+   
+    font-size:0.9em;
+  /*  box-shadow: 0px 1px 4px -2px #0feaac; */
+/*    font-weight:bold;*/
+}
+
+ #contenu #bouton0{
+    background-color: #0feaac;
+    border-radius: 8px;
+    margin-top: 2vh
+}
+#requestContainer .mybutton:hover {
+	
+	color:white;
+	background-color:red;
+	
+    border-color:white;
+    
+
+} 
+
+#requestContainer .request:hover{
+	background:rgba(125,202,41,0.6)!important;
+}
+.wait button:hover{
+	background:rgba(125,202,41,0.6)!important;
+}
+.wait button, #settings button {
+	color:white;
+	background-color:#0feaac;
+	padding:8px!important;
+	border-style:solid!important;
+    border-width: 2px!important;
+    border-color:white!important;
+    font-weight:bold!important;
+    margin:0!important;
+}
+.inputAddress{
+	width:90%;
+	margin-top: 10px;
+	min-height:40px;
+	border-style: solid;
+    border-width: 1px;
+    border-color:#c5c5c5;
+    padding:3px 6px 3px 6px;
+    color:#949494;
+    font-family:"OpenSansItalic";
+    font-size:1em;
+}
+
+
+#position{
+	background:rgba(255,255,255,1) url("../img/pictoPosition.png") no-repeat scroll 10px center/ 13px auto;;	
+}
+#destination{
+	background:rgba(255,255,255,1) url("../img/pictoDestination.png") no-repeat scroll 10px center/ 15px auto;;	
+}
+
+#profil{
+	position:absolute;
+	left:0;
+	top:3%;
+	text-align:left;
+
+}
+
+#photoProfil{
+	width:20%;
+	border-radius:50%;
+	border:2px solid #0feaac;
+	vertical-align:middle;
+	margin-left:14%;	
+	display:inline-block;
+}
+.photoProfil{
+	width:70px;
+	height:70px;
+	border-radius:50%;
+	border:2px solid #0feaac;
+	vertical-align:middle;
+	display:inline-block;
+	margin:10px;
+}
+.licenceProfil{
+	width:100px;
+	height:60px;
+	border:2px solid #0feaac;
+	vertical-align:middle;
+	display:inline-block;
+	margin:10px;
+}
+#profil span{
+	color:#0feaac!important;
+	font-size:1em!important;
+	padding-left:5%;
+}
+
+
+md-input-container {
+    display: inline-block;
+    margin: 5px 0 0px;
+}
+
+.login-overlay .buttons .link{
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+
+#myFooter{
+	position:absolute;
+	bottom:-5px;
+	background-color:rgba(255,255,255,0.9);
+	width:100%;
+	padding:0% 10%;
+	font-size:0.8em;
+}
+#settings span, #settings p{
+	color:#1a1a1a!important;
+}
+
+#histo{
+    background-color: white
+}
+
+#histo span, #histo p
+{
+	color:#1a1a1a!important;
+	font-size:0.9em;
+	
+}
+#histo .md-button{
+	line-height:unset!important;
+}
+ #histo md-content{
+    background: #dddddd ;
+    width: auto;
+    
+} 
+
+.cancelBtn{
+   background: rgba(255, 255, 255, 0.3) none repeat scroll 0 0 !important;
+    border-color: #949494 !important;
+    border-width:2px;
+    color: #949494 !important;
+	padding:8px!important;
+	border-style:solid!important;
+  	margin:10px 15px 0px;	
+}
+
+.wait svg{
+	fill:#949494;
+}
+
+/*=========================================
+	Login/inscription
+==========================================*/
+.inputFile{
+	display:none;
+}
+.photoLabel{
+	color:rgba(0, 0, 0, 0.26);
+	text-decoration: none;
+	margin-bottom:5px;
+	font-size:0.9em;
+	float:left;
+}
+ 
+ 
+.settings-container {
+    background: #ffffff none repeat scroll 0 0;
+    margin: auto;
+    padding: 20px;
+    width: 90%;
+    z-index: 1;
+} 
+
+md-switch{
+	margin: 0 32px !important;
+}
+
+ md-dialog p{
+ 	color:#000!important;
+ }
+ 
+ button[disabled]{
+ 	opacity:0.3!important;
+ }
+ /* color Google Places */
+ .pac-container, .pac-container span, .pac-container p{
+  	color:#949494!important;
+  	    font-family:"OpenSansItalic";
+    font-size:1.2em;
+ }
+ 
+  .popup{
+ 	position:absolute;
+ 	top:0;
+ 	z-index:99;
+ 	height:100%;
+ 	width:100%;
+ 	background-color:rgba(0,0,0,0.2);
+ 	font-family: 'OpenSans'
+ 	 
+ }
+ .popup-container{
+ 	border:2px solid #0feaac;
+ 	border-radius:10px;
+ 	width:90%;
+ 	background-color:white;
+ 	box-shadow: 1px 4px 6px 6px rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.19);
+ }
+ .comment-container{
+  	border:2px solid #0feaac;
+ 	border-radius:10px;
+ }
+ .popup-container span{
+ 	text-align:left;
+	
+ }
+ .popup-title{
+ 	width:100%;
+ 	background-color:#0feaac;
+ 	text-align:center;
+ 	font-family: 'OpenSans'
+ } 
+ .popup-footer{
+ 	background-color:white;
+	color:white;	
+}
+.popup span{
+	color:#454545!important;
+	
+}
+
+#cent{
+    text-align: center
+}
+
+#texte{
+    vertical-align: middle;
+}
+
+#adress{
+    margin-left: 1%;
+}
+/* button:hover{
+      background:#0feaac; 
+     background:red!important; 
+} */
+
+.popup button, #wait button{
+	margin:10px 15px 0px;	
+	color:white;
+	background:#0feaac;
+	padding:8px;
+	border-style:solid;
+    border-width: 2px;
+    border-color: #0feaac;
+    font-size:0.9em;
+    font-family: 'OpenSans';
+	border-radius:5px;
+	display:inline-block;
+	min-width:100px;
+}
+#wait md-content{
+	background:unset;
+}
+
+md-dialog .md-button{
+	background:#0feaac!important;
+} 
+
+
+md-list #list{
+    background-color: #dddddd;
+    width: auto
+}

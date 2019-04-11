@@ -1,0 +1,74 @@
+<md-list    style="margin:0px;padding:0;color:#1a1a1a;background-color:#dedede" id="settings" flex="100"> 
+	<p layout-padding></p>
+ 	<md-list-item  ng-if="">
+		<md-content  flex="100" style="padding:5px;margin:20px 0" layout="row">
+			<span style="font-weight:bold;color:#777777;margin-top:10px" flex="65">Broker host :</span>
+		   	<md-select ng-model="brokerHost"  flex="35" style="margin:0">
+		    	<md-option ng-repeat="host in  brokerHostList" ng-value="host.val">{{host.val}}</md-option>
+			</md-select>
+	   	</md-content>
+	</md-list-item>
+ 	<md-list-item  >
+		<div class="settings-container shadow" style="text-align: center" flex="100">
+			<form style=" justify-content: center;">
+					<md-input-container >
+        	    		<input ng-model="customer.firstname" type="text" placeholder="first name">
+            		</md-input-container>
+			</form>	
+			<form style=" justify-content: center;">
+					<md-input-container >
+        	    		<input ng-model="customer.lastname" type="text" placeholder="last name">
+            		</md-input-container>
+			</form>	
+			<form style=" justify-content: center;">
+					<md-input-container >
+        	    		<input ng-model="customer.phone" type="text" placeholder="phone number">
+            		</md-input-container>
+			</form>	
+			<md-content  flex="100"  layout="row" >
+				<div flex="100" style="text-align:center">
+					<span ng-if="!avatarPict">
+<!-- 						<a class ="photoLabel" ng-click="forceClick('#inputPicture')">Add your Picture</a><br/> -->
+	   				  		<img ng-src="./assets/img/avatar.png" class="photoProfil"   ng-click="forceClick('#inputPicture')"/>
+	   				  	</span>
+					<span ng-if="avatarPict">
+<!--	   				  		<a class ="photoLabel" ng-click="forceClick('#inputPicture')">Change your Picture</a><br/> -->
+	    					<img class="photoProfil"   ngf-src="avatarPict"  ng-click="forceClick('#inputPicture')"/>
+	    				</span>	
+ 	                            <input 
+	                                type="file" 
+	                                ngf-select 
+ 	                                ng-model="avatarPict" 
+	                                name="inputPicture" 
+	                                placeholder=""
+	                                ngf-pattern="'image/*'"
+	                                accept="image/*" 
+	                                ngf-max-size="20MB" 
+	                                class="inputFile"
+	                                id="inputPicture"               
+	                             >
+	                             
+				</div>
+    		</md-content>	
+		</md-list-item>
+	<md-divider></md-divider>
+
+</md-list>	
+
+	<p layout-padding></p>
+	<md-content  flex="100" style="margin:10px" layout="row" layout-align="center center">
+	 	<button   ng-click="save();" >Done</button>
+	</md-content>
+	<p style="font-size:0.8em;color:#000" layout-padding>{{version}}</p>
+	<md-content layout="row" flex="100" flex-sm="100" layout-align="center center" style="opacity:0.8;position:absolute;top:0;z-index:99;height:100%;width:80%" ng-if="wait">
+	<div layout-align="center center">
+
+	<div flex="100" style="text-align:center">
+		<img  src="./assets/img/spinner.gif"  style="width:100px;height:100px;"/>
+	</div>
+	<div flex="100" ng-if="waitPict">
+		<p style="font-size:1.1em;color:#000"  >{{uploadingItem}} : {{uploadPercent}} %</p>
+	</div>	
+	</div>	
+</md-content>	   	
+

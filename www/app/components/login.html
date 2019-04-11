@@ -1,0 +1,86 @@
+<div class="login-overlay" ng-cloak>
+	<div class="logo">
+	</div>
+	<div class="form-container shadow" ng-style="{ 'margin-top' : (authentication == 'Login') ? '180px' : '30px' }">
+		<div class="inputs">
+			<md-content layout-padding>
+				<form style="justify-content: center;" name="dialogForm" layout-align="center center">
+				
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo" ng-if="authentication == 'Signup'">
+						<md-input-container >
+		                    <input ng-model="user.firstname" type="text" placeholder="fisrt name" ng-required="true">
+		                </md-input-container>
+					</div>
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo" ng-if="authentication == 'Signup'">
+						<md-input-container >
+		                    <input ng-model="user.lastname" type="text" placeholder="last name" ng-required="true">
+		                </md-input-container>
+					</div>
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+						<md-input-container  >
+		                    <input id="email" ng-model="user.email" tabindex="1" focus type="email" placeholder="email" ng-required="true">
+		                </md-input-container>
+		             </div>
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+						<md-input-container >
+		                    <input id="password" ng-model="user.password" tabindex="2" focus type="password" placeholder="password" ng-required="true">
+		                </md-input-container>
+		             </div>   
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo" ng-if="authentication == 'Signup'">
+						<md-input-container >
+	    	                <input ng-model="user.phone" type="tel" placeholder="phone number" ng-required="true">
+	        	        </md-input-container>
+					</div>
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo" ng-if="authentication == 'Signup'">
+						<div   layout="row">
+							<div flex="50">
+								<span ng-if="!user.avatarPict && !forceClicked">
+<!-- 									<a class ="photoLabel" ng-click="forceClick('#inputPicture')">Add your Picture</a><br/>-->
+		     				  		<img ng-src="./assets/img/avatar.png" class="photoProfil"   ng-click="forceClicked=true;forceClick('#inputPicture')"/>
+		     				  	</span>
+								<span ng-if="user.avatarPict">
+<!-- 		     				  		<a class ="photoLabel" ng-click="forceClick('#inputPicture')">Change your Picture</a><br/>-->
+			     					<img class="photoProfil"   ngf-src="user.avatarPict"  ng-click="forceClick('#inputPicture')"/>
+			     				</span>	
+                                <input 
+                                    type="file" 
+                                    ngf-select 
+                                    ng-model="user.avatarPict"
+                                    name="inputPicture" 
+                                    placeholder=""
+                                    ngf-pattern="'image/*'"
+                                    accept="image/*" 
+                                    ngf-max-size="20MB" 
+                                    class="inputFile"
+                                    id="inputPicture" 
+                                 >
+                            </div>
+             			</div>              
+					</div>
+				</form>
+			</md-content>
+			<md-content ng-if="authentication == 'Login'" layout="row" layout-padding layout-align="center center">	
+					<md-button id="mybtn" class="md-raised primary" tabindex="3" focus ng-click="authenticate();" ng-disabled="dialogForm.$invalid">{{authentication}}</md-button>						
+			</md-content>	
+			<div ng-if="authentication == 'Signup'" layout="row" layout-padding>	
+				<div class="buttons">
+					<md-button class="md-raised primary" ng-click="signup();" ng-disabled="dialogForm.$invalid">{{authentication}}</md-button>						
+				</div>
+			</div>	
+		</div>
+		<a href="#" ng-click="changeLoginMode($event);$event.stopPropagation();" style="font-size:1em;text-decoration: underline;text-align:right;margin:0px 25px 10px 0px;" layout="row" layout-align="end center">
+			{{authentication == 'Login' ? 'Signup':'Login' }}</a>		
+	</div>
+</div>
+<md-content layout="row" flex="100" flex-sm="100" layout-align="center center" style="background-color:#000;opacity:0.7;position:absolute;top:0;z-index:99;height:100%;width:100%" ng-if="wait">
+	<div layout-align="center center">
+
+	<div flex="100" style="text-align:center">
+		<img  src="./assets/img/spinner.gif"  style="width:100px;height:100px;"/>
+	</div>
+	<div flex="100" ng-if="waitPict">
+		<p style="font-size:1.1em"  >{{uploadingItem}} : {{uploadPercent}} %</p>
+	</div>	
+	</div>	
+</md-content>
+	

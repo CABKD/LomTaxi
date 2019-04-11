@@ -1,0 +1,194 @@
+	
+	<md-content layout="row" flex="100" flex-sm="100" layout-align="center center" >
+		<div id="gmaps"  style="width: 100%; height: 100%;" ng-show="mapLoad == true"></div>	
+
+  </md-content>
+
+							   <!--  pour velizy -->
+	  <div id="requestContainer" 
+	  ng-style="true == true ? {'background':'rgba(255,255,255,0.7)','box-shadow': '0 4px 15px 15px rgba(55, 55, 55, 0.27)' }: {'background':'rgba(255,255,255,0)','box-shadow': 'node'}"
+	  
+	  ng-if="rideStatus == 0" style="padding:12px 0px"> 
+	  <div id="contenu" layout="row" layout-align="center center" >
+		  <input class="inputAddress" id="adress" value="{{adresse}}"  placeholder="enter your destination" g-places-autocomplete options="autocompleteOptions" force-selection="true" ng-model="adresse" />
+		  <input type="hidden" id="station" />
+		  <md-button class="brequest" id="bouton0" ng-click="affiche_stat_dest()">OK</md-button>
+</div>
+
+	   <div  layout="row"  layout-align="center center" style="display: inline;font-size: 12px" >
+			  
+			
+		<button class="mybutton"  id="bouton1" type="button" ng-click="remplir_input1()" value="LOUVOIS, 78140 Vélizy-Villacoublay, France " ng-style="" > LOUVOIS </button>
+			<button class="mybutton"  id="bouton2" type="button" ng-click="remplir_input2()" value="MAIRIE, 78140 Vélizy-Villacoublay, France " ng-style=""> MAIRIE </button>
+			<button class="mybutton"  id="bouton3" type="button" ng-click="remplir_input3()" value="BREGUET, 78140 Vélizy-Villacoublay, France " ng-style=""> BREGUET </button>
+			
+			<button class="mybutton"  id="bouton4" type="button" ng-click="remplir_input4()" value="RAVEL, 78140 Vélizy-Villacoublay, France " ng-style=""> RAVEL  </button>  
+			<button class="mybutton"  id="bouton5" type="button" ng-click="remplir_input5()" value="SAINT-EXUPERY, 78140 Vélizy-Villacoublay, France " ng-style=""> SAINT-EXUPERY  </button>
+			
+				  </div>
+	  <button class="request"  ng-if=" rideStatus == 0"   ng-click="request()" style="border-radius: 8px" >REQUEST</button> 
+
+   </div>		
+   
+  
+
+  <md-content layout="row" flex="0" flex-sm="0" layout-align="center center"  >
+  </md-content>
+  
+   <md-content layout="row" flex="100" flex-sm="100" layout-align="center center" style="background-color:#000;opacity:0.7;position:absolute;top:0;z-index:99;height:100%;width:100%" ng-if="wait == true">
+  <div layout-align="center center">
+
+  <div flex="100" style="text-align:center" id="wait">
+	  <img  src="./assets/img/spinner.gif"  style="width:100px;height:100px;"/>
+		  <md-content  layout="row" style="margin:0;padding:0">
+			  <button class="md-raised md-primary" ng-click="cancelRequest();$event.stopPropagation();">ABORT</button>	
+		  </md-content>
+	  </md-content>
+  </div>
+  </div>	
+  </md-content>
+  <md-content class="popup" layout="column" flex="100" flex-sm="100" layout-align="center center" ng-if="showPopup" >
+	  <md-content class ="popup-container"  layout="column" layout-align="center center" ng-if="rideStatus == 2">
+		  <div  layout="row" class="popup-title" layout-align="center center" layout-padding><p>RIDE REQUEST</p>	
+		  </div>
+		  <div   layout-padding style="width:100%" >
+			  <div  layout="row" layout-align="center center">
+				  <span >NO SHUTTLE AVAILABLE</span>	
+			  </div>	
+		  </div>	
+		  <md-content  layout="row" class="popup-footer" layout-align="space-around center" layout-padding>
+			  <button class="md-raised md-primary" ng-click="cancelRequest();$event.stopPropagation();">ABORT</button>	
+			  <button ng-click="retry();$event.stopPropagation();">RETRY</button>	
+		  </md-content>
+	  </md-content>
+
+	  <md-content class ="popup-container" id="container1"  layout="column" layout-align="center center"  ng-if="showmess==1">
+		
+		<p id="cent" style="color:black">
+			<span id="texte" >This area is not available</span>
+		</p>	
+				
+				
+		<md-content  layout="row" class="popup-footer" layout-align="space-around center" layout-padding>
+			<button id="b_container" type="hidden" class="md-raised md-primary" ng-click="clear_adress($event);$event.stopPropagation()" >OK</button>	
+		</md-content>
+	</md-content>
+
+	
+	  <md-content class ="popup-container" id="container" layout="column" layout-align="center center" ng-if="rideStatus == 3" >
+		  <div  layout="row" class="popup-title" layout-align="center center" layout-padding><p>SHUTTLE IS COMING</p>	
+		  </div>
+	  
+		  <div  layout="row" ng-if="rideInfo.Duration!=0">
+			  <span >Arriving in: {{rideInfo.durationText}}</span>	
+			  
+		  
+		  </div>		
+		  <br/>
+		  
+
+		  <div  layout="row" >
+			  
+				  <span >At : {{station_accueil}}</span>	
+  
+			  </div>
+			  <br/><br/>
+			  <!-- <div layout="row" > -->
+				  <span >Start a pedestrian route?</span>
+				  <br/>
+				  <br/>
+			  <md-content  layout="row" class="popup-footer" layout-align="center center" layout-padding>
+				  <button class="md-raised md-primary"   ng-click="openmap();$event.stopPropagation();">YES</button>	
+				  <button  id="b_container" ng-click="carComing();$event.stopPropagation();">CANCEL</button>
+			  </md-content>
+		  <!-- 	</div> -->
+		  
+			  <br/>
+			  <br/>
+		  <!-- <md-content  layout="row" class="popup-footer" layout-align="space-around center" layout-padding>
+			  <button class="md-raised md-primary"  id="b_container" ng-click="carComing();$event.stopPropagation();">OK</button>	
+		  </md-content> -->
+	  </md-content>
+  <!-- </div> -->
+	  <md-content class ="popup-container" id="container" layout="column" layout-align="center center" layout-padding ng-if="rideStatus == 5 || rideStatus == 6" >
+		  <div  layout="row" class="popup-title" layout-align="start center" layout-padding><p>SHUTTLE IS ARRIVED</p>	
+		  </div>
+		  <div  layout="row" >
+			  <span >Shuttle :{{shuttle.idVehicle}} {{shuttle.idFleet}}</span>	
+			  <!-- <img ng-src="{{avatar}}" class="photoProfil"   /> -->
+		  </div>	
+		  <div  layout="row" >
+			  <span >Going to : <br/>{{destAddr}}</span>	
+		  </div>	
+		  <div  layout="row" >
+			  <span >Destination in : {{tripTime}}</span>
+		  </div>		
+		  <md-content  layout="row" class="popup-footer" layout-align="space-around center" layout-padding>
+			  <button class="md-raised md-primary" id="b_container" ng-click="close();$event.stopPropagation();">OK</button>	
+		  </md-content>
+	  </md-content>
+	  
+	  <md-content class ="popup-container"  layout="column" layout-align="center center" ng-if="rideStatus == 7">
+	  <div  layout="row" class="popup-title" layout-align="center center" layout-padding><p>ARRIVED TO DESTINATION</p>	
+	  </div>
+	  <div   layout-padding style="width:100%" >
+		  <div  layout="row" >
+			  <span >Arrived to :<br/> {{destAddr}}</span>	
+		  </div>	
+	  </div>	
+
+	  <md-content  layout="row" class="popup-footer" layout-align="space-around center" layout-padding ng-if="affiche == 1">
+	  <span >Start a pedestrian route to your destination?</span>
+	  <br/>
+	  <br/>
+  <md-content  layout="row" class="popup-footer" layout-align="center center" layout-padding>
+	  <button class="md-raised md-primary"   ng-click="open_nav();$event.stopPropagation();">YES</button>	
+	  <button class="md-raised md-primary" ng-click="goscoring($event);$event.stopPropagation()">CANCEL</button>
+  </md-content>
+	</md-content>
+
+
+		  <md-content  layout="row" class="popup-footer" layout-align="space-around center" layout-padding ng-if="affiche == 0">
+			  <button class="md-raised md-primary" ng-click="arrivedToDestination($event);$event.stopPropagation()" >SCORING</button>	
+		  </md-content>
+	  </md-content>	
+	  <md-content class ="popup-container" id="container" layout="column" layout-align="center center" ng-if="rideStatus == 8">
+		  <div  layout="row" class="popup-title" layout-align="center center" layout-padding><p>RATE YOUR DRIVER</p>	
+		  </div>
+		  <div  layout="row" >
+			  <span >Shuttle :{{shuttle.idVehicle}} {{shuttle.idFleet}}</span>	
+			  <!-- <img ng-src="{{avatar}}" class="photoProfil"   /> -->
+		  </div>
+		  <div  layout="row" layout-align="center center" >	
+			  <img src="./assets/img/stareOn.png" ng-click="stareClick(0)"/>
+			  <div><img src="./assets/img/stareOn.png" ng-if="score.note>0" ng-click="stareClick(1)"/><img src="./assets/img/stareOff.png" ng-if="score.note<1" ng-click="stareClick(1)"/></div>
+			  <div><img src="./assets/img/stareOn.png" ng-if="score.note>1" ng-click="stareClick(2)"/><img src="./assets/img/stareOff.png" ng-if="score.note<2" ng-click="stareClick(2)"/></div>
+			  <div><img src="./assets/img/stareOn.png" ng-if="score.note>2" ng-click="stareClick(3)"/><img src="./assets/img/stareOff.png" ng-if="score.note<3" ng-click="stareClick(3)"/></div>
+			  <div><img src="./assets/img/stareOn.png" ng-if="score.note>3" ng-click="stareClick(4)"/><img src="./assets/img/stareOff.png" ng-if="score.note<4" ng-click="stareClick(4)"/></div>
+			  <div><img src="./assets/img/stareOn.png" ng-if="score.note>4" ng-click="stareClick(5)"/><img src="./assets/img/stareOff.png" ng-if="score.note<5" ng-click="stareClick(5)"/></div>
+		  </div>		
+		  <div  layout="row" layout-align="center center" layout-padding class="comment-container" >
+		  <md-input-container  style="margin-top:20px" >
+			   <label>Comment</label>
+			  <textarea ng-model="score.comment" maxlength="100"  ></textarea>
+		  </md-input-container>						
+		  </div>			
+		  <md-content  layout="row" class="popup-footer" layout-align="space-around center" layout-padding>
+			  <!-- <button class="md-raised md-primary" ng-click="endRide($event);$event.stopPropagation()" >SAVE</button> -->
+			  <button class="md-raised md-primary" ng-click="showpop($event);$event.stopPropagation()" >SAVE</button>	
+		  </md-content>
+	  </md-content>
+
+	  <md-content class ="popup-container" id="container1" layout="column" layout-align="center center" ng-if="etat==1">
+		
+		<p id="cent">
+			<span id="texte">Thank you to use our services with Milla</span>
+		</p>	
+				
+				
+		<md-content  layout="row" class="popup-footer" layout-align="space-around center" layout-padding>
+			<button id="b_container" type="hidden" class="md-raised md-primary" ng-click="endRide($event);$event.stopPropagation()" >OK</button>	
+		</md-content>
+	</md-content>
+
+  </md-content>

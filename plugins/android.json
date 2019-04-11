@@ -1,0 +1,40 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-geolocation": {
+      "PACKAGE_NAME": "com.lomtaxi"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.lomtaxi"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.lomtaxi"
+    },
+    "cordova-plugin-googlemaps": {
+      "API_KEY_FOR_ANDROID": "AIzaSyBddcO9plncN2lOARQsUvmBtfdE7pMvJDI",
+      "PLAY_SERVICES_VERSION": "15.0.1",
+      "ANDROID_SUPPORT_V4_VERSION": "27.+",
+      "PACKAGE_NAME": "com.lomtaxi"
+    },
+    "cordova-android-play-services-gradle-release": {
+      "PLAY_SERVICES_VERSION": "15.0.0",
+      "PACKAGE_NAME": "com.lomtaxi"
+    },
+    "cordova-plugin-app-version": {
+      "PACKAGE_NAME": "com.lomtaxi"
+    },
+    "cordova-plugin-globalization": {
+      "PACKAGE_NAME": "com.lomtaxi"
+    },
+    "in.lucasdup.bringtofront": {
+      "PACKAGE_NAME": "com.lomtaxi"
+    }
+  },
+  "dependent_plugins": {}
+}
