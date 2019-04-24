@@ -82,19 +82,23 @@ angular.module('ngApp').controller('HomeController', function ( $rootScope, $sco
 				   var lng = parseFloat(position.coords.longitude.toFixed(6));         
 				
 				   userPos = {"lat":lat, "lng":lng}; 
-				  map.setCenter({lat: 48.786081, lng: 2.174604}); 
-			//	  map.setCenter(userPos); 
+				//  map.setCenter({lat: 48.786081, lng: 2.174604}); 
+				  map.setCenter(userPos); 
+				  showCustomer(userPos)
 				 },
 			   function(err) {setTimeout(getPosition,50);},options);  
 			   }     
 	  }
 	  var closest=-1;
 var prevColor="#0feaac";	
-var prev_image="https://www.lifeonmaps.com/images/mg-pin.png";
-var image="https://www.lifeonmaps.com/images/mg-pin24.png";
+
+/* var prev_image="https://www.lifeonmaps.com/images/mg-pin.png";
+var image="https://www.lifeonmaps.com/images/mg-pin24.png"; */
+var prev_image={url: "./assets/img/mg-pin.png"}
+var image={url: "./assets/img/mg-pin24.png"}
 var stationMarker=[];
  //====== STATIONS
- stationName[0]="Parking Lot";
+/*  stationName[0]="Parking Lot";
  stationLat[0]="48.780238";
  stationLng[0]="2.196710";
   stationName[1]="LOUVOIS";
@@ -114,7 +118,16 @@ var stationMarker=[];
  stationLng[4]="2.18415";
  stationName[5]="SAINT-EXUPERY";
  stationLat[5]="48.78327";
- stationLng[5]="2.17606"; 
+ stationLng[5]="2.17606";  */
+ stationName[1]="BRACONNIER 1";
+  stationLat[1]="48.789938";
+  stationLng[1]="2.212394";
+  stationName[2]="BRACONNIER 2";
+  stationLat[2]="48.790278";
+  stationLng[2]="2.212714";
+  stationName[3]="BRACONNIER 3";
+  stationLat[3]="48.790518";
+  stationLng[3]="2.212714";
 
 $scope.affiche_stat_dest=function(){
 	
@@ -239,7 +252,7 @@ google.maps.event.addListener(stationMarker[3],'click', function(){
 		$scope.adresse=document.getElementById("bouton3").value;
 });
 
-google.maps.event.addListener(stationMarker[4],'click', function(){  
+/* google.maps.event.addListener(stationMarker[4],'click', function(){  
 		
 	stationMarker[4].setIcon(prev_image);
 		stationMarker[2].setIcon(image);
@@ -252,9 +265,9 @@ google.maps.event.addListener(stationMarker[4],'click', function(){
 		document.getElementById("bouton3").style.backgroundColor=prevColor;
 		document.getElementById("bouton5").style.backgroundColor=prevColor;
 		$scope.adresse=document.getElementById("bouton4").value;
-});
+}); */
 
-google.maps.event.addListener(stationMarker[5],'click', function(){
+/* google.maps.event.addListener(stationMarker[5],'click', function(){
 		 
 	stationMarker[5].setIcon(prev_image);
 		stationMarker[2].setIcon(image);
@@ -267,7 +280,7 @@ google.maps.event.addListener(stationMarker[5],'click', function(){
 		document.getElementById("bouton3").style.backgroundColor=prevColor;
 		document.getElementById("bouton4").style.backgroundColor=prevColor;
 		$scope.adresse=document.getElementById("bouton5").value;
-});
+}); */
 
 }
 
@@ -277,14 +290,14 @@ google.maps.event.addListener(stationMarker[5],'click', function(){
 	    setTimeout(function(){
 			
 	        map = new google.maps.Map(document.getElementById('gmaps'), {
-	            zoom: 15,
+	            zoom: 19,
 		      
-				center: {lat: 48.786081, lng: 2.174604}, 
+				center: {lat: 48.789938, lng: 2.212394}, 
 	            zoomControl: true, //false
 	            scaleControl: false, //false
 	            streetViewControl: true, //false
 				gestureHandling: 'greedy',//g
-				maxZoom: 15,
+				maxZoom: 25,
 	            disableDefaultUI: true
 			});
 	        setTimeout(getPosition,50);
@@ -457,7 +470,7 @@ google.maps.event.addListener(stationMarker[5],'click', function(){
 	}
 
 
-var bonhomme={url:"https://www.lifeonmaps.com/images/map-marker-17-64x64.png"};
+var bonhomme={url:"./assets/img/bonhomme.png"};
 
 
 	 function addCustomerMarker(customerLoc){
@@ -602,8 +615,9 @@ var bonhomme={url:"https://www.lifeonmaps.com/images/map-marker-17-64x64.png"};
 			console.log(mess)
 			return;
 		} */
-
+console.log($scope.rideStatus)
 		if($scope.rideStatus == 4 && message.destinationName.search(rideStartTopic) != -1){
+			console.log("je suis la")
 			unSubscribe(rideStartTopic);
 			preserveViewport = false;
 			itinerairePickUpHide();
@@ -623,7 +637,7 @@ var bonhomme={url:"https://www.lifeonmaps.com/images/map-marker-17-64x64.png"};
 				$scope.rideInfo = mess.rideInfo;
 				console.log($scope.rideInfo)
 				puStation=mess.rideInfo.puStation;
-				
+				console.log(puStation+"station")
 				$scope.station_accueil=stationName[puStation];
 				console.log($scope.station_accueil)
 				initRidetoCustomer(mess.shuttleId);
@@ -648,8 +662,10 @@ var bonhomme={url:"https://www.lifeonmaps.com/images/map-marker-17-64x64.png"};
 			shuttleMarker.marker1.setPosition({"lat":result.lat, "lng":result.lng});    
 			shuttleMarker.marker.setVisible(false); 
 			shuttleMarker.marker1.setVisible(false);
+			/* var val=calculTN();
+				console.log(val) */
 			if($scope.rideStatus == 4) {
-
+				
 				itinerairePickUp();
 			}else {
 				
@@ -747,7 +763,7 @@ var bonhomme={url:"https://www.lifeonmaps.com/images/map-marker-17-64x64.png"};
 	var rideStartTopic = null;
 	//var userPosTopic=null;
 	var passengerTopic=null;
-	//var rideStartTopic = "/lomt/ridestart/";
+
 	function subscribeTaxiTopic(shuttleId){
 		taxiTopic = "/lomt/shuttle/"+shuttleId;
 		
@@ -797,9 +813,13 @@ var bonhomme={url:"https://www.lifeonmaps.com/images/map-marker-17-64x64.png"};
 			url:"https://www.lifeonmaps.com/images/map-marker-17-64x64.png"
 		} */
 	    GeoMarker = new GeolocationMarker();
-	    GeoMarker.setCircleOptions({fillColor: '#808080'});
+	    GeoMarker.setCircleOptions(
+			{//fillColor: '#808080',
+			fillOpacity: 0,
+  			strokeWeight: 0
+		});
 	    GeoMarker.setPositionOptions({
-				  enableHighAccuracy: false,
+				  enableHighAccuracy: true,
 				  timeout: 5000,
 				  maximumAge: 1000
 		});
@@ -847,13 +867,15 @@ var bonhomme={url:"https://www.lifeonmaps.com/images/map-marker-17-64x64.png"};
 				geocoder.geocode({'address': $scope.adresse}, function(results, status) {
 	          if (status === 'OK') {
 	 	       	 selectedPlace = {
-		    			 "lat":results[0].geometry.location.lat(), 
-		    			 "lng":results[0].geometry.location.lng(),
+		    			/*  "lat":results[0].geometry.location.lat(), 
+		    			 "lng":results[0].geometry.location.lng(), */
 					//	"address": $scope.destination,
 						 "address":  $scope.adresse,
-						 "station": $scope.station,    
+						 "station": $scope.station,  
+						 "lat":Number(stationLat[$scope.station]), 
+		    			 "lng":Number(stationLng[$scope.station]),  
 						 };
-						 console.log($scope.station+"stationdrop2")		 
+						 console.log(selectedPlace.lat +" "+ selectedPlace.lng)		 
 	 	       	sendRideRequest();
 	          } else {
 	            alert('Geocode was not successful for the following reason: ' + status);
@@ -876,13 +898,13 @@ var bonhomme={url:"https://www.lifeonmaps.com/images/map-marker-17-64x64.png"};
 			 stationMarker[1].setIcon(prev_image);
 			 stationMarker[2].setIcon(image);
 			 stationMarker[3].setIcon(image);
-			 stationMarker[4].setIcon(image);
-			 stationMarker[5].setIcon(image);
+		/* 	 stationMarker[4].setIcon(image);
+			 stationMarker[5].setIcon(image); */
 			 document.getElementById("bouton1").style.backgroundColor="red";
 			 document.getElementById("bouton2").style.backgroundColor=prevColor;
 			 document.getElementById("bouton3").style.backgroundColor=prevColor;
-			 document.getElementById("bouton4").style.backgroundColor=prevColor;
-			 document.getElementById("bouton5").style.backgroundColor=prevColor;
+			/*  document.getElementById("bouton4").style.backgroundColor=prevColor;
+			 document.getElementById("bouton5").style.backgroundColor=prevColor; */
 	 }
 	
 	
@@ -894,13 +916,13 @@ var bonhomme={url:"https://www.lifeonmaps.com/images/map-marker-17-64x64.png"};
 			stationMarker[2].setIcon(prev_image);
 			stationMarker[1].setIcon(image);
 			stationMarker[3].setIcon(image);
-			stationMarker[4].setIcon(image);
-			stationMarker[5].setIcon(image);
+		/* 	stationMarker[4].setIcon(image);
+			stationMarker[5].setIcon(image); */
 			document.getElementById("bouton2").style.backgroundColor="red";
 			document.getElementById("bouton1").style.backgroundColor=prevColor;
 			document.getElementById("bouton3").style.backgroundColor=prevColor;
-			document.getElementById("bouton4").style.backgroundColor=prevColor;
-			document.getElementById("bouton5").style.backgroundColor=prevColor;
+			/* document.getElementById("bouton4").style.backgroundColor=prevColor;
+			document.getElementById("bouton5").style.backgroundColor=prevColor; */
 		}
 	
 		function remplir_input3(){
@@ -911,49 +933,49 @@ var bonhomme={url:"https://www.lifeonmaps.com/images/map-marker-17-64x64.png"};
 			stationMarker[3].setIcon(prev_image);
 			stationMarker[1].setIcon(image);
 			 stationMarker[2].setIcon(image);
-			 stationMarker[4].setIcon(image);
-			 stationMarker[5].setIcon(image);
+			/*  stationMarker[4].setIcon(image);
+			 stationMarker[5].setIcon(image); */
 			 document.getElementById("bouton3").style.backgroundColor="red";
 			 document.getElementById("bouton2").style.backgroundColor=prevColor;
 			 document.getElementById("bouton1").style.backgroundColor=prevColor;
-			 document.getElementById("bouton4").style.backgroundColor=prevColor;
-			 document.getElementById("bouton5").style.backgroundColor=prevColor;
+			 /* document.getElementById("bouton4").style.backgroundColor=prevColor;
+			 document.getElementById("bouton5").style.backgroundColor=prevColor; */
 		}
 	
-		function remplir_input4(){
+	/* 	function remplir_input4(){
 	
 			document.getElementById("station").value=4;
 			$scope.adresse=document.getElementById("bouton4").value;
 			$scope.station=document.getElementById("station").value;
-			stationMarker[4].setIcon(prev_image);
+		//	stationMarker[4].setIcon(prev_image);
 			stationMarker[1].setIcon(image);
 			stationMarker[2].setIcon(image);
 			stationMarker[3].setIcon(image);
-			stationMarker[5].setIcon(image);
+		//	stationMarker[5].setIcon(image);
 			document.getElementById("bouton4").style.backgroundColor="red";
 		document.getElementById("bouton2").style.backgroundColor=prevColor;
 		document.getElementById("bouton3").style.backgroundColor=prevColor;
 		document.getElementById("bouton1").style.backgroundColor=prevColor;
 		document.getElementById("bouton5").style.backgroundColor=prevColor;
-		} 
+		}  */
 	
-		function remplir_input5(){
+	/* 	function remplir_input5(){
 	
 			document.getElementById("station").value=5;
 			$scope.adresse=document.getElementById("bouton5").value;
 			$scope.station=document.getElementById("station").value;
-			stationMarker[5].setIcon(prev_image);
+		//	stationMarker[5].setIcon(prev_image);
 			stationMarker[1].setIcon(image);
 			 stationMarker[2].setIcon(image);
 			 stationMarker[3].setIcon(image);
-			 stationMarker[4].setIcon(image);
-			 document.getElementById("bouton5").style.backgroundColor="red";
+		//	 stationMarker[4].setIcon(image);
+		//	 document.getElementById("bouton5").style.backgroundColor="red";
 		document.getElementById("bouton2").style.backgroundColor=prevColor;
 		document.getElementById("bouton3").style.backgroundColor=prevColor;
-		document.getElementById("bouton4").style.backgroundColor=prevColor;
+	//	document.getElementById("bouton4").style.backgroundColor=prevColor;
 		document.getElementById("bouton1").style.backgroundColor=prevColor;
 		}
-	
+	 */
 
 	$scope.request = function(){
 		request();
@@ -1010,23 +1032,27 @@ var bonhomme={url:"https://www.lifeonmaps.com/images/map-marker-17-64x64.png"};
 								},
 								
                 				"destLocation" : {
-                					"lat" : selectedPlace.lat, 
-                					"lng" : selectedPlace.lng, 
+                					/* "lat" : selectedPlace.lat, 
+                					"lng" : selectedPlace.lng,  */
 									"address" : selectedPlace.address,
 									/*  "station": selectedPlace.station, */
 									"station": $scope.station,
+									"lat" : Number( stationLat[$scope.station]), 
+                					"lng" : Number(stationLng[$scope.station]), 
                 				},
                 				"userInfo" : {
                 					"firstName" : $rootScope.userFirstName,
                 					"lastName" : $rootScope.userLastName,
                 					"avatar" : shared.global.customer.avatar,
                 				}
-                		}
+						}
+						console.log(mess.destLocation.lat)
                 	  	var message = new Paho.MQTT.Message(JSON.stringify(mess));
                 	  	message.destinationName = "/lomt/ride/request/"+shared.global.customer.customerId;
                 	  	message.retained = false;
                 	  	mqttClient.send(message);
-                	  	rideRequest = mess;
+						  rideRequest = mess;
+						  console.log(rideRequest.destLocation.lat)
                 	  	$scope.destAddr = rideRequest.destLocation.address;
                 	});
                 }else{
@@ -1217,7 +1243,7 @@ var Totaltime=0;
 				//  var step = parseInt(response.routes[0].legs[0].steps.length/2);
 			//	  customerMarker.marker.setVisible(false);
   				 // if(response.routes[0].legs[0].distance.value < 100) {
-					if(dist < 100) {
+					if(dist < 50) {
 					//window.plugins.bringtofront();
 					   itinerairePickUpHide();
 					  
@@ -1272,7 +1298,8 @@ var Totaltime=0;
     		    map: map,
     		    icon: imgDest,
     		  });
-    	}
+		}
+		console.log(markerDest.position.lat)
     	if(directionService == null){
 			directionService = new google.maps.DirectionsService();
 		};  
@@ -1308,7 +1335,7 @@ var Totaltime=0;
 				//  optimizeWaypoints: true,
 	              travelMode  : google.maps.DirectionsTravelMode.DRIVING // Mode de conduite
 		}
-		
+		console.log(request.destination)
 		directionService.route( request, function( response, status ) {
 			var dist=0;
 			var Totaltime=0;
@@ -1325,7 +1352,7 @@ var Totaltime=0;
 				 
 				  
 					
-				if(dist < 100) {
+				if(dist < 10) {
 				
   					  itineraireDestinationHide();
 						$rootScope.titleBar = "ARRIVED TO DESTINATION";
@@ -1384,8 +1411,9 @@ var Totaltime=0;
 
 	 function masquernotification()
 	{
+		if(document.getElementById('b_container')!=null){
 	  document.getElementById('b_container').click(); 
-
+	}
 	
 	} 
 
@@ -1521,6 +1549,26 @@ $scope.ville="";
 		clearGeoMarker();
 	});
 
-	
+	var distanceService=null;
+function calculTN(){
+	var result=null;
+	console.log("yes")
+	render.preserveViewport = preserveViewport;
+	distanceService= new google.maps.DistanceMatrixService();
+	distanceService.getDistanceMatrix({
+		origin:shuttleMarker.marker.getPosition(),
+		destination:stationLat[puStation]+","+stationLng[puStation],
+		travelMode  : google.maps.DirectionsTravelMode.DRIVING,
+		unitSystem: google.maps.UnitSystem.METRIC,
+		durationInTraffic: true,
+	},function(response,status){
+		if(status=='OK'){
+			 result=response.rows.elemeents.duration
+		}
+	})
+	return result
+}
+
+
 
 });

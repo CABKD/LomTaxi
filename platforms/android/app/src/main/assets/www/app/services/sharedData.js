@@ -18,12 +18,16 @@ angular.module("ngApp").service("shared", function(){
        
        brokerHostList :
     	    [
-    	     {"val":"www.lifeonmaps.com"},
-    	     {"val":"www.lifeonmaps.com"}
+    	    /*  {"val":"www.lifeonmaps.com"},
+             {"val":"www.lifeonmaps.com"} */
+             {"val":"dev.zlool.com"},
+             {"val":"dev.zlool.com"}
+            
     	    ],
   	 settings:
   	 	{
-  		 	"brokerHost" : "www.lifeonmaps.com",
+               /* "brokerHost" : "www.lifeonmaps.com", */
+               "brokerHost" : "dev.zlool.com",  
   		 	"defaultLat":48.576244,  
   		 	"defaultLng":7.807807,
   		 	"defaultPos":false,
