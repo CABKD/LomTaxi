@@ -21,7 +21,7 @@ angular.module('ngApp')
 					for(var i = 0; i < result.length; i++){
 						result[i].date = formatDate(result[i].rideRequestTs);
 						/* result[i].avatar = API_ENDPOINT.urlImages+"/"+result[i].driverInfo.avatar; */
-						result[i].avatar = API_ENDPOINT.urlImages+"/"+result[i].shuttleInfo.avatar;
+					//	result[i].avatar = API_ENDPOINT.urlImages+"/"+result[i].shuttleInfo.avatar;
 
 					}
 					$scope.rides = result;
