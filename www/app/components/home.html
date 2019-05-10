@@ -1,9 +1,13 @@
 	
 	<md-content layout="row" flex="100" flex-sm="100" layout-align="center center" >
-		<div id="gmaps"  style="width: 100%; height: 100%;" ng-show="mapLoad == true"></div>	
-
+		<div id="gmaps"  style="width: 100%; height: 100%;" ng-show="mapLoad == true">
+			
+		</div>	
+		<div id="buttondelete" ng-if="delete==1">
+			<button id="supp" ng-click="annuler();">Cancel mission</button>
+		</div>
   </md-content>
-
+  
 							   <!--  pour velizy -->
 	  <div id="requestContainer" 
 	  ng-style="true == true ? {'background':'rgba(255,255,255,0.7)','box-shadow': '0 4px 15px 15px rgba(55, 55, 55, 0.27)' }: {'background':'rgba(255,255,255,0)','box-shadow': 'node'}"
@@ -18,19 +22,19 @@
 	   <div  layout="row"  layout-align="center center" style="display: inline;font-size: 12px" >
 			  
 			
-		<button class="mybutton"  id="bouton1" type="button" ng-click="remplir_input1()" value="BRACONNIER 1, 78140 Vélizy-Villacoublay, France " ng-style="" > BRACONNIER 1 </button>
-			<button class="mybutton"  id="bouton2" type="button" ng-click="remplir_input2()" value="BRACONNIER 2, 78140 Vélizy-Villacoublay, France " ng-style=""> BRACONNIER 2 </button>
-			<button class="mybutton"  id="bouton3" type="button" ng-click="remplir_input3()" value="BRACONNIER 3, 78140 Vélizy-Villacoublay, France " ng-style=""> BRACONNIER 3 </button>
+		<button class="mybutton"  id="bouton1" type="button" ng-click="remplir_input1()" value="3 rue Arago, 78140 Vélizy-Villacoublay, France " ng-style="" > ARAGO </button>
+			<button class="mybutton"  id="bouton2" type="button" ng-click="remplir_input2()" value="3 rue de Bretagne, 78140 Vélizy-Villacoublay, France " ng-style=""> BRETAGNE </button>
+			<button class="mybutton"  id="bouton3" type="button" ng-click="remplir_input3()" value="2 rue de la division Leclerc, 78140 Vélizy-Villacoublay, France " ng-style="">LECLERC </button>
 			
-			<!-- <button class="mybutton"  id="bouton4" type="button" ng-click="remplir_input4()" value="RAVEL, 78140 Vélizy-Villacoublay, France " ng-style=""> RAVEL  </button>  
-			<button class="mybutton"  id="bouton5" type="button" ng-click="remplir_input5()" value="SAINT-EXUPERY, 78140 Vélizy-Villacoublay, France " ng-style=""> SAINT-EXUPERY  </button>
-			 -->
+			 <button class="mybutton"  id="bouton4" type="button" ng-click="remplir_input4()" value="31 avenue de Savoie, 78140 Vélizy-Villacoublay, France " ng-style=""> SAVOIE  </button>  
+			<!-- <button class="mybutton"  id="bouton5" type="button" ng-click="remplir_input5()" value="48 rue Berlioz, 78140 Vélizy-Villacoublay, France " ng-style=""> GOUNOD  </button> -->
+			 
 				  </div>
 	  <button class="request"  ng-if=" rideStatus == 0"   ng-click="request()" style="border-radius: 8px" >REQUEST</button> 
 
    </div>		
    
-  
+ 
 
   <md-content layout="row" flex="0" flex-sm="0" layout-align="center center"  >
   </md-content>
@@ -43,7 +47,7 @@
 		  <md-content  layout="row" style="margin:0;padding:0">
 			  <button class="md-raised md-primary" ng-click="cancelRequest();$event.stopPropagation();">ABORT</button>	
 		  </md-content>
-	  </md-content>
+	 <!--  </md-content> -->
   </div>
   </div>	
   </md-content>
@@ -75,12 +79,46 @@
 	</md-content>
 
 	
+
+	<md-content class ="popup-container" id="container" layout="column" layout-align="center center" ng-if="confirmation == 2" >
+	
+		
+
+		<div  layout="row" >
+			<br/>
+			<br/>
+				<span >Your vehicle is arriving at : {{station_accueil}} Station</span>
+			</div>
+			<br/>
+					<div  layout="row" ng-if="rideInfo.Duration!=0">	
+						<span >	in {{time}}</span>	
+					</div>
+			
+			<br/>
+		
+				<span >Please confirm your reservation?</span>
+				<br/>
+				<br/>
+			<md-content  layout="row" class="popup-footer" layout-align="center center" layout-padding>
+				<button class="md-raised md-primary"   ng-click=" confirm();$event.stopPropagation();">YES</button>	
+				<button  id="b_container" ng-click="infirmer();$event.stopPropagation();">NO</button>
+			</md-content>
+	
+		
+			<br/>
+			<br/>
+	
+	</md-content>
+
+
+
+
 	  <md-content class ="popup-container" id="container" layout="column" layout-align="center center" ng-if="rideStatus == 3" >
 		  <div  layout="row" class="popup-title" layout-align="center center" layout-padding><p>SHUTTLE IS COMING</p>	
 		  </div>
 	  
 		  <div  layout="row" ng-if="rideInfo.Duration!=0">
-			  <span >Arriving in: {{rideInfo.durationText}}</span>	
+			  <span >Arriving in: {{time}}</span>	
 			  
 		  
 		  </div>		
@@ -190,5 +228,24 @@
 			<button id="b_container" type="hidden" class="md-raised md-primary" ng-click="endRide($event);$event.stopPropagation()" >OK</button>	
 		</md-content>
 	</md-content>
+
+
+
+	<md-content class ="popup-container" id="container1" layout="column" layout-align="center center" ng-if="noshow==1">
+		
+		<p id="cent">
+			<span id="texte">The shuttle is gone. The ride will be canceled. Please request a new one.</span>
+		</p>	
+				
+				
+		<md-content  layout="row" class="popup-footer" layout-align="space-around center" layout-padding>
+			<button id="b_container" type="hidden" class="md-raised md-primary" ng-click="endRide($event);$event.stopPropagation()" >OK</button>	
+		</md-content>
+	</md-content>
+
+	<!-- <div id="delete" ng-if="delete==1">
+		<button id="button_delete">Cancel mission</button>
+	</div> -->
+
 
   </md-content>

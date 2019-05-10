@@ -14,21 +14,6 @@
                     }
                 }
             ]
-        },
-        {
-            "outputFile": "C:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\test\\LomTaxi\\LomTaxi\\platforms\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-port\\values-port.xml",
-            "map": [
-                {
-                    "source": "C:\\Users\\isfm0\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\c57aab8f6d5b2d325b4d2da2d258acb6\\res\\values-port\\values-port.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "55",
-                        "endOffsets": "106"
-                    }
-                }
-            ]
         }
     ]
 }

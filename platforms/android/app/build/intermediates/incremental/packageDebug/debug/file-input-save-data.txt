@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Wed Apr 17 19:52:59 CEST 2019
+#Thu May 09 17:21:36 CEST 2019
 210.set=ANDROID_RESOURCE
 14.set=ANDROID_RESOURCE
 180.file=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\transforms\\mergeJavaRes\\debug\\0.jar\\META-INF\\com.android.support_support-compat.version
@@ -21,7 +21,7 @@
 134.base=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_
 186.base=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\transforms\\mergeJniLibs\\debug\\0
 161.base=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_
-192.file=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_\\res\\drawable-hdpi-v4\\notification_bg_normal.9.png
+192.file=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_icon_light_normal_background.9.png
 132.set=ASSET
 238.set=ASSET
 179.set=JAVA_RESOURCE
@@ -178,7 +178,7 @@
 94.file=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\assets\\debug\\www\\assets\\lib\\angular-sanitize.js
 148.base=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_
 69.set=ANDROID_RESOURCE
-246.file=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_\\res\\layout-v21\\notification_action_tombstone.xml
+246.file=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_\\res\\drawable-hdpi-v4\\common_google_signin_btn_icon_light_normal_background.9.png
 169.file=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\assets\\debug\\www\\plugins\\cordova-plugin-googlemaps\\www\\js_CordovaGoogleMaps-for-android_ios.js
 200.base=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_
 123.base=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\assets\\debug
@@ -248,9 +248,9 @@
 95.file=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\assets\\debug\\www\\assets\\img\\MillaMobilityWhite.png
 149.base=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_
 79.set=ANDROID_RESOURCE
-247.file=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_\\res\\drawable-hdpi-v4\\common_google_signin_btn_icon_light_normal_background.9.png
+247.file=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_\\res\\layout-v21\\notification_action_tombstone.xml
 201.base=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_
-70.file=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_\\res\\layout\\notification_template_part_time.xml
+70.file=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_\\res\\drawable-port-hdpi-v4\\screen.png
 124.base=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_
 222.file=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\transforms\\mergeJavaRes\\debug\\0.jar\\play-services-places-placereport.properties
 145.file=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_\\res\\color\\common_google_signin_btn_text_dark.xml
@@ -274,7 +274,7 @@
 204.set=ASSET
 9.base=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\assets\\debug
 105.file=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\transforms\\mergeJniLibs\\debug\\0\\lib\\x86_64\\libtbxml.so
-234.file=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_\\res\\layout\\notification_media_cancel_action.xml
+234.file=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_\\res\\drawable-xhdpi-v4\\notification_bg_normal.9.png
 157.file=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_\\res\\layout\\notification_template_part_chronometer.xml
 250.set=ANDROID_RESOURCE
 191.set=ANDROID_RESOURCE
@@ -308,7 +308,7 @@
 239.set=ANDROID_RESOURCE
 17.file=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\assets\\debug\\www\\languages\\en.json
 13.base=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_
-69.file=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_\\res\\drawable-port-hdpi-v4\\screen.png
+69.file=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_\\res\\layout\\notification_template_part_time.xml
 44.file=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\assets\\debug\\www\\plugins\\cordova-plugin-googlemaps\\www\\LatLngBounds.js
 119.file=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_\\res\\drawable-hdpi-v4\\notification_bg_low_pressed.9.png
 96.file=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\assets\\debug\\www\\assets\\lib\\angular-translate-loader-url.min.js
@@ -340,7 +340,7 @@
 214.set=ANDROID_RESOURCE
 106.file=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\assets\\debug\\www\\assets\\img\\footer.png
 18.set=ASSET
-235.file=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_\\res\\drawable-xhdpi-v4\\notification_bg_normal.9.png
+235.file=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_\\res\\layout\\notification_media_cancel_action.xml
 158.file=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\assets\\debug\\www\\cordova-js-src\\exec.js
 210.file=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_\\res\\drawable-hdpi-v4\\googleg_standard_color_18.png
 133.file=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\assets\\debug\\www\\assets\\img\\profil\\avatar.png
@@ -369,7 +369,7 @@
 141.base=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\assets\\debug
 197.file=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_\\res\\drawable\\common_google_signin_btn_text_light_focused.xml
 120.file=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_\\res\\drawable-hdpi-v4\\common_full_open_on_phone.png
-172.file=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_\\res\\drawable\\common_google_signin_btn_icon_dark_normal.xml
+172.file=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_\\res\\drawable-land-mdpi-v4\\screen.png
 39.base=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\assets\\debug
 143.set=ASSET
 249.set=ASSET
@@ -405,7 +405,7 @@
 53.base=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\assets\\debug
 209.file=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\transforms\\mergeJavaRes\\debug\\0.jar\\play-services-tasks.properties
 224.set=ASSET
-107.file=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_\\res\\drawable-port-ldpi-v4\\screen.png
+107.file=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_\\res\\drawable-hdpi-v4\\googleg_disabled_color_18.png
 28.set=ASSET
 80.base=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\transforms\\mergeJniLibs\\debug\\0
 236.file=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\assets\\debug\\www\\assets\\css\\app-green.css
@@ -439,7 +439,7 @@
 121.file=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\assets\\debug\\www\\assets\\lib\\autocomplete.js
 0.base=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\transforms\\mergeJavaRes\\debug\\0.jar
 250.file=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_\\res\\layout\\notification_template_media_custom.xml
-173.file=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_\\res\\drawable-land-mdpi-v4\\screen.png
+173.file=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_\\res\\drawable\\common_google_signin_btn_icon_dark_normal.xml
 107.set=ANDROID_RESOURCE
 153.set=ASSET
 19.file=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\assets\\debug\\www\\plugins\\cordova-plugin-globalization\\www\\GlobalizationError.js
@@ -471,7 +471,7 @@ count=259
 54.base=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_
 234.set=ANDROID_RESOURCE
 175.set=ANDROID_RESOURCE
-108.file=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_\\res\\drawable-hdpi-v4\\googleg_disabled_color_18.png
+108.file=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_\\res\\drawable-port-ldpi-v4\\screen.png
 38.set=ASSET
 81.base=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\assets\\debug
 237.file=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\assets\\debug\\www\\cordova-js-src\\android\\promptbasednativeapi.js
@@ -488,11 +488,11 @@ count=259
 149.set=ANDROID_RESOURCE
 91.set=ASSET
 202.set=ASSET
-35.file=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_\\res\\drawable-xhdpi-v4\\googleg_disabled_color_18.png
+35.file=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_\\res\\layout\\notification_media_action.xml
 66.base=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\assets\\debug
 218.base=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_
 87.file=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\assets\\debug\\www\\app\\components\\login-controller.js
-10.file=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_\\res\\drawable-mdpi-v4\\notify_panel_notification_icon_bg.png
+10.file=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_\\res\\drawable\\common_google_signin_btn_text_dark_normal.xml
 41.base=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\assets\\debug
 52.set=ANDROID_RESOURCE
 116.base=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\assets\\debug
@@ -558,11 +558,11 @@ count=259
 159.set=ANDROID_RESOURCE
 212.set=ANDROID_RESOURCE
 16.set=ASSET
-36.file=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_\\res\\layout\\notification_media_action.xml
+36.file=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_\\res\\drawable-xhdpi-v4\\googleg_disabled_color_18.png
 67.base=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\assets\\debug
 219.base=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_
 88.file=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_\\res\\layout\\notification_template_media.xml
-11.file=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_\\res\\drawable\\common_google_signin_btn_text_dark_normal.xml
+11.file=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_\\res\\drawable-mdpi-v4\\notify_panel_notification_icon_bg.png
 42.base=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\assets\\debug
 62.set=ANDROID_RESOURCE
 117.base=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\assets\\debug
@@ -624,7 +624,7 @@ count=259
 195.base=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\assets\\debug
 170.base=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_
 65.set=ASSET
-191.file=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_icon_light_normal_background.9.png
+191.file=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_\\res\\drawable-hdpi-v4\\notification_bg_normal.9.png
 7.set=ASSET
 169.set=ASSET
 222.set=JAVA_RESOURCE

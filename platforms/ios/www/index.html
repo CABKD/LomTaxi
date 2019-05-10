@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html ng-app="ngApp">
+
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Security-Policy">
+<!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->
+<meta name="format-detection" content="telephone=no">
+<meta name="msapplication-tap-highlight" content="no">
+<meta name="viewport"	content="initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, user-scalable=yes">
+<link rel="stylesheet" type="text/css"	href="assets/css/angular-material.css">
+<!--<link rel="stylesheet" type="text/css" 	href="assets/css/angular-material-icons.css">-->
+<!-- <link rel="stylesheet" type="text/css" 	href="assets/css/materialdesignicons.min.css" />-->
+<!-- <link rel="stylesheet" type="text/css" 	href="assets/css/bootstrap.css">-->
+<!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
+<!-- <link rel="stylesheet" type="text/css" 	href="assets/css/app-green.css">-->
+<link rel="stylesheet" type="text/css" 	href="assets/css/index.css">
+<link rel="stylesheet" type="text/css" 	href="assets/css/autocomplete.css">
+
+
+<!-- AngularJs -->
+<script type="text/javascript"	src="assets/lib/mqttws31.js"></script>
+<script type="text/javascript" src="assets/lib/angular.min.js"></script>
+<script type="text/javascript" src="assets/lib/angular-ui-router.min.js"></script>
+<script type="text/javascript" src="assets/lib/angular-aria.min.js"></script>
+<script type="text/javascript" src="assets/lib/angular-animate.min.js"></script>
+<script type="text/javascript" src="assets/lib/angular-messages.js"></script>
+<script type="text/javascript" src="assets/lib/ngStorage.min.js"></script>
+<script type="text/javascript" src="assets/lib/ngTouch.min.js"></script>
+<script type="text/javascript" src="assets/lib/angular-swipe.js"></script>
+<script type="text/javascript" src="assets/lib/moment.js"></script>
+<script type="text/javascript" src="assets/lib/angular-moment.js"></script>
+<script type="text/javascript" src="assets/lib/angular-sanitize.js"></script>
+<script type="text/javascript" src="assets/lib/angular-sortable-view.js"></script>
+<script type="text/javascript"	src="assets/lib/angular-paho.js"></script>
+<script type="text/javascript"	src="assets/lib/ng-file-upload.min.js"></script>
+<script type="text/javascript"	src="assets/lib/ng-file-upload-shim.min.js"></script>
+
+
+<!-- Angular Material -->
+<script type="text/javascript" src="assets/lib/angular-material.js"></script>
+<script type="text/javascript"	src="assets/lib/angular-material-icons.js"></script>
+
+<!-- Cordova -->
+<script type="text/javascript" src="assets/lib/ng-cordova.min.js"></script>
+<!-- <script src="cordova.js"></script> -->
+<script type="text/javascript" src="assets/lib/angular-translate.min.js"></script>
+<script type="text/javascript" src="assets/lib/angular-translate-loader-url.min.js"></script>
+<script type="text/javascript" src="assets/lib/angular-translate-loader-static-files.min.js"></script>
+<!-- Modules -->
+<script type="text/javascript" src="app/app.js"></script>
+ <script type="text/javascript" src="cordova.js"></script>
+<!-- Routes -->
+<script type="text/javascript" src="app/routes.js"></script>
+
+
+<!-- Controllers -->
+<script type="text/javascript"	src="app/components/login-controller.js"></script>
+<script src="app/components/dashboard.js"></script>
+<script type="text/javascript"	src="app/components/home-controller.js"></script>
+<script type="text/javascript"	src="app/components/settings-controller.js"></script>
+<script type="text/javascript"	src="app/components/histo-controller.js"></script>
+<!-- <script src="http://192.168.0.10:1337/vorlon.js"></script> -->
+
+    <!-- services -->
+    <script src="app/services/ws.js"></script>
+    <script src="app/services/services.js"></script>
+    <script src="app/services/constants.js"></script>
+    <script src="app/services/sharedData.js"></script>
+    <!-- <script src="http://dev.pexsi.fr:1337/vorlon.js" ></script>-->
+    
+<!-- <script type="text/javascript"	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAzZwg45F7MRLV67NQv-tVrN5lE26rMm14&libraries=places"  ></script> -->
+<script type="text/javascript"	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgr7wOnfVErRWoT_I5fa0g4AABIZUSB2g&libraries=geometry,places"  ></script>
+																				 
+<script type="text/javascript"	src="assets/lib/autocomplete.js"></script>
+<script type="text/javascript"	src="assets/lib/geolocationmarker-compiled.js"  ></script>
+    
+<title>NgApp</title>
+</head>
+
+<body layout="column" ng-cloak style="height:100%;font-size:1.2em">
+	<md-toolbar  ng-controller="HeaderController" ng-show="!isActive('login')" >
+        <div class="md-toolbar-tools md-toolbar-tools-align" >
+            <span id="menuButton" ng-click="toggle();" > 
+            	<ng-md-icon icon="menu" ng-class="md-48"></ng-md-icon>
+            </span>
+            <span flex style="text-align:center">{{titleBar}}</span> 
+            <span id="menuButton" ng-click="centerLocalisation();" ng-show="isActive('home')" > 
+            	<ng-md-icon icon="gps_fixed" ng-class="md-48"></ng-md-icon>
+            </span>
+            <span ng-click="back($event);" ng-show="isActive('settings') || isActive('histo')" > 
+            	<ng-md-icon icon="clear" ng-class="md-48"></ng-md-icon>
+            </span>
+        </div>
+	</md-toolbar>
+
+	<md-sidenav class="md-sidenav-left" md-component-id="left"  align="end" style="overflow:hidden;" layout="column" flex ng-click="toggle();">
+			<div layout="row" flex="65" flex-sm="65" layout-align="center center" style="background-color:rgba(0,0,0,0.85)" >
+				<div id="profil"  >
+					<img src="./assets/img/profil/avatar.png" id="photoProfil" ng-show="avatarLoad == false"/>
+					<img src="{{avatar}}"   id="photoProfil" ng-show="avatarLoad == true" image-onload />
+					<span style=" font-size: 0.8em !important;">{{userFirstName+" "+userLastName }}</span>
+					<!-- <img src="./assets/img/profilLine.png" style="position:absolute;left: -0.4%; top: -17%;width: 100%;color:#fff"/> -->
+				</div>
+				<div   flex="100" layout="column" style="padding-top:20%"  >
+					<div layout="row" ><a href="" style="color:#fff;padding:5% 20px" ng-click="changePage('home');">New Ride</a></div>
+					<div layout="row" layout-align="start center" ><a href="#/histo" style="color:#fff;padding:5% 20px">Your Rides</a></div> 
+					<div layout="row" ><a href="#/settings" style="color:#fff;padding:5% 20px">Settings</a></div>
+					<div layout="row" ><a href="" style="color:#fff;padding:5% 20px" ng-click="logout()">Log Out</a></div>
+					
+				</div>
+ 			</div>
+	<!--		<div layout="row" flex="35" flex-sm="35" layout-align="center center" style="background-color:#111111;color:#fff;border-top:1px solid #0feaac"> -->
+			<div layout="row" flex="35" flex-sm="35" layout-align="center center" style="background-color:#fff;color:#fff;border-top:1px solid #0feaac">
+				<img src="./assets/img/MillaMobilityDark.png" width="60%">
+			</div>
+    </md-sidenav>
+    
+    <md-content layout="column" flex>
+   		<ui-view layout="column" flex>
+   		</ui-view>
+	</md-content>
+	<md-content class="popup" layout="column" flex="100" flex-sm="100" layout-align="center center" ng-if="logOut==true" >
+		<md-content class ="popup-container" layout="column" layout-align="center center">
+			<div  layout="row" class="popup-title" layout-align="center center" layout-padding><p>Log Out</p>	
+			</div>
+			<div   layout-padding style="width:100%" >
+				<div  layout="row" layout-align="center center">
+					<span >Confirm</span>	
+				</div>	
+			</div>	
+			<md-content  layout="row" class="popup-footer" layout-align="space-around center" layout-padding>
+				<button class="md-raised md-primary" ng-click="cancelLogout();">No</button>	
+				<button ng-click="confirmLogout();$event.stopPropagation();">Yes</button>	
+			</md-content>
+		</md-content>
+	
+   		
+</body>
+</html>

@@ -528,8 +528,22 @@ md-switch{
 md-dialog .md-button{
 	background:#0feaac!important;
 } 
+#buttondelete{
+    width:100%;
+    position:absolute;
+   align-content: center;
+	bottom:0;
+	height: 60px
+}
 
-
+#supp{
+background-color: #0feaac;
+margin: auto;
+width: 25%;
+height: 60px;
+display: block;
+border-radius: 8px
+}
 md-list #list{
     background-color: #dddddd;
     width: auto

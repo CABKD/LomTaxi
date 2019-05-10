@@ -1,0 +1,24 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-android-play-services-gradle-release": {
+      "PACKAGE_NAME": "com.lomtaxi"
+    },
+    "cordova-plugin-app-version": {
+      "PACKAGE_NAME": "com.lomtaxi"
+    },
+    "cordova-plugin-geolocation": {
+      "PACKAGE_NAME": "com.lomtaxi"
+    },
+    "cordova-plugin-globalization": {
+      "PACKAGE_NAME": "com.lomtaxi"
+    }
+  },
+  "dependent_plugins": {}
+}
