@@ -18,7 +18,26 @@
     },
     "cordova-plugin-globalization": {
       "PACKAGE_NAME": "com.lomtaxi"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.lomtaxi"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.lomtaxi"
+    },
+    "in.lucasdup.bringtofront": {
+      "PACKAGE_NAME": "com.lomtaxi"
+    },
+    "cordova-plugin-background-mode": {
+      "PACKAGE_NAME": "com.lomtaxi"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "com.lomtaxi"
     }
   },
-  "dependent_plugins": {}
+  "dependent_plugins": {
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.lomtaxi"
+    }
+  }
 }

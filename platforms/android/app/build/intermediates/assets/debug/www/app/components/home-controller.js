@@ -19,7 +19,7 @@ angular.module('ngApp').controller('HomeController', function ( $rootScope, $sco
 	$scope.wait = false;
 	$scope.mqttConnect = false;
 	$scope.adresse="";
-	$scope.time="";
+//	$scope.time="";
 	$rootScope.titleBar = "Request an Autonomous POD";
 	$scope.dest_lat=null;
 	$scope.dest_lng=null;
@@ -29,6 +29,7 @@ angular.module('ngApp').controller('HomeController', function ( $rootScope, $sco
 	var stationLng = [];
 	var puStation;
 	var myLatlng;
+	var ref;
 	$scope.TN=null;
 	$scope.TU=null;
 	$scope.TAN=null;
@@ -102,24 +103,7 @@ var prev_image={url: "./assets/img/mg-pin.png"}
 var image={url: "./assets/img/mg-pin24.png"}
 var stationMarker=[];
  //====== STATIONS
- /* stationName[0]="Parking Lot";
- stationLat[0]="48.78595";
- stationLng[0]="2.17555";
- stationName[1]="RACINE";
- stationLat[1]="48.78595";
- stationLng[1]="2.17555";
- stationName[2]="JULES FERRY";
- stationLat[2]="48.78633";
- stationLng[2]="2.17329";
- stationName[3]="JULES GUESDES";
- stationLat[3]="48.78689";
- stationLng[3]="2.16966";
- stationName[4]="BERLIOZ";
- stationLat[4]="48.78607";
- stationLng[4]="2.17068";
- stationName[5]="GOUNOD";
- stationLat[5]="48.78567";
- stationLng[5]="2.17331"; */
+ 
  stationName[0]="Parking Lot";
 stationLat[0]="48.785849";
 stationLng[0]="2.176051";
@@ -313,9 +297,10 @@ google.maps.event.addListener(stationMarker[3],'click', function(){
 				center: {lat: 48.785849, lng: 2.176051}, 
 	            zoomControl: true, //false
 	            scaleControl: false, //false
-	            streetViewControl: true, //false
-				gestureHandling: 'greedy',//g
+	            streetViewControl: false, //false
+				gestureHandling: 'cooperative',//g
 				maxZoom: 21,
+				draggable:true,
 	            disableDefaultUI: true
 			});
 	        setTimeout(getPosition,50);
@@ -762,29 +747,57 @@ var bonhomme={url:"./assets/img/bonhomme.png"};
 			}
 		}
 
+
+		if($scope.rideStatus<8 && message.destinationName.search(endTopic)!=-1){
+			var data= JSON.parse(message.payloadString)
+		console.log(data.ride)
+		if(data.ride=="endride"){
+			$scope.showPopup = true;
+			console.log("end ride")
+			$scope.showPopup = true;
+		$scope.rideStatus = 7;
+		$scope.affiche=0;
+		$rootScope.titleBar = "ARRIVED TO DESTINATION";
+		}
+	}
+
+	if($scope.rideStatus<8 && message.destinationName.search(cancelmissionTopic)!=-1){
+		var data= JSON.parse(message.payloadString)
+	console.log(data.ride)
+	if(data.ride=="cancel"){
+	document.getElementById("supp").disabled=true;
+	document.getElementById("buttondelete").style.visibility="hidden"
+//	$scope.delete=0;
+		console.log("cancel ride")
+		
+	}
+}
 		
 	  }
 	  
  $scope.confirm= function(){
 	 $scope.confirmation=0;
 	 $scope.rideStatus=3;
-	  var mess = {
+	/*   var mess = {
 		"confirm":$scope.confirmation}
 	 var message = new Paho.MQTT.Message(JSON.stringify(mess));
 	 
-	 message.destinationName = "/lomt/ride/confirm/";
+	 message.destinationName = "/lomt/ride/confirm/"+shared.global.customer.customerId;
 	 console.log(message.destinationName)
 	 console.log(message.payloadString)
-	 mqttClient.send(message); 
+	 mqttClient.send(message);  */
  }
+
+
+
 
  $scope.annuler= function(){
 	$scope.confirmation=1;
 	var mess = {
-		"confirm":$scope.confirmation}
+		"confirm":$scope.confirmation+" "+shared.global.customer.customerId}
 	 var message = new Paho.MQTT.Message(JSON.stringify(mess));
 	 
-	 message.destinationName = "/lomt/ride/confirm/";
+	 message.destinationName = "/lomt/ride/confirm/"/* +shared.global.customer.customerId */;
 	 console.log(message.destinationName)
 	 console.log(message.payloadString)
 	 mqttClient.send(message);
@@ -797,10 +810,10 @@ var bonhomme={url:"./assets/img/bonhomme.png"};
  $scope.infirmer= function(){
 	$scope.confirmation=1;
 	var mess = {
-		"confirm":$scope.confirmation}
+		"confirm":$scope.confirmation+" "+shared.global.customer.customerId}
 	 var message = new Paho.MQTT.Message(JSON.stringify(mess));
 	 
-	 message.destinationName = "/lomt/ride/confirm/";
+	 message.destinationName = "/lomt/ride/confirm/"/* +shared.global.customer.customerId */;
 	
 	 mqttClient.send(message);
 	$scope.rideStatus=1;
@@ -842,6 +855,8 @@ var bonhomme={url:"./assets/img/bonhomme.png"};
 	//var userPosTopic=null;
 	var passengerTopic=null;
 	var noshowTopic=null;
+	var endTopic=null;
+	var cancelmissionTopic=null;
 	function subscribeTaxiTopic(shuttleId){
 		taxiTopic = "/lomt/shuttle/"+shuttleId;
 		
@@ -862,6 +877,8 @@ var bonhomme={url:"./assets/img/bonhomme.png"};
 			unSubscribe(rideStartTopic);
 			unSubscribe(vehiclesTopic);
 			unSubscribe(noshowTopic)
+			unSubscribe(endTopic)
+			unSubscribe(cancelmissionTopic)
 			  /* userPosTopic = "/lomt/user/position/"+shared.global.customer.customerId;
 			mqttClient.subscribe(userPosTopic+"/#");  */ 
 			 var lat = latlng.lat.toFixed(1) * 10;
@@ -875,6 +892,10 @@ var bonhomme={url:"./assets/img/bonhomme.png"};
 			mqttClient.subscribe(rideRequestTopic+"/#");
 			noshowTopic="/lomt/ride/noshow/"+shared.global.customer.customerId;
 			mqttClient.subscribe(noshowTopic+"/#");
+			endTopic="/lomt/ride/end/"+shared.global.customer.customerId;
+			mqttClient.subscribe(endTopic+"/#");
+			cancelmissionTopic="/lomt/cancelmission/"+shared.global.customer.customerId
+			mqttClient.subscribe(cancelmissionTopic+"/#");
 			mqttClient.onMessageArrived = onMessageArrived;
 		}
 	}
@@ -944,6 +965,7 @@ var bonhomme={url:"./assets/img/bonhomme.png"};
 	function request(){
 		$scope.wait = true;
 		$scope.rideStatus = 1;
+		$scope.confirmation=2;
 		if($scope.donnee==1){
 			//$scope.station=getDropOff();
 			console.log($scope.station+"stationdrop")
@@ -961,18 +983,24 @@ var bonhomme={url:"./assets/img/bonhomme.png"};
 						 "lat":Number(stationLat[$scope.station]), 
 		    			 "lng":Number(stationLng[$scope.station]),  
 						 };
-						 console.log(selectedPlace.lat +" "+ selectedPlace.lng)		 
-	 	       	sendRideRequest();
+						 console.log(selectedPlace.lat +" "+ selectedPlace.lng)	
+						/*  document.getElementById("conf").addEventListener("click", function(){
+							sendRideRequest();
+						  });  */
+	 	      	sendRideRequest();
 	          } else {
 	            alert('Geocode was not successful for the following reason: ' + status);
 	            $scope.wait = false;
-	            $scope.rideStatus=0;
+				$scope.rideStatus=0;
+				init_stations();
 	          }
 	        });
 			
 		}else{
 			sendRideRequest();
-			
+		/* 	document.getElementById("conf").addEventListener("click", function(){
+				sendRideRequest();
+			  });  */
 		}
 		
 	}
@@ -1088,6 +1116,7 @@ var bonhomme={url:"./assets/img/bonhomme.png"};
 		$scope.rideStatus = 0;
 		$scope.showPopup = false;
 		$scope.wait = false;
+		initMap()
 	}
 	$scope.close = function(){
 		$scope.showPopup = false;
@@ -1188,6 +1217,8 @@ var bonhomme={url:"./assets/img/bonhomme.png"};
 		//	 unSubscribe(subscribeUserTopic);
 			 unSubscribe(rideStartTopic);
 			unSubscribe(noshowTopic);
+			unSubscribe(endTopic)
+			unSubscribe(cancelmissionTopic)
 			 mqttClient.disconnect();
 		
 		}
@@ -1271,6 +1302,9 @@ var bonhomme={url:"./assets/img/bonhomme.png"};
 	var directionService = null; 
 	  
     function itinerairePickUp(){
+
+	
+
 		console.log($scope.rideStatus)
 		if(render == null) {
 			render = new google.maps.DirectionsRenderer({
@@ -1309,6 +1343,25 @@ var Totaltime=0;
 	              travelMode  : google.maps.DirectionsTravelMode.DRIVING // Mode de conduite
 		}
 		
+		 var pos_station=new google.maps.LatLng(stationLat[puStation],stationLng[puStation]);
+		 if (navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(function(position) {
+			  var pos = {
+				lat: position.coords.latitude,
+				lng: position.coords.longitude
+			  };
+			  var ma_position=new google.maps.LatLng(pos.lat,pos.lng);
+			  var distance=google.maps.geometry.spherical.computeDistanceBetween(ma_position,pos_station)
+			  console.log(distance+" cal_distance")
+			  
+			  if(distance <4210){
+				  console.log("intro")
+				//window.plugins.bringtofront();
+				//cordova.plugins.backgroundMode.moveToForeground();
+				cordova.InAppBrowser.open("https://www.google.com/maps/dir/?api=1&destination="+Number(stationLat[puStation])+","+Number(stationLng[puStation])+"&dir_action=navigates/data=!3m1!4b1!4m5!4m4!1m1!4e1!1m0!3e2").close();
+			  }
+			})
+		}  
 		
 	
     	if(directionService == null){
@@ -1332,8 +1385,8 @@ var Totaltime=0;
 				//  var step = parseInt(response.routes[0].legs[0].steps.length/2);
 			//	  customerMarker.marker.setVisible(false);
   				 // if(response.routes[0].legs[0].distance.value < 100) {
-					if(dist < 20) {
-					//window.plugins.bringtofront();
+					if(dist < 10) {
+				
 					   itinerairePickUpHide();
 					  
   					  $rootScope.titleBar = "SHUTTLE IS ARRIVED";
@@ -1441,7 +1494,7 @@ var Totaltime=0;
 				 
 				  
 					
-				if(dist < 20) {
+				if(dist < 10) {
 				
   					  itineraireDestinationHide();
 						$rootScope.titleBar = "ARRIVED TO DESTINATION";
@@ -1564,8 +1617,13 @@ $scope.ville="";
 
 
 	$scope.openmap=function(){
-		window.open("https://www.google.com/maps/dir/?api=1&destination="+Number(stationLat[puStation])+","+Number(stationLng[puStation])+"&dir_action=navigates/data=!3m1!4b1!4m5!4m4!1m1!4e1!1m0!3e2");
-	 }
+		$scope.rideStatus = 4;
+		$scope.showPopup = false;
+	 cordova.InAppBrowser.open("https://www.google.com/maps/dir/?api=1&destination="+Number(stationLat[puStation])+","+Number(stationLng[puStation])+"&dir_action=navigates/data=!3m1!4b1!4m5!4m4!1m1!4e1!1m0!3e2");
+	//	cordova.plugins.backgroundMode.enable();
+
+	
+	}
 
 
 	 $scope.open_nav=function(){
@@ -1631,6 +1689,8 @@ $scope.ville="";
 			 unSubscribe(subscribeUserTopic);
 			 unSubscribe(rideStartTopic);
 			unSubscribe(noshowTopic)
+			unSubscribe(endTopic)
+			unSubscribe(cancelmissionTopic)
 			 mqttClient.disconnect();
 			 
 		}

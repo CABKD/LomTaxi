@@ -1,27 +1,13 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:2:1-22:12
-INJECTED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:2:1-22:12
-INJECTED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:2:1-22:12
-INJECTED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:2:1-22:12
-MERGED from [:tbxml-android:] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\tbxml-android.aar\0f71d4fcdc536522270951d0816ddf67\AndroidManifest.xml:2:1-11:12
-MERGED from [com.google.android.gms:play-services-maps:15.0.1] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\play-services-maps-15.0.1.aar\905c0e729eae6616b665230a10a8cf9a\AndroidManifest.xml:17:1-32:12
-MERGED from [com.google.android.gms:play-services-location:15.0.1] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\play-services-location-15.0.1.aar\334ddffbdf674232ab90c115a5e56707\AndroidManifest.xml:2:1-9:12
-MERGED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\play-services-base-15.0.1.aar\0339dafa1223b2c6982f92784036dca6\AndroidManifest.xml:17:1-29:12
-MERGED from [com.google.android.gms:play-services-places-placereport:15.0.1] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\play-services-places-placereport-15.0.1.aar\eaf55cf165bad36fb862c39b3cdf3dae\AndroidManifest.xml:17:1-24:12
-MERGED from [com.google.android.gms:play-services-tasks:15.0.1] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\play-services-tasks-15.0.1.aar\1bbe68f87df28d9663011e6f9ca9115f\AndroidManifest.xml:2:1-9:12
-MERGED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\play-services-basement-15.0.1.aar\fbc2282ae3504f7660fa0732d978ab89\AndroidManifest.xml:17:1-28:12
-MERGED from [com.android.support:support-v4:26.1.0] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\7873b9c2d2791cc40d1c5aec450a36a4\AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\b5098fbe6ce35aaad437eb36069439b6\AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\b9b86202e084747be5edf5fbd383e93a\AndroidManifest.xml:17:1-22:12
+ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:2:1-19:12
+INJECTED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:2:1-19:12
+INJECTED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:2:1-19:12
+INJECTED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:2:1-19:12
 MERGED from [:CordovaLib] C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\CordovaLib\build\intermediates\manifests\full\debug\AndroidManifest.xml:20:1-27:12
-MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\e2f0d02fbc6c05e5def740269f1e5fe3\AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\3bbd4b292e05546b8374298e94398c48\AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-compat:27.1.1] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\c57aab8f6d5b2d325b4d2da2d258acb6\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\648e059322a8da2ed7041b183262161e\AndroidManifest.xml:17:1-22:12
-INJECTED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:2:1-22:12
-INJECTED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:2:1-22:12
-INJECTED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:2:1-22:12
+INJECTED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:2:1-19:12
+INJECTED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:2:1-19:12
+INJECTED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:2:1-19:12
 	package
 		ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:2:102-123
 		INJECTED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml
@@ -54,32 +40,10 @@ ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\p
 		ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:3:23-48
 uses-permission#android.permission.INTERNET
 ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:4:5-67
-MERGED from [com.google.android.gms:play-services-maps:15.0.1] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\play-services-maps-15.0.1.aar\905c0e729eae6616b665230a10a8cf9a\AndroidManifest.xml:24:5-67
-MERGED from [com.google.android.gms:play-services-maps:15.0.1] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\play-services-maps-15.0.1.aar\905c0e729eae6616b665230a10a8cf9a\AndroidManifest.xml:24:5-67
 	android:name
 		ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:4:22-64
 application
-ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:5:5-14:19
-MERGED from [com.google.android.gms:play-services-maps:15.0.1] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\play-services-maps-15.0.1.aar\905c0e729eae6616b665230a10a8cf9a\AndroidManifest.xml:30:5-20
-MERGED from [com.google.android.gms:play-services-maps:15.0.1] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\play-services-maps-15.0.1.aar\905c0e729eae6616b665230a10a8cf9a\AndroidManifest.xml:30:5-20
-MERGED from [com.google.android.gms:play-services-location:15.0.1] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\play-services-location-15.0.1.aar\334ddffbdf674232ab90c115a5e56707\AndroidManifest.xml:7:5-20
-MERGED from [com.google.android.gms:play-services-location:15.0.1] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\play-services-location-15.0.1.aar\334ddffbdf674232ab90c115a5e56707\AndroidManifest.xml:7:5-20
-MERGED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\play-services-base-15.0.1.aar\0339dafa1223b2c6982f92784036dca6\AndroidManifest.xml:22:5-27:19
-MERGED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\play-services-base-15.0.1.aar\0339dafa1223b2c6982f92784036dca6\AndroidManifest.xml:22:5-27:19
-MERGED from [com.google.android.gms:play-services-places-placereport:15.0.1] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\play-services-places-placereport-15.0.1.aar\eaf55cf165bad36fb862c39b3cdf3dae\AndroidManifest.xml:22:5-20
-MERGED from [com.google.android.gms:play-services-places-placereport:15.0.1] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\play-services-places-placereport-15.0.1.aar\eaf55cf165bad36fb862c39b3cdf3dae\AndroidManifest.xml:22:5-20
-MERGED from [com.google.android.gms:play-services-tasks:15.0.1] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\play-services-tasks-15.0.1.aar\1bbe68f87df28d9663011e6f9ca9115f\AndroidManifest.xml:7:5-20
-MERGED from [com.google.android.gms:play-services-tasks:15.0.1] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\play-services-tasks-15.0.1.aar\1bbe68f87df28d9663011e6f9ca9115f\AndroidManifest.xml:7:5-20
-MERGED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\play-services-basement-15.0.1.aar\fbc2282ae3504f7660fa0732d978ab89\AndroidManifest.xml:22:5-26:19
-MERGED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\play-services-basement-15.0.1.aar\fbc2282ae3504f7660fa0732d978ab89\AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:support-v4:26.1.0] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\7873b9c2d2791cc40d1c5aec450a36a4\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-v4:26.1.0] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\7873b9c2d2791cc40d1c5aec450a36a4\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\b5098fbe6ce35aaad437eb36069439b6\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\b5098fbe6ce35aaad437eb36069439b6\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\e2f0d02fbc6c05e5def740269f1e5fe3\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\e2f0d02fbc6c05e5def740269f1e5fe3\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\3bbd4b292e05546b8374298e94398c48\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\3bbd4b292e05546b8374298e94398c48\AndroidManifest.xml:25:5-29:19
+ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:5:5-13:19
 	android:supportsRtl
 		ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:5:114-140
 	android:label
@@ -91,19 +55,19 @@ MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\isfm0\.gradle\
 activity#com.lomtaxi.MainActivity
 ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:6:9-11:20
 	android:screenOrientation
-		ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:6:194-230
+		ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:6:199-235
 	android:label
 		ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:6:97-134
 	android:launchMode
-		ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:6:135-165
+		ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:6:135-170
 	android:windowSoftInputMode
-		ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:6:294-336
+		ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:6:299-341
 	android:configChanges
 		ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:6:19-96
 	android:theme
-		ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:6:231-293
+		ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:6:236-298
 	android:name
-		ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:6:166-193
+		ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:6:171-198
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
 ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:7:13-10:29
 	android:label
@@ -116,105 +80,31 @@ category#android.intent.category.LAUNCHER
 ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:9:17-77
 	android:name
 		ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:9:27-74
-meta-data#com.google.android.geo.API_KEY
-ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:12:9-124
-	android:value
-		ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:12:66-121
+service#de.appplant.cordova.plugin.background.ForegroundService
+ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:12:9-91
 	android:name
-		ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:12:20-65
-meta-data#com.google.android.gms.version
-ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:13:9-122
-MERGED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\play-services-basement-15.0.1.aar\fbc2282ae3504f7660fa0732d978ab89\AndroidManifest.xml:23:9-25:69
-MERGED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\play-services-basement-15.0.1.aar\fbc2282ae3504f7660fa0732d978ab89\AndroidManifest.xml:23:9-25:69
-	android:value
-		ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:13:66-119
-	android:name
-		ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:13:20-65
+		ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:12:18-88
 uses-sdk
-ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:15:5-74
-MERGED from [:tbxml-android:] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\tbxml-android.aar\0f71d4fcdc536522270951d0816ddf67\AndroidManifest.xml:7:5-9:41
-MERGED from [:tbxml-android:] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\tbxml-android.aar\0f71d4fcdc536522270951d0816ddf67\AndroidManifest.xml:7:5-9:41
-MERGED from [com.google.android.gms:play-services-maps:15.0.1] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\play-services-maps-15.0.1.aar\905c0e729eae6616b665230a10a8cf9a\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-maps:15.0.1] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\play-services-maps-15.0.1.aar\905c0e729eae6616b665230a10a8cf9a\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-location:15.0.1] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\play-services-location-15.0.1.aar\334ddffbdf674232ab90c115a5e56707\AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-location:15.0.1] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\play-services-location-15.0.1.aar\334ddffbdf674232ab90c115a5e56707\AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\play-services-base-15.0.1.aar\0339dafa1223b2c6982f92784036dca6\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\play-services-base-15.0.1.aar\0339dafa1223b2c6982f92784036dca6\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-places-placereport:15.0.1] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\play-services-places-placereport-15.0.1.aar\eaf55cf165bad36fb862c39b3cdf3dae\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-places-placereport:15.0.1] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\play-services-places-placereport-15.0.1.aar\eaf55cf165bad36fb862c39b3cdf3dae\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-tasks:15.0.1] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\play-services-tasks-15.0.1.aar\1bbe68f87df28d9663011e6f9ca9115f\AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-tasks:15.0.1] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\play-services-tasks-15.0.1.aar\1bbe68f87df28d9663011e6f9ca9115f\AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\play-services-basement-15.0.1.aar\fbc2282ae3504f7660fa0732d978ab89\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\play-services-basement-15.0.1.aar\fbc2282ae3504f7660fa0732d978ab89\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:26.1.0] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\7873b9c2d2791cc40d1c5aec450a36a4\AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-v4:26.1.0] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\7873b9c2d2791cc40d1c5aec450a36a4\AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\b5098fbe6ce35aaad437eb36069439b6\AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\b5098fbe6ce35aaad437eb36069439b6\AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\b9b86202e084747be5edf5fbd383e93a\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\b9b86202e084747be5edf5fbd383e93a\AndroidManifest.xml:20:5-44
+ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:14:5-74
 MERGED from [:CordovaLib] C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\CordovaLib\build\intermediates\manifests\full\debug\AndroidManifest.xml:25:5-44
 MERGED from [:CordovaLib] C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\CordovaLib\build\intermediates\manifests\full\debug\AndroidManifest.xml:25:5-44
-MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\e2f0d02fbc6c05e5def740269f1e5fe3\AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\e2f0d02fbc6c05e5def740269f1e5fe3\AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\3bbd4b292e05546b8374298e94398c48\AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\3bbd4b292e05546b8374298e94398c48\AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-compat:27.1.1] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\c57aab8f6d5b2d325b4d2da2d258acb6\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:27.1.1] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\c57aab8f6d5b2d325b4d2da2d258acb6\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\648e059322a8da2ed7041b183262161e\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\648e059322a8da2ed7041b183262161e\AndroidManifest.xml:20:5-44
-	tools:overrideLibrary
-		ADDED from [com.android.support:support-v4:26.1.0] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\7873b9c2d2791cc40d1c5aec450a36a4\AndroidManifest.xml:23:9-51
 	android:targetSdkVersion
-		ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:15:42-71
+		ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:14:42-71
 	android:minSdkVersion
-		ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:15:15-41
+		ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:14:15-41
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:16:5-81
+ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:15:5-81
 	android:name
-		ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:16:22-78
+		ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:15:22-78
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:17:5-79
+ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:16:5-79
 	android:name
-		ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:17:22-76
+		ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:16:22-76
 uses-feature#android.hardware.location.gps
-ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:18:5-66
+ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:17:5-66
 	android:name
-		ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:18:19-63
-uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:19:5-79
-MERGED from [com.google.android.gms:play-services-maps:15.0.1] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\play-services-maps-15.0.1.aar\905c0e729eae6616b665230a10a8cf9a\AndroidManifest.xml:23:5-79
-MERGED from [com.google.android.gms:play-services-maps:15.0.1] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\play-services-maps-15.0.1.aar\905c0e729eae6616b665230a10a8cf9a\AndroidManifest.xml:23:5-79
+		ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:17:19-63
+uses-permission#android.permission.WAKE_LOCK
+ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:18:5-68
 	android:name
-		ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:19:22-76
-uses-feature#0x00020000
-ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:20:5-78
-MERGED from [com.google.android.gms:play-services-maps:15.0.1] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\play-services-maps-15.0.1.aar\905c0e729eae6616b665230a10a8cf9a\AndroidManifest.xml:26:5-28:35
-MERGED from [com.google.android.gms:play-services-maps:15.0.1] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\play-services-maps-15.0.1.aar\905c0e729eae6616b665230a10a8cf9a\AndroidManifest.xml:26:5-28:35
-	android:glEsVersion
-		ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:20:19-51
-	android:required
-		ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:20:52-75
-uses-feature#android.hardware.location
-ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:21:5-62
-	android:name
-		ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:21:19-59
-activity#com.google.android.gms.common.api.GoogleApiActivity
-ADDED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\play-services-base-15.0.1.aar\0339dafa1223b2c6982f92784036dca6\AndroidManifest.xml:23:9-26:75
-	android:exported
-		ADDED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\play-services-base-15.0.1.aar\0339dafa1223b2c6982f92784036dca6\AndroidManifest.xml:25:13-37
-	android:theme
-		ADDED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\play-services-base-15.0.1.aar\0339dafa1223b2c6982f92784036dca6\AndroidManifest.xml:26:13-72
-	android:name
-		ADDED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\play-services-base-15.0.1.aar\0339dafa1223b2c6982f92784036dca6\AndroidManifest.xml:24:13-79
-meta-data#android.support.VERSION
-ADDED from [com.android.support:support-v4:26.1.0] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\7873b9c2d2791cc40d1c5aec450a36a4\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\b5098fbe6ce35aaad437eb36069439b6\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\b5098fbe6ce35aaad437eb36069439b6\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\e2f0d02fbc6c05e5def740269f1e5fe3\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\e2f0d02fbc6c05e5def740269f1e5fe3\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\3bbd4b292e05546b8374298e94398c48\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\3bbd4b292e05546b8374298e94398c48\AndroidManifest.xml:26:9-28:38
-	android:value
-		ADDED from [com.android.support:support-v4:26.1.0] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\7873b9c2d2791cc40d1c5aec450a36a4\AndroidManifest.xml:28:13-35
-	android:name
-		ADDED from [com.android.support:support-v4:26.1.0] C:\Users\isfm0\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\7873b9c2d2791cc40d1c5aec450a36a4\AndroidManifest.xml:27:13-51
+		ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:18:22-65

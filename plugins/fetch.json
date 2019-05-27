@@ -26,12 +26,10 @@
   "cordova-plugin-googlemaps": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-googlemaps@^2.4.6"
+      "id": "cordova-plugin-googlemaps@^2.3.11"
     },
     "is_top_level": true,
-    "variables": {
-      "API_KEY_FOR_ANDROID": "AIzaSyBddcO9plncN2lOARQsUvmBtfdE7pMvJDI"
-    }
+    "variables": {}
   },
   "cordova-android-play-services-gradle-release": {
     "source": {
@@ -63,6 +61,30 @@
     "source": {
       "type": "registry",
       "id": "https://github.com/markeeftb/cordova-bring-to-front"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-background-mode": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-background-mode@^0.7.2"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-device": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-device"
+    },
+    "is_top_level": false,
+    "variables": {}
+  },
+  "cordova-plugin-inappbrowser": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-inappbrowser@^3.0.0"
     },
     "is_top_level": true,
     "variables": {}

@@ -6,7 +6,7 @@
     android:versionName="1.0.0" >
 
     <uses-sdk
-        android:minSdkVersion="19"
+        android:minSdkVersion="16"
         android:targetSdkVersion="26" />
 
     <supports-screens
@@ -23,12 +23,7 @@
 
     <uses-feature android:name="android.hardware.location.gps" />
 
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
-    <uses-feature
-        android:glEsVersion="0x00020000"
-        android:required="true" />
-    <uses-feature android:name="android.hardware.location" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
         android:debuggable="true"
@@ -40,7 +35,7 @@
             android:name="com.lomtaxi.MainActivity"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale"
             android:label="@string/activity_name"
-            android:launchMode="singleTop"
+            android:launchMode="singleInstance"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.DeviceDefault.NoActionBar"
             android:windowSoftInputMode="adjustResize" >
@@ -51,21 +46,7 @@
             </intent-filter>
         </activity>
 
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyBddcO9plncN2lOARQsUvmBtfdE7pMvJDI" />
-        <meta-data
-            android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" />
-
-        <activity
-            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-            android:exported="false"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-
-        <meta-data
-            android:name="android.support.VERSION"
-            android:value="26.1.0" />
+        <service android:name="de.appplant.cordova.plugin.background.ForegroundService" />
     </application>
 
 </manifest>

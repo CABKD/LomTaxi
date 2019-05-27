@@ -1,9 +1,13 @@
 	
 	<md-content layout="row" flex="100" flex-sm="100" layout-align="center center" >
-		<div id="gmaps"  style="width: 100%; height: 100%;" ng-show="mapLoad == true"></div>	
-
+		<div id="gmaps"  style="width: 100%; height: 100%;" ng-show="mapLoad == true">
+			
+		</div>	
+		<div id="buttondelete" ng-if="delete==1">
+			<button id="supp" ng-click="annuler();">Cancel mission</button>
+		</div>
   </md-content>
-
+  
 							   <!--  pour velizy -->
 	  <div id="requestContainer" 
 	  ng-style="true == true ? {'background':'rgba(255,255,255,0.7)','box-shadow': '0 4px 15px 15px rgba(55, 55, 55, 0.27)' }: {'background':'rgba(255,255,255,0)','box-shadow': 'node'}"
@@ -30,7 +34,7 @@
 
    </div>		
    
-  
+ 
 
   <md-content layout="row" flex="0" flex-sm="0" layout-align="center center"  >
   </md-content>
@@ -43,7 +47,7 @@
 		  <md-content  layout="row" style="margin:0;padding:0">
 			  <button class="md-raised md-primary" ng-click="cancelRequest();$event.stopPropagation();">ABORT</button>	
 		  </md-content>
-	  </md-content>
+	 <!--  </md-content> -->
   </div>
   </div>	
   </md-content>
@@ -76,15 +80,25 @@
 
 	
 
-	<md-content class ="popup-container" id="container" layout="column" layout-align="center center" ng-if="confirmation == 1" >
+	<md-content class ="popup-container" id="container" layout="column" layout-align="center center" ng-if="confirmation == 2" >
 	
 		
 
 		<div  layout="row" >
 			<br/>
 			<br/>
-				<span >Your vehicle is arriving at : {{station_accueil}} Station</span>
+				<span >Your vehicle is arriving at </span>
+			
+			
 			</div>
+			<div  layout="row" >
+				
+				<br/>
+				<span>	{{station_accueil}} Station</span>
+				
+				
+				</div>
+			
 			<br/>
 					<div  layout="row" ng-if="rideInfo.Duration!=0">	
 						<span >	in {{time}}</span>	
@@ -224,5 +238,24 @@
 			<button id="b_container" type="hidden" class="md-raised md-primary" ng-click="endRide($event);$event.stopPropagation()" >OK</button>	
 		</md-content>
 	</md-content>
+
+
+
+	<md-content class ="popup-container" id="container1" layout="column" layout-align="center center" ng-if="noshow==1">
+		
+		<p id="cent">
+			<span id="texte">The shuttle is gone. The ride will be canceled. Please request a new one.</span>
+		</p>	
+				
+				
+		<md-content  layout="row" class="popup-footer" layout-align="space-around center" layout-padding>
+			<button id="b_container" type="hidden" class="md-raised md-primary" ng-click="endRide($event);$event.stopPropagation()" >OK</button>	
+		</md-content>
+	</md-content>
+
+	<!-- <div id="delete" ng-if="delete==1">
+		<button id="button_delete">Cancel mission</button>
+	</div> -->
+
 
   </md-content>

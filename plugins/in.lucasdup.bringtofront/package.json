@@ -18,7 +18,7 @@
   ],
   "_resolved": "git+https://github.com/markeeftb/cordova-bring-to-front.git#84ecca693298c17c865bd49695b338864b328887",
   "_spec": "https://github.com/markeeftb/cordova-bring-to-front",
-  "_where": "C:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\test\\LomTaxi\\LomTaxi",
+  "_where": "C:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO",
   "bundleDependencies": false,
   "cordova": {
     "id": "in.lucasdup.bringtofront",

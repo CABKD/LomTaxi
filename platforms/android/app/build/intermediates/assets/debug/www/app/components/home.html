@@ -87,10 +87,20 @@
 		<div  layout="row" >
 			<br/>
 			<br/>
-				<span >Your vehicle is arriving at : {{station_accueil}} Station</span>
+				<span >Your vehicle is arriving at </span>
+			
+			
 			</div>
+			<div  layout="row" >
+				
+				<br/>
+				<span>	{{station_accueil}} Station</span>
+				
+				
+				</div>
+			
 			<br/>
-					<div  layout="row" ng-if="rideInfo.Duration!=0">	
+					<div  layout="row" >	<!-- ng-if="rideInfo.Duration!=0" -->
 						<span >	in {{time}}</span>	
 					</div>
 			
@@ -100,7 +110,7 @@
 				<br/>
 				<br/>
 			<md-content  layout="row" class="popup-footer" layout-align="center center" layout-padding>
-				<button class="md-raised md-primary"   ng-click=" confirm();$event.stopPropagation();">YES</button>	
+				<button id="conf" class="md-raised md-primary"   ng-click=" confirm();$event.stopPropagation();">YES</button>	
 				<button  id="b_container" ng-click="infirmer();$event.stopPropagation();">NO</button>
 			</md-content>
 	
