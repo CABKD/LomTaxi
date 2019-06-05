@@ -4,8 +4,26 @@
 			
 		</div>	
 		<div id="buttondelete" ng-if="delete==1">
-			<button id="supp" ng-click="annuler();">Cancel mission</button>
+			<button id="supp" ng-click="annule();">Cancel ride</button>
 		</div>
+
+		<!-- <md-content class ="popup-container" id="container" layout="column" layout-align="center center" ng-if="annule ==1" >
+	
+				<br/>
+			
+					<span >Please confirm your choice?</span>
+					<br/>
+					<br/>
+				<md-content  layout="row" class="popup-footer" layout-align="center center" layout-padding>
+					<button class="md-raised md-primary"   ng-click="annuler();$event.stopPropagation();">YES</button>	
+					<button   ng-click="noannule();$event.stopPropagation();">NO</button>
+				</md-content>
+		
+			
+				<br/>
+				<br/>
+		
+		</md-content> -->
   </md-content>
   
 							   <!--  pour velizy -->
@@ -22,13 +40,14 @@
 	   <div  layout="row"  layout-align="center center" style="display: inline;font-size: 12px" >
 			  
 			
-		<button class="mybutton"  id="bouton1" type="button" ng-click="remplir_input1()" value="3 rue Arago, 78140 Vélizy-Villacoublay, France " ng-style="" > ARAGO </button>
-			<button class="mybutton"  id="bouton2" type="button" ng-click="remplir_input2()" value="3 rue de Bretagne, 78140 Vélizy-Villacoublay, France " ng-style=""> BRETAGNE </button>
+		<button class="mybutton"  id="bouton1" type="button" ng-click="remplir_input1()" value="12 D53, 78140 Vélizy-Villacoublay, France " ng-style="" > TRAM </button>
+			<button class="mybutton"  id="bouton2" type="button" ng-click="remplir_input2()" value="37-33 Avenue de Picardie, 78140 Vélizy-Villacoublay, France " ng-style=""> PICARDIE </button>
 			<button class="mybutton"  id="bouton3" type="button" ng-click="remplir_input3()" value="2 rue de la division Leclerc, 78140 Vélizy-Villacoublay, France " ng-style="">LECLERC </button>
 			
-			 <button class="mybutton"  id="bouton4" type="button" ng-click="remplir_input4()" value="31 avenue de Savoie, 78140 Vélizy-Villacoublay, France " ng-style=""> SAVOIE  </button>  
-			<!-- <button class="mybutton"  id="bouton5" type="button" ng-click="remplir_input5()" value="48 rue Berlioz, 78140 Vélizy-Villacoublay, France " ng-style=""> GOUNOD  </button> -->
-			 
+			 <button class="mybutton"  id="bouton4" type="button" ng-click="remplir_input4()" value="14 Allée de Normandie, Vélizy-Villacoublay, France " ng-style=""> BOROTRA  </button>  
+			 <button class="mybutton"  id="bouton5" type="button" ng-click="remplir_input5()" value="Rue de Bretagne, 78140 Vélizy-Villacoublay, France " ng-style=""> BRETAGNE  </button> 
+			 <button class="mybutton"  id="bouton6" type="button" ng-click="remplir_input6()" value="32-42 Rue Jules Guesde, 78140 Vélizy-Villacoublay, France " ng-style=""> MOZART  </button> 
+			 <button class="mybutton"  id="bouton7" type="button" ng-click="remplir_input7()" value="14-16 Rue Charles Gounod, 78140 Vélizy-Villacoublay, France " ng-style=""> GOUNOD  </button> 
 				  </div>
 	  <button class="request"  ng-if=" rideStatus == 0"   ng-click="request()" style="border-radius: 8px" >REQUEST</button> 
 
@@ -208,7 +227,7 @@
 			  <!-- <img ng-src="{{avatar}}" class="photoProfil"   /> -->
 		  </div>
 		  <div  layout="row" layout-align="center center" >	
-			  <img src="./assets/img/stareOn.png" ng-click="stareClick(0)"/>
+			 <!--  <img src="./assets/img/stareOn.png" ng-click="stareClick(5)"/> -->
 			  <div><img src="./assets/img/stareOn.png" ng-if="score.note>0" ng-click="stareClick(1)"/><img src="./assets/img/stareOff.png" ng-if="score.note<1" ng-click="stareClick(1)"/></div>
 			  <div><img src="./assets/img/stareOn.png" ng-if="score.note>1" ng-click="stareClick(2)"/><img src="./assets/img/stareOff.png" ng-if="score.note<2" ng-click="stareClick(2)"/></div>
 			  <div><img src="./assets/img/stareOn.png" ng-if="score.note>2" ng-click="stareClick(3)"/><img src="./assets/img/stareOff.png" ng-if="score.note<3" ng-click="stareClick(3)"/></div>
@@ -257,5 +276,39 @@
 		<button id="button_delete">Cancel mission</button>
 	</div> -->
 
+	<md-content class ="popup-container" id="container" layout="column" layout-align="center center" ng-if="annule ==1" >
+	
+		<br/>
+	
+			<span >Please confirm your choice?</span>
+			<br/>
+			<br/>
+		<md-content  layout="row" class="popup-footer" layout-align="center center" layout-padding>
+			<button class="md-raised md-primary"   ng-click="annuler();$event.stopPropagation();">YES</button>	
+			<button   ng-click="noannule();$event.stopPropagation();">NO</button>
+		</md-content>
 
+	
+		<br/>
+		<br/>
+
+</md-content>
+
+<md-content class ="popup-container" id="container" layout="column" layout-align="center center" ng-if="m_erreur ==1" >
+	
+	<br/>
+
+		<span >Course non disponible</span>
+		<br/>
+		<br/>
+	<md-content  layout="row" class="popup-footer" layout-align="center center" layout-padding>
+		
+		<button   ng-click="m_err();$event.stopPropagation();">OK</button>
+	</md-content>
+
+
+	<br/>
+	<br/>
+
+</md-content>
   </md-content>

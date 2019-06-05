@@ -22,6 +22,7 @@
     <preference name="orientation" value="portrait" />
     <platform name="android">
         <allow-intent href="market:*" />
+        <allow-navigation href="*" />
         <feature name="SplashScreen">
             <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
         </feature>
@@ -38,17 +39,21 @@
     <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
+        <allow-navigation href="*" />
     </platform>
     <plugin name="cordova-plugin-geolocation" spec="^4.0.1" />
     <plugin name="cordova-plugin-splashscreen" spec="^5.0.2" />
     <plugin name="cordova-android-play-services-gradle-release" spec="^1.4.4">
         <variable name="PLAY_SERVICES_VERSION" value="15.0.0" />
     </plugin>
-    <plugin name="cordova-plugin-globalization" spec="^1.11.0" />
     <plugin name="cordova-plugin-app-version" spec="^0.1.9" />
     <plugin name="in.lucasdup.bringtofront" spec="https://github.com/markeeftb/cordova-bring-to-front" />
     <plugin name="cordova-plugin-background-mode" spec="^0.7.2" />
+    <plugin name="uk.co.workingedge.phonegap.plugin.launchnavigator" spec="^5.0.4">
+        <variable name="GOOGLE_API_KEY_FOR_ANDROID" value="AIzaSyDD_i9izhBIngUbO3p98-unNFINIrOYqSI" />
+        <variable name="OKHTTP_VERSION" value="3.12.0" />
+    </plugin>
     <plugin name="cordova-plugin-inappbrowser" spec="^3.0.0" />
     <engine name="android" spec="^7.0.0" />
-    <engine name="ios" spec="^4.5.5" />
+    <plugin name="cordova-plugin-globalization" spec="^1.11.0" />
 </widget>

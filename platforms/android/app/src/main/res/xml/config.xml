@@ -1,7 +1,19 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.lomtaxi" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <feature name="ActionSheet">
+        <param name="android-package" value="nl.xservices.plugins.actionsheet.ActionSheet" />
+    </feature>
     <feature name="AppVersion">
         <param name="android-package" value="uk.co.whiteoctober.cordova.AppVersion" />
+    </feature>
+    <feature name="Device">
+        <param name="android-package" value="org.apache.cordova.device.Device" />
+    </feature>
+    <feature name="BackgroundMode">
+        <param name="android-package" value="de.appplant.cordova.plugin.background.BackgroundMode" />
+    </feature>
+    <feature name="Notification">
+        <param name="android-package" value="org.apache.cordova.dialogs.Notification" />
     </feature>
     <feature name="Geolocation">
         <param name="android-package" value="org.apache.cordova.geolocation.Geolocation" />
@@ -20,11 +32,8 @@
     <feature name="bringtofront">
         <param name="android-package" value="in.lucasdup.bringtofront.BringToFront" />
     </feature>
-    <feature name="Device">
-        <param name="android-package" value="org.apache.cordova.device.Device" />
-    </feature>
-    <feature name="BackgroundMode">
-        <param name="android-package" value="de.appplant.cordova.plugin.background.BackgroundMode" />
+    <feature name="LaunchNavigator">
+        <param name="android-package" value="uk.co.workingedge.phonegap.plugin.LaunchNavigatorPlugin" />
     </feature>
     <feature name="InAppBrowser">
         <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
@@ -45,6 +54,7 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
     <allow-intent href="market:*" />
+    <allow-navigation href="*" />
     <icon density="ldpi" src="res/icon/android/MILLA.png" />
     <splash density="land-hdpi" src="res/screen/android/MillaMobilityWhite2.png" />
     <splash density="land-ldpi" src="res/screen/android/MillaMobilityWhite2.png" />

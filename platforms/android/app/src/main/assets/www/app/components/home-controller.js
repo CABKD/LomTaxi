@@ -105,20 +105,29 @@ var stationMarker=[];
  //====== STATIONS
  
  stationName[0]="Parking Lot";
-stationLat[0]="48.785849";
-stationLng[0]="2.176051";
-stationName[1]="TRAM";
-stationLat[1]="48.785849";
-stationLng[1]="2.176051";
-stationName[2]="BRETAGNE";
-stationLat[2]="48.784838";
-stationLng[2]="2.168134";
-stationName[3]="LECLERC";
-stationLat[3]="48.781895";
-stationLng[3]="2.168971";
-stationName[4]="SAVOIE";
-stationLat[4]="48.783828";
-stationLng[4]="2.170662";
+ stationLat[0]="48.784939";
+ stationLng[0]="2.177946";
+ stationName[1]="TRAM";
+ stationLat[1]="48.784939";
+ stationLng[1]="2.177946";
+ stationName[2]="PICARDIE";
+ stationLat[2]="48.784896";
+ stationLng[2]="2.171036";
+ stationName[3]="LECLERC";
+ stationLat[3]="48.784435";
+ stationLng[3]="2.169032";
+ stationName[4]="BOROTRA";
+ stationLat[4]="48.781934";
+ stationLng[4]="2.168714";
+ stationName[5]="BRETAGNE";
+ stationLat[5]="48.783572";
+ stationLng[5]="2.165957";
+ stationName[6]="MOZART";
+ stationLat[6]="48.785503";
+ stationLng[6]="2.169211";
+ stationName[7]="GOUNOD";
+ stationLat[7]="48.785667";
+ stationLng[7]="2.172534";
 
 $scope.affiche_stat_dest=function(){
 	
@@ -133,7 +142,9 @@ $scope.affiche_stat_dest=function(){
 			document.getElementById("bouton2").style.backgroundColor=prevColor;
 			document.getElementById("bouton3").style.backgroundColor=prevColor;
 			document.getElementById("bouton4").style.backgroundColor=prevColor;
-		//	document.getElementById("bouton5").style.backgroundColor=prevColor; 
+			document.getElementById("bouton5").style.backgroundColor=prevColor; 
+			document.getElementById("bouton6").style.backgroundColor=prevColor; 
+			document.getElementById("bouton7").style.backgroundColor=prevColor; 
 			$scope.station=1;
 			break;
 			case 2:
@@ -141,7 +152,9 @@ $scope.affiche_stat_dest=function(){
 			document.getElementById("bouton1").style.backgroundColor=prevColor;
 			document.getElementById("bouton3").style.backgroundColor=prevColor;
 			document.getElementById("bouton4").style.backgroundColor=prevColor;
-	//		document.getElementById("bouton5").style.backgroundColor=prevColor; 
+			document.getElementById("bouton5").style.backgroundColor=prevColor; 
+			document.getElementById("bouton6").style.backgroundColor=prevColor; 
+			document.getElementById("bouton7").style.backgroundColor=prevColor; 
 			$scope.station=2;
 			break;
 			case 3:
@@ -149,7 +162,9 @@ $scope.affiche_stat_dest=function(){
 			document.getElementById("bouton2").style.backgroundColor=prevColor;
 			document.getElementById("bouton1").style.backgroundColor=prevColor;
 			document.getElementById("bouton4").style.backgroundColor=prevColor;
-		//	document.getElementById("bouton5").style.backgroundColor=prevColor; 
+			document.getElementById("bouton5").style.backgroundColor=prevColor; 
+			document.getElementById("bouton6").style.backgroundColor=prevColor; 
+			document.getElementById("bouton7").style.backgroundColor=prevColor; 
 			$scope.station=3;
 			break;
 			case 4:
@@ -157,24 +172,52 @@ $scope.affiche_stat_dest=function(){
 			document.getElementById("bouton2").style.backgroundColor=prevColor;
 			document.getElementById("bouton3").style.backgroundColor=prevColor;
 			document.getElementById("bouton1").style.backgroundColor=prevColor;
-			//document.getElementById("bouton5").style.backgroundColor=prevColor; 
+			document.getElementById("bouton5").style.backgroundColor=prevColor; 
+			document.getElementById("bouton6").style.backgroundColor=prevColor; 
+			document.getElementById("bouton7").style.backgroundColor=prevColor; 
 			$scope.station=4;
 			break;
-			/* case 5:
+			 case 5:
 			 document.getElementById("bouton5").style.backgroundColor="red";
 			document.getElementById("bouton2").style.backgroundColor=prevColor;
 			document.getElementById("bouton3").style.backgroundColor=prevColor;
 			document.getElementById("bouton4").style.backgroundColor=prevColor;
 			document.getElementById("bouton1").style.backgroundColor=prevColor; 
+			document.getElementById("bouton6").style.backgroundColor=prevColor; 
+			document.getElementById("bouton7").style.backgroundColor=prevColor; 
 			$scope.station=5;
-			console.log("mama")
-			break; */
+			
+			break; 
+			case 6:
+			document.getElementById("bouton6").style.backgroundColor="red";
+		   document.getElementById("bouton2").style.backgroundColor=prevColor;
+		   document.getElementById("bouton3").style.backgroundColor=prevColor;
+		   document.getElementById("bouton4").style.backgroundColor=prevColor;
+		   document.getElementById("bouton1").style.backgroundColor=prevColor; 
+		   document.getElementById("bouton5").style.backgroundColor=prevColor; 
+		   document.getElementById("bouton7").style.backgroundColor=prevColor; 
+		   $scope.station=6;
+		   
+		   break;
+		   case 7:
+		   document.getElementById("bouton7").style.backgroundColor="red";
+		  document.getElementById("bouton2").style.backgroundColor=prevColor;
+		  document.getElementById("bouton3").style.backgroundColor=prevColor;
+		  document.getElementById("bouton4").style.backgroundColor=prevColor;
+		  document.getElementById("bouton1").style.backgroundColor=prevColor; 
+		  document.getElementById("bouton5").style.backgroundColor=prevColor; 
+		  document.getElementById("bouton6").style.backgroundColor=prevColor; 
+		  $scope.station=7 ;
+		  
+		  break;
 			default :-1;
 			document.getElementById("bouton2").style.backgroundColor=prevColor;
 			document.getElementById("bouton1").style.backgroundColor=prevColor;
 			document.getElementById("bouton3").style.backgroundColor=prevColor;
 			document.getElementById("bouton4").style.backgroundColor=prevColor;
-		//	document.getElementById("bouton5").style.backgroundColor=prevColor;
+			document.getElementById("bouton5").style.backgroundColor=prevColor;
+			document.getElementById("bouton6").style.backgroundColor=prevColor; 
+			document.getElementById("bouton7").style.backgroundColor=prevColor; 
 			break;
 		}
 		console.log('Closest marker is: ' + stationName[closest]);
@@ -196,12 +239,15 @@ function init_stations(){
 		  var ma_position=new google.maps.LatLng(pos.lat,pos.lng);
 		  var distance=google.maps.geometry.spherical.computeDistanceBetween(ma_position,pos_tram)
 		  console.log(distance+" cal_dist")
-		  if(distance>550){
+		  if(distance>300){
 			document.getElementById("bouton2").disabled = true;
 			document.getElementById("bouton3").disabled = true;
 			document.getElementById("bouton4").disabled = true;
+			document.getElementById("bouton5").disabled = true;
+			document.getElementById("bouton6").disabled = true;
+			document.getElementById("bouton7").disabled = true;
 		  }
-		  if(distance <500){
+		  if(distance <300){
 			document.getElementById("bouton1").disabled = true;
 		  }
 		})
@@ -225,12 +271,17 @@ function init_stations(){
 		stationMarker[2].setIcon(image);
 		stationMarker[3].setIcon(image);
 		stationMarker[4].setIcon(image);
+		stationMarker[5].setIcon(image);
+		stationMarker[6].setIcon(image);
+		stationMarker[7].setIcon(image);
 	
 		document.getElementById("bouton1").style.backgroundColor="red";
 		document.getElementById("bouton2").style.backgroundColor=prevColor;
 		document.getElementById("bouton3").style.backgroundColor=prevColor;
 		document.getElementById("bouton4").style.backgroundColor=prevColor;
-	
+		document.getElementById("bouton5").style.backgroundColor=prevColor;
+		document.getElementById("bouton6").style.backgroundColor=prevColor;
+		document.getElementById("bouton7").style.backgroundColor=prevColor;
 		
 		
 			$scope.adresse=document.getElementById("bouton1").value;
@@ -242,11 +293,17 @@ function init_stations(){
 		stationMarker[1].setIcon(image);
 		stationMarker[3].setIcon(image);
 		stationMarker[4].setIcon(image);
+		stationMarker[5].setIcon(image);
+		stationMarker[6].setIcon(image);
+		stationMarker[7].setIcon(image);
 	
 		document.getElementById("bouton2").style.backgroundColor="red";
 		document.getElementById("bouton1").style.backgroundColor=prevColor;
 		document.getElementById("bouton3").style.backgroundColor=prevColor;
 		document.getElementById("bouton4").style.backgroundColor=prevColor;
+		document.getElementById("bouton5").style.backgroundColor=prevColor;
+		document.getElementById("bouton6").style.backgroundColor=prevColor;
+		document.getElementById("bouton7").style.backgroundColor=prevColor;
 	
 			$scope.adresse=document.getElementById("bouton2").value;
 });
@@ -257,12 +314,16 @@ google.maps.event.addListener(stationMarker[3],'click', function(){
 		stationMarker[2].setIcon(image);
 		stationMarker[1].setIcon(image);
 		stationMarker[4].setIcon(image);
-	
+		stationMarker[5].setIcon(image);
+		stationMarker[6].setIcon(image);
+		stationMarker[7].setIcon(image);
 			document.getElementById("bouton3").style.backgroundColor="red";
 	document.getElementById("bouton2").style.backgroundColor=prevColor;
 		document.getElementById("bouton1").style.backgroundColor=prevColor;
 		document.getElementById("bouton4").style.backgroundColor=prevColor;
-	
+		document.getElementById("bouton5").style.backgroundColor=prevColor;
+		document.getElementById("bouton6").style.backgroundColor=prevColor;
+		document.getElementById("bouton7").style.backgroundColor=prevColor;
 		$scope.adresse=document.getElementById("bouton3").value;
 });
 
@@ -272,16 +333,77 @@ google.maps.event.addListener(stationMarker[3],'click', function(){
 		stationMarker[2].setIcon(image);
 		stationMarker[3].setIcon(image);
 		stationMarker[1].setIcon(image);
-
+		stationMarker[5].setIcon(image);
+		stationMarker[6].setIcon(image);
+		stationMarker[7].setIcon(image);
 		document.getElementById("bouton4").style.backgroundColor="red";
 	document.getElementById("bouton2").style.backgroundColor=prevColor;
 		document.getElementById("bouton1").style.backgroundColor=prevColor;
 		document.getElementById("bouton3").style.backgroundColor=prevColor;
+		document.getElementById("bouton5").style.backgroundColor=prevColor;
+		document.getElementById("bouton6").style.backgroundColor=prevColor;
+		document.getElementById("bouton7").style.backgroundColor=prevColor;
 	
 		$scope.adresse=document.getElementById("bouton4").value;
 }); 
 
-
+google.maps.event.addListener(stationMarker[5],'click', function(){  
+		
+	stationMarker[5].setIcon(prev_image);
+		stationMarker[2].setIcon(image);
+		stationMarker[3].setIcon(image);
+		stationMarker[1].setIcon(image);
+		stationMarker[4].setIcon(image);
+		stationMarker[6].setIcon(image);
+		stationMarker[7].setIcon(image);
+		document.getElementById("bouton5").style.backgroundColor="red";
+	document.getElementById("bouton2").style.backgroundColor=prevColor;
+		document.getElementById("bouton1").style.backgroundColor=prevColor;
+		document.getElementById("bouton3").style.backgroundColor=prevColor;
+		document.getElementById("bouton4").style.backgroundColor=prevColor;
+		document.getElementById("bouton6").style.backgroundColor=prevColor;
+		document.getElementById("bouton7").style.backgroundColor=prevColor;
+	
+		$scope.adresse=document.getElementById("bouton4").value;
+});
+google.maps.event.addListener(stationMarker[6],'click', function(){  
+		
+	stationMarker[6].setIcon(prev_image);
+		stationMarker[2].setIcon(image);
+		stationMarker[3].setIcon(image);
+		stationMarker[1].setIcon(image);
+		stationMarker[5].setIcon(image);
+		stationMarker[4].setIcon(image);
+		stationMarker[7].setIcon(image);
+		document.getElementById("bouton6").style.backgroundColor="red";
+	document.getElementById("bouton2").style.backgroundColor=prevColor;
+		document.getElementById("bouton1").style.backgroundColor=prevColor;
+		document.getElementById("bouton3").style.backgroundColor=prevColor;
+		document.getElementById("bouton5").style.backgroundColor=prevColor;
+		document.getElementById("bouton4").style.backgroundColor=prevColor;
+		document.getElementById("bouton7").style.backgroundColor=prevColor;
+	
+		$scope.adresse=document.getElementById("bouton4").value;
+});
+google.maps.event.addListener(stationMarker[7],'click', function(){  
+		
+	stationMarker[7].setIcon(prev_image);
+		stationMarker[2].setIcon(image);
+		stationMarker[3].setIcon(image);
+		stationMarker[1].setIcon(image);
+		stationMarker[5].setIcon(image);
+		stationMarker[6].setIcon(image);
+		stationMarker[4].setIcon(image);
+		document.getElementById("bouton7").style.backgroundColor="red";
+	document.getElementById("bouton2").style.backgroundColor=prevColor;
+		document.getElementById("bouton1").style.backgroundColor=prevColor;
+		document.getElementById("bouton3").style.backgroundColor=prevColor;
+		document.getElementById("bouton5").style.backgroundColor=prevColor;
+		document.getElementById("bouton6").style.backgroundColor=prevColor;
+		document.getElementById("bouton4").style.backgroundColor=prevColor;
+	
+		$scope.adresse=document.getElementById("bouton7").value;
+});
 
 }
 
@@ -635,6 +757,7 @@ var bonhomme={url:"./assets/img/bonhomme.png"};
 			
 			   if(mess.result == false) {
 				$scope.rideStatus = 2;
+				$scope.confirmation =0
 			}else{  
 				
 				//$scope.rideStatus = 3;
@@ -772,12 +895,41 @@ var bonhomme={url:"./assets/img/bonhomme.png"};
 		
 	}
 }
-		
+	
+if($scope.rideStatus<8 && message.destinationName.search(inboardTopic)!=-1){
+	var data= JSON.parse(message.payloadString)
+console.log(data.ride)
+if(data.ride=="onboard"){
+	itinerairePickUpHide();
+	
+}
+}
+
+
+
+
 	  }
 	  
  $scope.confirm= function(){
-	 $scope.confirmation=0;
-	 $scope.rideStatus=3;
+	
+	 if(puStation==$scope.station){
+		$scope.m_erreur=1;
+	//	$scope.confirmation =3;
+		$scope.confirmation=1;
+	var mess = {
+		"confirm":$scope.confirmation+" "+shared.global.customer.customerId}
+	 var message = new Paho.MQTT.Message(JSON.stringify(mess));
+	 
+	 message.destinationName = "/lomt/ride/confirm/"/* +shared.global.customer.customerId */;
+	
+	 mqttClient.send(message);
+	$scope.rideStatus=1;
+//	$scope.etat=1;
+	}
+	else{
+		$scope.confirmation=0;
+		$scope.rideStatus=3;
+	}
 	/*   var mess = {
 		"confirm":$scope.confirmation}
 	 var message = new Paho.MQTT.Message(JSON.stringify(mess));
@@ -788,10 +940,26 @@ var bonhomme={url:"./assets/img/bonhomme.png"};
 	 mqttClient.send(message);  */
  }
 
+ $scope.annule=function(){
+	 $scope.annule=1;
+	 $scope.showPopup=true
+	 }
 
+$scope.m_err=function(){
+	$scope.etat=1;
+		$scope.rideStatus=9;
+		$scope.m_erreur=0;
+}
 
+$scope.noannule=function(){
+	document.getElementById("supp").style.visibility="hidden"
+	document.getElementById("supp").disabled = true;
+	$scope.annule=0;
+	$scope.showPopup=false
+}
 
  $scope.annuler= function(){
+	 $scope.annule=0;
 	$scope.confirmation=1;
 	var mess = {
 		"confirm":$scope.confirmation+" "+shared.global.customer.customerId}
@@ -857,6 +1025,7 @@ var bonhomme={url:"./assets/img/bonhomme.png"};
 	var noshowTopic=null;
 	var endTopic=null;
 	var cancelmissionTopic=null;
+	var inboardTopic=null;
 	function subscribeTaxiTopic(shuttleId){
 		taxiTopic = "/lomt/shuttle/"+shuttleId;
 		
@@ -879,6 +1048,7 @@ var bonhomme={url:"./assets/img/bonhomme.png"};
 			unSubscribe(noshowTopic)
 			unSubscribe(endTopic)
 			unSubscribe(cancelmissionTopic)
+			unSubscribe(inboardTopic)
 			  /* userPosTopic = "/lomt/user/position/"+shared.global.customer.customerId;
 			mqttClient.subscribe(userPosTopic+"/#");  */ 
 			 var lat = latlng.lat.toFixed(1) * 10;
@@ -896,6 +1066,8 @@ var bonhomme={url:"./assets/img/bonhomme.png"};
 			mqttClient.subscribe(endTopic+"/#");
 			cancelmissionTopic="/lomt/cancelmission/"+shared.global.customer.customerId
 			mqttClient.subscribe(cancelmissionTopic+"/#");
+			inboardTopic="/lomt/inboard/"+shared.global.customer.customerId
+			mqttClient.subscribe(inboardTopic+"/#");
 			mqttClient.onMessageArrived = onMessageArrived;
 		}
 	}
@@ -965,7 +1137,7 @@ var bonhomme={url:"./assets/img/bonhomme.png"};
 	function request(){
 		$scope.wait = true;
 		$scope.rideStatus = 1;
-		$scope.confirmation=2;
+	//	$scope.confirmation=2;
 		if($scope.donnee==1){
 			//$scope.station=getDropOff();
 			console.log($scope.station+"stationdrop")
@@ -992,7 +1164,7 @@ var bonhomme={url:"./assets/img/bonhomme.png"};
 	            alert('Geocode was not successful for the following reason: ' + status);
 	            $scope.wait = false;
 				$scope.rideStatus=0;
-				init_stations();
+			//	init_stations();
 	          }
 	        });
 			
@@ -1013,12 +1185,16 @@ var bonhomme={url:"./assets/img/bonhomme.png"};
 			 stationMarker[2].setIcon(image);
 			 stationMarker[3].setIcon(image);
 		 	 stationMarker[4].setIcon(image);
-		//	 stationMarker[5].setIcon(image); 
+			 stationMarker[5].setIcon(image); 
+			 stationMarker[6].setIcon(image);
+			 stationMarker[7].setIcon(image);
 			 document.getElementById("bouton1").style.backgroundColor="red";
 			 document.getElementById("bouton2").style.backgroundColor=prevColor;
 			 document.getElementById("bouton3").style.backgroundColor=prevColor;
 			  document.getElementById("bouton4").style.backgroundColor=prevColor;
-		//	 document.getElementById("bouton5").style.backgroundColor=prevColor; 
+			 document.getElementById("bouton5").style.backgroundColor=prevColor; 
+			 document.getElementById("bouton6").style.backgroundColor=prevColor;
+			 document.getElementById("bouton7").style.backgroundColor=prevColor;
 	 }
 	
 	
@@ -1031,12 +1207,16 @@ var bonhomme={url:"./assets/img/bonhomme.png"};
 			stationMarker[1].setIcon(image);
 			stationMarker[3].setIcon(image);
 			stationMarker[4].setIcon(image);
-		//	stationMarker[5].setIcon(image); 
+			stationMarker[5].setIcon(image);
+			stationMarker[6].setIcon(image);
+			stationMarker[7].setIcon(image); 
 			document.getElementById("bouton2").style.backgroundColor="red";
 			document.getElementById("bouton1").style.backgroundColor=prevColor;
 			document.getElementById("bouton3").style.backgroundColor=prevColor;
 			 document.getElementById("bouton4").style.backgroundColor=prevColor;
-		//	document.getElementById("bouton5").style.backgroundColor=prevColor; 
+			document.getElementById("bouton5").style.backgroundColor=prevColor; 
+			document.getElementById("bouton6").style.backgroundColor=prevColor;
+			 document.getElementById("bouton7").style.backgroundColor=prevColor;
 		}
 	
 		function remplir_input3(){
@@ -1048,12 +1228,16 @@ var bonhomme={url:"./assets/img/bonhomme.png"};
 			stationMarker[1].setIcon(image);
 			 stationMarker[2].setIcon(image);
 			  stationMarker[4].setIcon(image);
-		//	 stationMarker[5].setIcon(image); 
+			 stationMarker[5].setIcon(image); 
+			 stationMarker[6].setIcon(image);
+			 stationMarker[7].setIcon(image);
 			 document.getElementById("bouton3").style.backgroundColor="red";
 			 document.getElementById("bouton2").style.backgroundColor=prevColor;
 			 document.getElementById("bouton1").style.backgroundColor=prevColor;
 			  document.getElementById("bouton4").style.backgroundColor=prevColor;
-	//		 document.getElementById("bouton5").style.backgroundColor=prevColor; 
+			 document.getElementById("bouton5").style.backgroundColor=prevColor; 
+			document.getElementById("bouton6").style.backgroundColor=prevColor;
+			 document.getElementById("bouton7").style.backgroundColor=prevColor;
 		}
 	
 	 	function remplir_input4(){
@@ -1065,15 +1249,19 @@ var bonhomme={url:"./assets/img/bonhomme.png"};
 			stationMarker[1].setIcon(image);
 			stationMarker[2].setIcon(image);
 			stationMarker[3].setIcon(image);
-		//	stationMarker[5].setIcon(image);
+			stationMarker[5].setIcon(image);
+			stationMarker[6].setIcon(image);
+			stationMarker[7].setIcon(image);
 			document.getElementById("bouton4").style.backgroundColor="red";
 		document.getElementById("bouton2").style.backgroundColor=prevColor;
 		document.getElementById("bouton3").style.backgroundColor=prevColor;
 		document.getElementById("bouton1").style.backgroundColor=prevColor;
-	//	document.getElementById("bouton5").style.backgroundColor=prevColor;
+		document.getElementById("bouton5").style.backgroundColor=prevColor;
+	document.getElementById("bouton6").style.backgroundColor=prevColor;
+			 document.getElementById("bouton7").style.backgroundColor=prevColor;
 		}  
 	
-	 /* 	function remplir_input5(){
+	 	function remplir_input5(){
 	
 			document.getElementById("station").value=5;
 			$scope.adresse=document.getElementById("bouton5").value;
@@ -1083,13 +1271,57 @@ var bonhomme={url:"./assets/img/bonhomme.png"};
 			 stationMarker[2].setIcon(image);
 			 stationMarker[3].setIcon(image);
 			 stationMarker[4].setIcon(image);
+			 stationMarker[6].setIcon(image);
+			 stationMarker[7].setIcon(image);
 			 document.getElementById("bouton5").style.backgroundColor="red";
 		document.getElementById("bouton2").style.backgroundColor=prevColor;
 		document.getElementById("bouton3").style.backgroundColor=prevColor;
 		document.getElementById("bouton4").style.backgroundColor=prevColor;
 		document.getElementById("bouton1").style.backgroundColor=prevColor;
-		} */
+		document.getElementById("bouton6").style.backgroundColor=prevColor;
+		document.getElementById("bouton7").style.backgroundColor=prevColor;
+		} 
 	 
+		function remplir_input7(){
+	
+			document.getElementById("station").value=7;
+			$scope.adresse=document.getElementById("bouton7").value;
+			$scope.station=document.getElementById("station").value;
+			stationMarker[7].setIcon(prev_image);
+			stationMarker[1].setIcon(image);
+			 stationMarker[2].setIcon(image);
+			 stationMarker[3].setIcon(image);
+			 stationMarker[4].setIcon(image);
+			 stationMarker[6].setIcon(image);
+			 stationMarker[5].setIcon(image);
+			 document.getElementById("bouton7").style.backgroundColor="red";
+		document.getElementById("bouton2").style.backgroundColor=prevColor;
+		document.getElementById("bouton3").style.backgroundColor=prevColor;
+		document.getElementById("bouton4").style.backgroundColor=prevColor;
+		document.getElementById("bouton1").style.backgroundColor=prevColor;
+		document.getElementById("bouton6").style.backgroundColor=prevColor;
+		document.getElementById("bouton5").style.backgroundColor=prevColor;
+		}
+		function remplir_input6(){
+	
+			document.getElementById("station").value=6;
+			$scope.adresse=document.getElementById("bouton6").value;
+			$scope.station=document.getElementById("station").value;
+			stationMarker[6].setIcon(prev_image);
+			stationMarker[1].setIcon(image);
+			 stationMarker[2].setIcon(image);
+			 stationMarker[3].setIcon(image);
+			 stationMarker[4].setIcon(image);
+			 stationMarker[5].setIcon(image);
+			 stationMarker[7].setIcon(image);
+			 document.getElementById("bouton6").style.backgroundColor="red";
+		document.getElementById("bouton2").style.backgroundColor=prevColor;
+		document.getElementById("bouton3").style.backgroundColor=prevColor;
+		document.getElementById("bouton4").style.backgroundColor=prevColor;
+		document.getElementById("bouton1").style.backgroundColor=prevColor;
+		document.getElementById("bouton5").style.backgroundColor=prevColor;
+		document.getElementById("bouton7").style.backgroundColor=prevColor;
+		}
 
 	$scope.request = function(){
 		request();
@@ -1109,9 +1341,16 @@ var bonhomme={url:"./assets/img/bonhomme.png"};
 	$scope.remplir_input4=function(){
 		remplir_input4();
 	}
-	/* $scope.remplir_input5=function(){
+	 $scope.remplir_input5=function(){
 		remplir_input5();
-	}  */  
+	}  
+	
+	$scope.remplir_input6=function(){
+		remplir_input6();
+	}  
+	$scope.remplir_input7=function(){
+		remplir_input7();
+	}  
 	$scope.cancelRequest = function(){
 		$scope.rideStatus = 0;
 		$scope.showPopup = false;
@@ -1125,6 +1364,7 @@ var bonhomme={url:"./assets/img/bonhomme.png"};
 	}
 	$scope.retry = function(){
 		$scope.rideStatus = 1;
+		$scope.confirmation =0
 		request();
 	}
 
@@ -1219,6 +1459,7 @@ var bonhomme={url:"./assets/img/bonhomme.png"};
 			unSubscribe(noshowTopic);
 			unSubscribe(endTopic)
 			unSubscribe(cancelmissionTopic)
+			unSubscribe(inboardTopic)
 			 mqttClient.disconnect();
 		
 		}
@@ -1230,7 +1471,7 @@ var bonhomme={url:"./assets/img/bonhomme.png"};
 	console.log($scope.noshow+" etat2")
 	}
 	$scope.score = {
-			"note": 0,
+			"note": 5,
 			"comment":""
 	}
 	$scope.stareClick = function(score){
@@ -1354,12 +1595,13 @@ var Totaltime=0;
 			  var distance=google.maps.geometry.spherical.computeDistanceBetween(ma_position,pos_station)
 			  console.log(distance+" cal_distance")
 			  
-			  if(distance <4210){
+			  if(distance <10){
 				  console.log("intro")
 				//window.plugins.bringtofront();
 				//cordova.plugins.backgroundMode.moveToForeground();
-				cordova.InAppBrowser.open("https://www.google.com/maps/dir/?api=1&destination="+Number(stationLat[puStation])+","+Number(stationLng[puStation])+"&dir_action=navigates/data=!3m1!4b1!4m5!4m4!1m1!4e1!1m0!3e2").close();
-			  }
+			/* 	var ref=cordova.InAppBrowser.open("https://www.google.com/maps/dir/?api=1&destination="+Number(stationLat[puStation])+","+Number(stationLng[puStation])+"&dir_action=navigates/data=!3m1!4b1!4m5!4m4!1m1!4e1!1m0!3e2").close();
+			ref.close(); */ 
+			}
 			})
 		}  
 		
@@ -1387,7 +1629,7 @@ var Totaltime=0;
   				 // if(response.routes[0].legs[0].distance.value < 100) {
 					if(dist < 10) {
 				
-					   itinerairePickUpHide();
+				//	   itinerairePickUpHide();
 					  
   					  $rootScope.titleBar = "SHUTTLE IS ARRIVED";
   					
@@ -1496,7 +1738,7 @@ var Totaltime=0;
 					
 				if(dist < 10) {
 				
-  					  itineraireDestinationHide();
+  					//  itineraireDestinationHide();
 						$rootScope.titleBar = "ARRIVED TO DESTINATION";
 					
   				  }else{
@@ -1520,8 +1762,8 @@ var Totaltime=0;
 		$scope.rideStatus = 7;
 		$scope.affiche=0;
 		$rootScope.titleBar = "ARRIVED TO DESTINATION";
-		if($scope.donnee==1){
-			$scope.affiche=	1	};
+		/* if($scope.donnee==1){
+			$scope.affiche=	1	}; */
 	}
 
 	var shuttleMarker = null;
@@ -1619,10 +1861,11 @@ $scope.ville="";
 	$scope.openmap=function(){
 		$scope.rideStatus = 4;
 		$scope.showPopup = false;
-	 cordova.InAppBrowser.open("https://www.google.com/maps/dir/?api=1&destination="+Number(stationLat[puStation])+","+Number(stationLng[puStation])+"&dir_action=navigates/data=!3m1!4b1!4m5!4m4!1m1!4e1!1m0!3e2");
+	//	window.open("https://www.google.com/maps/dir/?api=1&destination="+Number(stationLat[puStation])+","+Number(stationLng[puStation])+"&dir_action=navigates/data=!3m1!4b1!4m5!4m4!1m1!4e1!1m0!3e2");
+			 cordova.InAppBrowser.open("https://www.google.com/maps/dir/?api=1&destination="+Number(stationLat[puStation])+","+Number(stationLng[puStation])+"&dir_action=navigates/data=!3m1!4b1!4m5!4m4!1m1!4e1!1m0!3e2");
 	//	cordova.plugins.backgroundMode.enable();
 
-	
+//	launchnavigator.navigate([Number(stationLat[puStation]),Number(stationLng[puStation])])
 	}
 
 
@@ -1691,6 +1934,7 @@ $scope.ville="";
 			unSubscribe(noshowTopic)
 			unSubscribe(endTopic)
 			unSubscribe(cancelmissionTopic)
+			unSubscribe(inboardTopic)
 			 mqttClient.disconnect();
 			 
 		}

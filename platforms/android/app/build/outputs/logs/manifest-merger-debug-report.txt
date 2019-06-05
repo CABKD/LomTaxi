@@ -1,13 +1,13 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:2:1-19:12
-INJECTED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:2:1-19:12
-INJECTED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:2:1-19:12
-INJECTED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:2:1-19:12
+ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:2:1-21:12
+INJECTED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:2:1-21:12
+INJECTED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:2:1-21:12
+INJECTED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:2:1-21:12
 MERGED from [:CordovaLib] C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\CordovaLib\build\intermediates\manifests\full\debug\AndroidManifest.xml:20:1-27:12
-INJECTED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:2:1-19:12
-INJECTED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:2:1-19:12
-INJECTED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:2:1-19:12
+INJECTED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:2:1-21:12
+INJECTED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:2:1-21:12
+INJECTED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:2:1-21:12
 	package
 		ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:2:102-123
 		INJECTED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml
@@ -43,7 +43,7 @@ ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\p
 	android:name
 		ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:4:22-64
 application
-ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:5:5-13:19
+ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:5:5-14:19
 	android:supportsRtl
 		ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:5:114-140
 	android:label
@@ -84,27 +84,37 @@ service#de.appplant.cordova.plugin.background.ForegroundService
 ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:12:9-91
 	android:name
 		ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:12:18-88
+meta-data#launchnavigator.GOOGLE_API_KEY
+ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:13:9-124
+	android:value
+		ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:13:66-121
+	android:name
+		ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:13:20-65
 uses-sdk
-ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:14:5-74
+ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:15:5-74
 MERGED from [:CordovaLib] C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\CordovaLib\build\intermediates\manifests\full\debug\AndroidManifest.xml:25:5-44
 MERGED from [:CordovaLib] C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\CordovaLib\build\intermediates\manifests\full\debug\AndroidManifest.xml:25:5-44
 	android:targetSdkVersion
-		ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:14:42-71
+		ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:15:42-71
 	android:minSdkVersion
-		ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:14:15-41
-uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:15:5-81
-	android:name
-		ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:15:22-78
-uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:16:5-79
-	android:name
-		ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:16:22-76
-uses-feature#android.hardware.location.gps
-ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:17:5-66
-	android:name
-		ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:17:19-63
+		ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:15:15-41
 uses-permission#android.permission.WAKE_LOCK
-ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:18:5-68
+ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:16:5-68
 	android:name
-		ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:18:22-65
+		ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:16:22-65
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:17:5-81
+	android:name
+		ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:17:22-78
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:18:5-79
+	android:name
+		ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:18:22-76
+uses-feature#android.hardware.location.gps
+ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:19:5-66
+	android:name
+		ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:19:19-63
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:20:5-79
+	android:name
+		ADDED from C:\Users\isfm0\OneDrive\Bureau\AppliLOM\LOMApp\LomTaxi_version_DEMO\platforms\android\app\src\main\AndroidManifest.xml:20:22-76
