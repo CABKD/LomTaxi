@@ -32,12 +32,9 @@
     "in.lucasdup.bringtofront": {
       "PACKAGE_NAME": "com.lomtaxi"
     },
-    "uk.co.workingedge.phonegap.plugin.launchnavigator": {
-      "GOOGLE_API_KEY_FOR_ANDROID": "AIzaSyDD_i9izhBIngUbO3p98-unNFINIrOYqSI",
-      "OKHTTP_VERSION": "3.12.0",
-      "PACKAGE_NAME": "com.lomtaxi"
-    },
-    "cordova-plugin-inappbrowser": {
+    "cordova-plugin-googlemaps": {
+      "PLAY_SERVICES_VERSION": "15.0.1",
+      "ANDROID_SUPPORT_V4_VERSION": "27.+",
       "PACKAGE_NAME": "com.lomtaxi"
     }
   },

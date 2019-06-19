@@ -33,6 +33,7 @@ body {
     padding:0px;
     width:100%;
     background-color:transparent;
+    
 /*    color:#fff;*/
 }
 /* .default{
@@ -548,3 +549,4 @@ md-list #list{
     background-color: #dddddd;
     width: auto
 }
+

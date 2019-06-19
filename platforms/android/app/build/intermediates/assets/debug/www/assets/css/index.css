@@ -33,6 +33,7 @@ body {
     padding:0px;
     width:100%;
     background-color:transparent;
+    
 /*    color:#fff;*/
 }
 /* .default{
@@ -547,4 +548,11 @@ border-radius: 8px
 md-list #list{
     background-color: #dddddd;
     width: auto
+}
+
+.lock-screen {
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+    position: fixed;
 }

@@ -1,12 +1,13 @@
 	
 	<md-content layout="row" flex="100" flex-sm="100" layout-align="center center" >
 		<div id="gmaps"  style="width: 100%; height: 100%;" ng-show="mapLoad == true">
-			
+			<!-- <div id="instru"  style="width: 100%; height: 100%;" ng-show="instructions == 1" >	 -->
 		</div>	
 		<div id="buttondelete" ng-if="delete==1">
-			<button id="supp" ng-click="annule();">Cancel ride</button>
+			<button id="supp" ng-click="annule();">Annuler la course</button>
 		</div>
-
+	 <!-- <div id="instru"  style="width: 100%; height: 100%;" ng-if="instructions == 1" >
+	 </div>	  -->
 		<!-- <md-content class ="popup-container" id="container" layout="column" layout-align="center center" ng-if="annule ==1" >
 	
 				<br/>
@@ -49,7 +50,7 @@
 			 <button class="mybutton"  id="bouton6" type="button" ng-click="remplir_input6()" value="32-42 Rue Jules Guesde, 78140 Vélizy-Villacoublay, France " ng-style=""> MOZART  </button> 
 			 <button class="mybutton"  id="bouton7" type="button" ng-click="remplir_input7()" value="14-16 Rue Charles Gounod, 78140 Vélizy-Villacoublay, France " ng-style=""> GOUNOD  </button> 
 				  </div>
-	  <button class="request"  ng-if=" rideStatus == 0"   ng-click="request()" style="border-radius: 8px" >REQUEST</button> 
+	  <button class="request"  ng-if=" rideStatus == 0"   ng-click="request()" style="border-radius: 8px" >Lancer</button> 
 
    </div>		
    
@@ -64,7 +65,7 @@
   <div flex="100" style="text-align:center" id="wait">
 	  <img  src="./assets/img/spinner.gif"  style="width:100px;height:100px;"/>
 		  <md-content  layout="row" style="margin:0;padding:0">
-			  <button class="md-raised md-primary" ng-click="cancelRequest();$event.stopPropagation();">ABORT</button>	
+			  <button class="md-raised md-primary" ng-click="cancelRequest();$event.stopPropagation();">Annuler</button>	
 		  </md-content>
 	 <!--  </md-content> -->
   </div>
@@ -72,23 +73,23 @@
   </md-content>
   <md-content class="popup" layout="column" flex="100" flex-sm="100" layout-align="center center" ng-if="showPopup" >
 	  <md-content class ="popup-container"  layout="column" layout-align="center center" ng-if="rideStatus == 2">
-		  <div  layout="row" class="popup-title" layout-align="center center" layout-padding><p>RIDE REQUEST</p>	
+		  <div  layout="row" class="popup-title" layout-align="center center" layout-padding><p>DEMANDE DE TRAJET</p>	
 		  </div>
 		  <div   layout-padding style="width:100%" >
 			  <div  layout="row" layout-align="center center">
-				  <span >NO SHUTTLE AVAILABLE</span>	
+				  <span >PAS DE NAVETTE DISPONIBLE</span>	
 			  </div>	
 		  </div>	
 		  <md-content  layout="row" class="popup-footer" layout-align="space-around center" layout-padding>
-			  <button class="md-raised md-primary" ng-click="cancelRequest();$event.stopPropagation();">ABORT</button>	
-			  <button ng-click="retry();$event.stopPropagation();">RETRY</button>	
+			  <button class="md-raised md-primary" ng-click="cancelRequest();$event.stopPropagation();">ANNULER</button>	
+			  <button ng-click="retry();$event.stopPropagation();">RECOMMENCER</button>	
 		  </md-content>
 	  </md-content>
 
 	  <md-content class ="popup-container" id="container1"  layout="column" layout-align="center center"  ng-if="showmess==1">
 		
 		<p id="cent" style="color:black">
-			<span id="texte" >This area is not available</span>
+			<span id="texte" >Zone non disponible</span>
 		</p>	
 				
 				
@@ -106,31 +107,31 @@
 		<div  layout="row" >
 			<br/>
 			<br/>
-				<span >Your vehicle is arriving at </span>
+				<span >La navette arrive à </span>
 			
 			
 			</div>
 			<div  layout="row" >
 				
 				<br/>
-				<span>	{{station_accueil}} Station</span>
+				<span> la Station {{station_accueil}} </span>
 				
 				
 				</div>
 			
 			<br/>
 					<div  layout="row" >	<!-- ng-if="rideInfo.Duration!=0" -->
-						<span >	in {{time}}</span>	
+						<span >	dans {{time}}</span>	
 					</div>
 			
 			<br/>
 		
-				<span >Please confirm your reservation?</span>
+				<span >Confirmez votre réservation?</span>
 				<br/>
 				<br/>
 			<md-content  layout="row" class="popup-footer" layout-align="center center" layout-padding>
-				<button id="conf" class="md-raised md-primary"   ng-click=" confirm();$event.stopPropagation();">YES</button>	
-				<button  id="b_container" ng-click="infirmer();$event.stopPropagation();">NO</button>
+				<button id="conf" class="md-raised md-primary"   ng-click=" confirm();$event.stopPropagation();">OUI</button>	
+				<button  id="b_container" ng-click="infirmer();$event.stopPropagation();">NON</button>
 			</md-content>
 	
 		
@@ -143,11 +144,11 @@
 
 
 	  <md-content class ="popup-container" id="container" layout="column" layout-align="center center" ng-if="rideStatus == 3" >
-		  <div  layout="row" class="popup-title" layout-align="center center" layout-padding><p>SHUTTLE IS COMING</p>	
+		  <div  layout="row" class="popup-title" layout-align="center center" layout-padding><p>Navette à l'approche</p>	
 		  </div>
 	  
 		  <div  layout="row" ng-if="rideInfo.Duration!=0">
-			  <span >Arriving in: {{time}}</span>	
+			  <span >Arrivée dans : {{time}}</span>	
 			  
 		  
 		  </div>		
@@ -156,17 +157,17 @@
 
 		  <div  layout="row" >
 			  
-				  <span >At : {{station_accueil}}</span>	
+				  <span >A : {{station_accueil}}</span>	
   
 			  </div>
 			  <br/><br/>
 			  <!-- <div layout="row" > -->
-				  <span >Start a pedestrian route?</span>
+				  <span >Voulez-vous la navigation piétonne?</span>
 				  <br/>
 				  <br/>
 			  <md-content  layout="row" class="popup-footer" layout-align="center center" layout-padding>
-				  <button class="md-raised md-primary"   ng-click="openmap();$event.stopPropagation();">YES</button>	
-				  <button  id="b_container" ng-click="carComing();$event.stopPropagation();">CANCEL</button>
+				  <button class="md-raised md-primary"   ng-click="openmap();$event.stopPropagation();">OUI</button>	
+				  <button  id="b_container" ng-click="carComing();$event.stopPropagation();">NON</button>
 			  </md-content>
 		  <!-- 	</div> -->
 		  
@@ -178,17 +179,17 @@
 	  </md-content>
   <!-- </div> -->
 	  <md-content class ="popup-container" id="container" layout="column" layout-align="center center" layout-padding ng-if="rideStatus == 5 || rideStatus == 6" >
-		  <div  layout="row" class="popup-title" layout-align="start center" layout-padding><p>SHUTTLE IS ARRIVED</p>	
+		  <div  layout="row" class="popup-title" layout-align="start center" layout-padding><p>LA NAVETTE EST ARRIVEE</p>	
 		  </div>
 		  <div  layout="row" >
-			  <span >Shuttle :{{shuttle.idVehicle}} {{shuttle.idFleet}}</span>	
+			  <span >Navette :{{shuttle.idVehicle}} {{shuttle.idFleet}}</span>	
 			  <!-- <img ng-src="{{avatar}}" class="photoProfil"   /> -->
 		  </div>	
 		  <div  layout="row" >
-			  <span >Going to : <br/>{{destAddr}}</span>	
+			  <span >Allant à : <br/>{{destAddr}}</span>	
 		  </div>	
 		  <div  layout="row" >
-			  <span >Destination in : {{tripTime}}</span>
+			  <span >Destination dans : {{tripTime}}</span>
 		  </div>		
 		  <md-content  layout="row" class="popup-footer" layout-align="space-around center" layout-padding>
 			  <button class="md-raised md-primary" id="b_container" ng-click="close();$event.stopPropagation();">OK</button>	
@@ -196,11 +197,11 @@
 	  </md-content>
 	  
 	  <md-content class ="popup-container"  layout="column" layout-align="center center" ng-if="rideStatus == 7">
-	  <div  layout="row" class="popup-title" layout-align="center center" layout-padding><p>ARRIVED TO DESTINATION</p>	
+	  <div  layout="row" class="popup-title" layout-align="center center" layout-padding><p>ARRIVEE A DESTINATION</p>	
 	  </div>
 	  <div   layout-padding style="width:100%" >
 		  <div  layout="row" >
-			  <span >Arrived to :<br/> {{destAddr}}</span>	
+			  <span >Arrivée à :<br/> {{destAddr}}</span>	
 		  </div>	
 	  </div>	
 
@@ -216,14 +217,14 @@
 
 
 		  <md-content  layout="row" class="popup-footer" layout-align="space-around center" layout-padding ng-if="affiche == 0">
-			  <button class="md-raised md-primary" ng-click="arrivedToDestination($event);$event.stopPropagation()" >SCORING</button>	
+			  <button class="md-raised md-primary" ng-click="arrivedToDestination($event);$event.stopPropagation()" >NOTATION</button>	
 		  </md-content>
 	  </md-content>	
 	  <md-content class ="popup-container" id="container" layout="column" layout-align="center center" ng-if="rideStatus == 8">
-		  <div  layout="row" class="popup-title" layout-align="center center" layout-padding><p>RATE YOUR DRIVER</p>	
+		  <div  layout="row" class="popup-title" layout-align="center center" layout-padding><p>NOTATION</p>	
 		  </div>
 		  <div  layout="row" >
-			  <span >Shuttle :{{shuttle.idVehicle}} {{shuttle.idFleet}}</span>	
+			  <span >Navette :{{shuttle.idVehicle}} {{shuttle.idFleet}}</span>	
 			  <!-- <img ng-src="{{avatar}}" class="photoProfil"   /> -->
 		  </div>
 		  <div  layout="row" layout-align="center center" >	
@@ -236,20 +237,20 @@
 		  </div>		
 		  <div  layout="row" layout-align="center center" layout-padding class="comment-container" >
 		  <md-input-container  style="margin-top:20px" >
-			   <label>Comment</label>
+			   <label>Commentaire</label>
 			  <textarea ng-model="score.comment" maxlength="100"  ></textarea>
 		  </md-input-container>						
 		  </div>			
 		  <md-content  layout="row" class="popup-footer" layout-align="space-around center" layout-padding>
 			  <!-- <button class="md-raised md-primary" ng-click="endRide($event);$event.stopPropagation()" >SAVE</button> -->
-			  <button class="md-raised md-primary" ng-click="showpop($event);$event.stopPropagation()" >SAVE</button>	
+			  <button class="md-raised md-primary" ng-click="showpop($event);$event.stopPropagation()" >Sauvegarder</button>	
 		  </md-content>
 	  </md-content>
 
 	  <md-content class ="popup-container" id="container1" layout="column" layout-align="center center" ng-if="etat==1">
 		
 		<p id="cent">
-			<span id="texte">Thank you to use our services with Milla</span>
+			<span id="texte">Merci d'avoir utilisé nos services</span>
 		</p>	
 				
 				
@@ -263,7 +264,7 @@
 	<md-content class ="popup-container" id="container1" layout="column" layout-align="center center" ng-if="noshow==1">
 		
 		<p id="cent">
-			<span id="texte">The shuttle is gone. The ride will be canceled. Please request a new one.</span>
+			<span id="texte">La navette est partie. La course va être annulée. Demandez une nouvelle course.</span>
 		</p>	
 				
 				
@@ -280,12 +281,12 @@
 	
 		<br/>
 	
-			<span >Please confirm your choice?</span>
+			<span >Confirmez votre choix</span>
 			<br/>
 			<br/>
 		<md-content  layout="row" class="popup-footer" layout-align="center center" layout-padding>
-			<button class="md-raised md-primary"   ng-click="annuler();$event.stopPropagation();">YES</button>	
-			<button   ng-click="noannule();$event.stopPropagation();">NO</button>
+			<button class="md-raised md-primary"   ng-click="annuler();$event.stopPropagation();">OUI</button>	
+			<button   ng-click="noannule();$event.stopPropagation();">NON</button>
 		</md-content>
 
 	

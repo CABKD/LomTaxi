@@ -31,6 +31,9 @@
 	    	                <input ng-model="user.phone" type="tel" placeholder="phone number" ng-required="true">
 	        	        </md-input-container>
 					</div>
+					 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo" ng-if="authentication == 'Signup'">
+					<input type="checkbox" ng-model="leader"><label>Acceptez les conditions gérérales d'utilisation </label><br/>
+				</div> 
 					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo" ng-if="authentication == 'Signup'">
 						<div   layout="row">
 							<div flex="50">
@@ -55,8 +58,8 @@
                                     id="inputPicture" 
                                  >
                             </div>
-             			</div>              
-					</div>
+						 </div>  
+						</div>	
 				</form>
 			</md-content>
 			<md-content ng-if="authentication == 'Login'" layout="row" layout-padding layout-align="center center">	
@@ -68,9 +71,29 @@
 				</div>
 			</div>	
 		</div>
+		 <a href="#" ng-click="CGU($event);$event.stopPropagation();" style="font-size:1em;text-decoration: underline;text-align:right;margin:0px 25px 10px 0px;" layout="row" layout-align="end center" ng-if="authentication == 'Signup'">         
+			Lire les CGU</a> 
+			
 		<a href="#" ng-click="changeLoginMode($event);$event.stopPropagation();" style="font-size:1em;text-decoration: underline;text-align:right;margin:0px 25px 10px 0px;" layout="row" layout-align="end center">
-			{{authentication == 'Login' ? 'Signup':'Login' }}</a>		
+			{{authentication == 'Login' ? 'Signup':'Login' }}</a>	
+			 <md-content   flex="100" layout="column" ng-if="cgu==1" >
+				<p style="font-size:1em;text-decoration: underline;text-align:right;background-color: #000;">
+				 Les mentions légales de votre site ;
+				 L’objet et le champ d’application des CGU ;
+				 Les conditions d’accès au site et, s’il y a lieu, de création d’un compte (membre, client) ;
+				 Des informations sur les services proposés sur le site ainsi que ses contenus ;
+				 Les modalités de collecte des données personnelles des utilisateur ;
+				 Le numéro de votre déclaration auprès de la CNIL, s’il y a lieu ;
+				 La responsabilité de l’éditeur en matière de propriété intellectuelle ;
+				 Les responsabilités et obligations des visiteurs du site ;
+				 Les règles relatives aux liens hypertextes ;
+				 Le droit applicable et la juridiction compétente en cas de contentieux.
+				 Les règles encadrant d’éventuelles modifications des CGU…
+				</p>
+			  </md-content>	 
+			
 	</div>
+	
 </div>
 <md-content layout="row" flex="100" flex-sm="100" layout-align="center center" style="background-color:#000;opacity:0.7;position:absolute;top:0;z-index:99;height:100%;width:100%" ng-if="wait">
 	<div layout-align="center center">
@@ -83,4 +106,3 @@
 	</div>	
 	</div>	
 </md-content>
-	

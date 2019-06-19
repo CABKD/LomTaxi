@@ -20,7 +20,8 @@ angular.module('ngApp').controller('HomeController', function ( $rootScope, $sco
 	$scope.mqttConnect = false;
 	$scope.adresse="";
 //	$scope.time="";
-	$rootScope.titleBar = "Request an Autonomous POD";
+	$rootScope.titleBar = "Demander une navette MILLA";
+//	$rootScope.titleBar = "Request an Autonomous POD";
 	$scope.dest_lat=null;
 	$scope.dest_lng=null;
 	$scope.donnee=null;
@@ -80,7 +81,8 @@ angular.module('ngApp').controller('HomeController', function ( $rootScope, $sco
 	function getPosition() {
 		
 			   if (navigator && navigator.geolocation) {
-				navigator.geolocation.getCurrentPosition(
+				navigator.geolocation.watchPosition(
+				//navigator.geolocation.getCurrentPosition(
 			function(position){     
 				  $scope.localisationFound = true;  
 					 var lat = parseFloat(position.coords.latitude.toFixed(6));
@@ -91,7 +93,7 @@ angular.module('ngApp').controller('HomeController', function ( $rootScope, $sco
 				  map.setCenter(userPos); 
 				  showCustomer(userPos)
 				 },
-			   function(err) {setTimeout(getPosition,50);},options);  
+			   function(err) {setTimeout(getPosition,150);},options);  
 			   }     
 	  }
 	  var closest=-1;
@@ -231,7 +233,8 @@ $scope.affiche_stat_dest=function(){
 function init_stations(){
 	var pos_tram=new google.maps.LatLng(48.785849,2.176051);
 	if (navigator.geolocation) {
-		navigator.geolocation.getCurrentPosition(function(position) {
+		navigator.geolocation.watchPosition(function(position) {
+	//	navigator.geolocation.getCurrentPosition(function(position) {
 		  var pos = {
 			lat: position.coords.latitude,
 			lng: position.coords.longitude
@@ -695,6 +698,7 @@ var bonhomme={url:"./assets/img/bonhomme.png"};
 			checkShuttleActif();
  
 		}
+	//	myPosition()
 	},1000);
 
 	
@@ -746,7 +750,8 @@ var bonhomme={url:"./assets/img/bonhomme.png"};
 			unSubscribe(rideStartTopic);
 			preserveViewport = false;
 			itinerairePickUpHide();
-			$rootScope.titleBar = "SHUTTLE IS ARRIVED";
+		//	$rootScope.titleBar = "SHUTTLE IS ARRIVED";
+		$rootScope.titleBar = "La navette est arrivée";
 			return;
 		}
 		if($scope.rideStatus == 1 && message.destinationName.search(rideRequestTopic) != -1){
@@ -912,21 +917,21 @@ if(data.ride=="onboard"){
 	  
  $scope.confirm= function(){
 	
-	 if(puStation==$scope.station){
+ 	  if(puStation==$scope.station){
 		$scope.m_erreur=1;
 	//	$scope.confirmation =3;
 		$scope.confirmation=1;
 	var mess = {
 		"confirm":$scope.confirmation+" "+shared.global.customer.customerId}
-	 var message = new Paho.MQTT.Message(JSON.stringify(mess));
+	 var message = new Paho.MQTT.Message(JSON.stringify(mess));  
 	 
 	 message.destinationName = "/lomt/ride/confirm/"/* +shared.global.customer.customerId */;
 	
-	 mqttClient.send(message);
+ 	  mqttClient.send(message);
 	$scope.rideStatus=1;
 //	$scope.etat=1;
 	}
-	else{
+	else{  
 		$scope.confirmation=0;
 		$scope.rideStatus=3;
 	}
@@ -1584,7 +1589,7 @@ var Totaltime=0;
 	              travelMode  : google.maps.DirectionsTravelMode.DRIVING // Mode de conduite
 		}
 		
-		 var pos_station=new google.maps.LatLng(stationLat[puStation],stationLng[puStation]);
+	/* 	 var pos_station=new google.maps.LatLng(stationLat[puStation],stationLng[puStation]);
 		 if (navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition(function(position) {
 			  var pos = {
@@ -1597,13 +1602,12 @@ var Totaltime=0;
 			  
 			  if(distance <10){
 				  console.log("intro")
-				//window.plugins.bringtofront();
-				//cordova.plugins.backgroundMode.moveToForeground();
-			/* 	var ref=cordova.InAppBrowser.open("https://www.google.com/maps/dir/?api=1&destination="+Number(stationLat[puStation])+","+Number(stationLng[puStation])+"&dir_action=navigates/data=!3m1!4b1!4m5!4m4!1m1!4e1!1m0!3e2").close();
-			ref.close(); */ 
+			//	window.plugins.bringtofront();
+			//	cordova.plugins.backgroundMode.moveToForeground();
+			
 			}
 			})
-		}  
+		} */  
 		
 	
     	if(directionService == null){
@@ -1628,14 +1632,14 @@ var Totaltime=0;
 			//	  customerMarker.marker.setVisible(false);
   				 // if(response.routes[0].legs[0].distance.value < 100) {
 					if(dist < 10) {
-				
+				//		navigator.notification.alert('La navette est arrivée', alertDismissed, 'Arrivée', 'OK')
 				//	   itinerairePickUpHide();
 					  
-  					  $rootScope.titleBar = "SHUTTLE IS ARRIVED";
-  					
+  					//  $rootScope.titleBar = "SHUTTLE IS ARRIVED";
+					  $rootScope.titleBar = "la navette est arrivée";
   				  }else{
 			
-					$rootScope.titleBar = "SHUTTLE in "+ (Math.round(Totaltime/60)+' minute(s)');
+					$rootScope.titleBar = "Navette dans "+ (Math.round(Totaltime/60)+' minute(s)');
 					$scope.delete=1;
 					
   				  }
@@ -1648,9 +1652,10 @@ var Totaltime=0;
 
 
 
-
-
-
+	function alertDismissed() {
+		// do something
+	}
+	
 
 
 	function itinerairePickUpHide(){
@@ -1739,10 +1744,10 @@ var Totaltime=0;
 				if(dist < 10) {
 				
   					//  itineraireDestinationHide();
-						$rootScope.titleBar = "ARRIVED TO DESTINATION";
+						$rootScope.titleBar = "ARRIVEE A DESTINATION";
 					
   				  }else{
-						$rootScope.titleBar = "Destination in "+(Math.round(Totaltime/60)+' minute(s)');
+						$rootScope.titleBar = "Destination dans "+(Math.round(Totaltime/60)+' minute(s)');
 					
   				  }
   				  $scope.tripTime = (Math.round(Totaltime/60)+' minute(s)');  
@@ -1761,15 +1766,16 @@ var Totaltime=0;
 		$scope.showPopup = true;
 		$scope.rideStatus = 7;
 		$scope.affiche=0;
-		$rootScope.titleBar = "ARRIVED TO DESTINATION";
+	//	$rootScope.titleBar = "ARRIVED TO DESTINATION";
+	$rootScope.titleBar = "ARRIVEE A DESTINATION";
 		/* if($scope.donnee==1){
 			$scope.affiche=	1	}; */
 	}
 
 	var shuttleMarker = null;
 	function initRidetoCustomer(shuttleId){
-		
-		$rootScope.titleBar = "SHUTTLE IS COMING";
+		$rootScope.titleBar = "Navette à l'approche";
+	//	$rootScope.titleBar = "SHUTTLE IS COMING";
 		shuttleInfo(shuttleId);
         $scope.wait = false;
 		$scope.showPopup = true;
@@ -1859,13 +1865,54 @@ $scope.ville="";
 
 
 	$scope.openmap=function(){
-		$scope.rideStatus = 4;
-		$scope.showPopup = false;
+		
+	//	window.open("https://www.google.com");
 	//	window.open("https://www.google.com/maps/dir/?api=1&destination="+Number(stationLat[puStation])+","+Number(stationLng[puStation])+"&dir_action=navigates/data=!3m1!4b1!4m5!4m4!1m1!4e1!1m0!3e2");
-			 cordova.InAppBrowser.open("https://www.google.com/maps/dir/?api=1&destination="+Number(stationLat[puStation])+","+Number(stationLng[puStation])+"&dir_action=navigates/data=!3m1!4b1!4m5!4m4!1m1!4e1!1m0!3e2");
-	//	cordova.plugins.backgroundMode.enable();
+//	window.open("https://www.google.com/maps/dir/?api=1&destination="+stationLat[puStation]+","+stationLng[puStation]+"&dir_action=navigate/data=!3m1!4b1!4m5!4m4!1m1!4e1!1m0!3e2")
+	//launchnavigator.navigate([Number(stationLat[puStation]),Number(stationLng[puStation])])
+	 let directionsService = new google.maps.DirectionsService;
+	let directionsDisplay = new google.maps.DirectionsRenderer({
+		map   : map,
+		suppressMarkers: true,
+		preserveViewport: preserveViewport,
+		polylineOptions: {"icons": [{
+			"icon": {
+			  "path": 0,
+			  "scale": 3,
+			  "fillOpacity": 0.7,
+			  "fillColor": "#0feaac",
+			  "strokeOpacity": 0.8,
+			  "strokeColor": "#3379c3",
+			  "strokeWeight": 1
+			},
+			"repeat": "10px"
+		  }],
+			strokeColor: "#0feaac",
+			strokeWeight:2 }
+	});
 
-//	launchnavigator.navigate([Number(stationLat[puStation]),Number(stationLng[puStation])])
+	var request = {
+		origin :userPos,
+
+	  destination : stationLat[puStation]+","+stationLng[puStation],
+	  //waypoints:wayPoints,
+		travelMode  : google.maps.DirectionsTravelMode.WALKING // Mode de conduite
+}
+
+directionsService.route( request, function( response, status ) {
+			
+	if ( status == google.maps.DirectionsStatus.OK ) {
+	  
+		directionsDisplay.setDirections( response );
+		directionsDisplay.setPanel(document.getElementById('instru'));
+	 
+	}
+}); 
+ $scope.rideStatus = 4;
+	//	$scope.instructions=1;
+		$scope.showPopup = false; 
+
+
 	}
 
 

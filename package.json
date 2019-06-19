@@ -21,11 +21,10 @@
         "cordova-plugin-dialogs": "^2.0.1",
         "cordova-plugin-geolocation": "^4.0.1",
         "cordova-plugin-globalization": "^1.11.0",
-        "cordova-plugin-inappbrowser": "^3.0.0",
+        "cordova-plugin-googlemaps": "^2.6.2",
         "cordova-plugin-splashscreen": "^5.0.2",
         "cordova-plugin-whitelist": "^1.3.3",
-        "in.lucasdup.bringtofront": "https://github.com/markeeftb/cordova-bring-to-front",
-        "uk.co.workingedge.phonegap.plugin.launchnavigator": "^5.0.4"
+        "in.lucasdup.bringtofront": "https://github.com/markeeftb/cordova-bring-to-front"
     },
     "cordova": {
         "plugins": {
@@ -39,11 +38,10 @@
             "in.lucasdup.bringtofront": {},
             "cordova-plugin-globalization": {},
             "cordova-plugin-background-mode": {},
-            "uk.co.workingedge.phonegap.plugin.launchnavigator": {
-                "GOOGLE_API_KEY_FOR_ANDROID": "AIzaSyDD_i9izhBIngUbO3p98-unNFINIrOYqSI",
-                "OKHTTP_VERSION": "3.12.0"
-            },
-            "cordova-plugin-inappbrowser": {}
+            "cordova-plugin-googlemaps": {
+                "PLAY_SERVICES_VERSION": "15.0.1",
+                "ANDROID_SUPPORT_V4_VERSION": "27.+"
+            }
         },
         "platforms": [
             "android"

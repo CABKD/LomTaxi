@@ -127,7 +127,13 @@ angular.module('ngApp')
     	
     }
 
-    
+     $scope.CGU = function ($event) {
+        $event.stopPropagation();
+        //    window.open("/app/components/cgu.html");
+        $scope.cgu = 1;
+
+
+    } 
 /*
     $scope.onFileSelect = function($files) {
     	if($scope.user.file == null) return;
