@@ -7,7 +7,7 @@
  * # MainCtrl
  */
 angular.module('ngApp')
-  .controller('HistoController', function($rootScope, $scope, $location, shared, $window,  API_ENDPOINT, $mdDialog, WS, $cordovaAppVersion) {
+  .controller('HistoController', function($rootScope, $scope, $location, shared, $window,  $interval,API_ENDPOINT, $mdDialog, WS, $state,$cordovaAppVersion) {
 	  console.log(shared.global.customer.customerId)
 		WS.collectionFind('rides', 
 				{	"query":{

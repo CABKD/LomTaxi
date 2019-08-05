@@ -1,4 +1,4 @@
-#Wed Jun 19 12:14:37 CEST 2019
+#Mon Aug 05 17:13:08 CEST 2019
 base.0=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 renamed.0=classes.dex
 file.0=C\:\\Users\\isfm0\\OneDrive\\Bureau\\AppliLOM\\LOMApp\\LomTaxi_version_DEMO\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0\\classes.dex

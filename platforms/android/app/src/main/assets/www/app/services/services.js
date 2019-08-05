@@ -11,7 +11,8 @@ angular.module('ngApp')
 		phone			: "",
 		avatar			: "",
 		id				: "",
-		customerId		: ""
+    customerId		: "",
+    code : ""
   }			
   var HTTP_TIMEOUT = 3000;	
   var authToken;
@@ -23,7 +24,7 @@ angular.module('ngApp')
     }
   }
 
-  function storeUserCredentials(token, customerId, firstname, lastname, phone, email, avatar, id) {
+  function storeUserCredentials(token, customerId, firstname, lastname, phone, email, avatar, id,code) {
     window.localStorage.setItem(LOCAL_TOKEN_KEY, token);
     config.firstname 	= firstname;
     config.lastname 	= lastname;
@@ -32,7 +33,7 @@ angular.module('ngApp')
     config.avatar	 	= avatar;
     config.id			= id;
     config.customerId		= customerId;
-    
+    config.code		= code;
     window.localStorage.setItem(LOCAL_USER_KEY, JSON.stringify(config));
     setCookie("v_user", email, 30);    
     
@@ -66,7 +67,7 @@ angular.module('ngApp')
       $http.post(API_ENDPOINT.url + '/customersignup', user, { timeout: HTTP_TIMEOUT })
       	.then(function(result) {
         if (result.data.success) {
-            storeUserCredentials(result.data.token, result.data.customerId,  result.data.firstname, result.data.lastname, result.data.phone, result.data.email, result.data.avatar,  result.data._id);
+            storeUserCredentials(result.data.token, result.data.customerId,  result.data.firstname, result.data.lastname, result.data.phone, result.data.email, result.data.avatar,  result.data._id,result.data.code);
           resolve(result.data.msg);
         } else {
           reject(result.data.msg);
@@ -164,6 +165,13 @@ angular.module('ngApp')
     	var id = config.customerId;
     	if(id) {
     		return ( id);
+    	}
+        return( "");
+    },
+    code: function() {
+    	var code = config.code;
+    	if(code) {
+    		return ( code);
     	}
         return( "");
     },

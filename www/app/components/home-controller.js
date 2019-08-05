@@ -12,13 +12,18 @@ angular.module('ngApp').controller('HomeController', function ( $rootScope, $sco
 	var preserveViewport = false;	
 	var rideId = 0; // received in request accept topic
 	
-	
-	$scope.rideStatus = 0; // 0 :iddle, 1 : request, 2 : No drivers available, 3 : drivers available, 4 : taxi is coming , 5 : taxi is arrived, 6 : goto destination, 7 : arrived to destination, 8 : scoring
+	$scope.debut=1;
+	//$scope.rideStatus; // 0 :iddle, 1 : request, 2 : No drivers available, 3 : drivers available, 4 : taxi is coming , 5 : taxi is arrived, 6 : goto destination, 7 : arrived to destination, 8 : scoring
 	$scope.showPopup = false;
 	//$scope.etat=0;
+	$scope.timer;
 	$scope.wait = false;
 	$scope.mqttConnect = false;
 	$scope.adresse="";
+	$scope.useradresse=""
+	$scope.m_erreur=0;
+	$scope.confirmation =0
+	$scope.expired=0
 //	$scope.time="";
 	$rootScope.titleBar = "Demander une navette MILLA";
 //	$rootScope.titleBar = "Request an Autonomous POD";
@@ -27,10 +32,13 @@ angular.module('ngApp').controller('HomeController', function ( $rootScope, $sco
 	$scope.donnee=null;
 	var stationName = [];
 	var stationLat = [];
+	var stationAdresse = new Array();
 	var stationLng = [];
 	var puStation;
+	var near_station;
 	var myLatlng;
 	var ref;
+	$scope.id_shuttle=null;
 	$scope.TN=null;
 	$scope.TU=null;
 	$scope.TAN=null;
@@ -49,9 +57,14 @@ angular.module('ngApp').controller('HomeController', function ( $rootScope, $sco
 	setArrivedTime();
 	
 	var userPos = null;
-
+	function togo(){
+		$scope.rideStatus=0
+		$scope.debut=0
+	}
 	
-	
+	$scope.togo = function(){
+		togo();
+	}
 	/**********************************************************
 	 * Map section
 	 */
@@ -99,10 +112,10 @@ angular.module('ngApp').controller('HomeController', function ( $rootScope, $sco
 	  var closest=-1;
 var prevColor="#0feaac";	
 
-/* var prev_image="https://www.lifeonmaps.com/images/mg-pin.png";
-var image="https://www.lifeonmaps.com/images/mg-pin24.png"; */
-var prev_image={url: "./assets/img/mg-pin.png"}
-var image={url: "./assets/img/mg-pin24.png"}
+/* var prev_image="https://dev.zlool.com/images/mg-pin.png";
+var image="https://dev.zlool.com/images/mg-pin24.png"; */
+var prev_image={url: "./assets/img/pinStation_30.png"}
+var image={url: "./assets/img/pinStation_30.png"}
 var stationMarker=[];
  //====== STATIONS
  
@@ -130,8 +143,14 @@ var stationMarker=[];
  stationName[7]="GOUNOD";
  stationLat[7]="48.785667";
  stationLng[7]="2.172534";
-
-$scope.affiche_stat_dest=function(){
+ stationAdresse[1]= "12 D53, 78140 Vélizy-Villacoublay, France "
+ stationAdresse[2]= "37-33 Avenue de Picardie, 78140 Vélizy-Villacoublay, France "
+ stationAdresse[3]= "2 rue de la division leclerc, 78140 Vélizy-Villacoublay, France "
+ stationAdresse[4]= "14 Allée de Normandie, Vélizy-Villacoublay, France "
+ stationAdresse[5]= "Rue de Bretagne, 78140 Vélizy-Villacoublay, France "
+ stationAdresse[6]= "32-42 Rue Jules Guesde, 78140 Vélizy-Villacoublay, France "
+ stationAdresse[7]= "14-16 Rue Charles Gounod, 78140 Vélizy-Villacoublay, France "
+/* $scope.affiche_stat_dest=function(){
 	
 	
 	 closest=getDropOff();
@@ -225,7 +244,7 @@ $scope.affiche_stat_dest=function(){
 		console.log('Closest marker is: ' + stationName[closest]);
 		$scope.donnee=1;
 		closest=-1;
-}
+} */
 
 
 
@@ -268,7 +287,7 @@ function init_stations(){
 	     icon: image
 	   });
 	}
-	   google.maps.event.addListener(stationMarker[1],'click', function(){
+	  /*  google.maps.event.addListener(stationMarker[1],'click', function(){
 				
 		stationMarker[1].setIcon(prev_image);
 		stationMarker[2].setIcon(image);
@@ -406,14 +425,28 @@ google.maps.event.addListener(stationMarker[7],'click', function(){
 		document.getElementById("bouton4").style.backgroundColor=prevColor;
 	
 		$scope.adresse=document.getElementById("bouton7").value;
-});
+}); */
 
 }
 
 
+function a() {
+	return false;
+  }
+
 	function initMap() {
-		if(event.cancelable){
-		event.preventDefault();}
+		$scope.debut=1
+		//document.addEventListener('touchstart', function() { event.preventDefault(); }, { passive:false });
+		/* if(event.cancelable){
+			event.stopPropagation();
+		
+		} */
+		/* window.addEventListener('touchmove', ev => {
+		
+			  ev.preventDefault();
+			  ev.stopImmediatePropagation();
+		
+		  }, { passive: false }); */
 	    setTimeout(function(){
 			
 	        map = new google.maps.Map(document.getElementById('gmaps'), {
@@ -423,11 +456,12 @@ google.maps.event.addListener(stationMarker[7],'click', function(){
 	            zoomControl: true, //false
 	            scaleControl: false, //false
 	            streetViewControl: false, //false
-				gestureHandling: 'cooperative',//g
-				maxZoom: 21,
-				draggable:true,
+				gestureHandling: 'greedy',//g
+				maxZoom: 18,
+			//	draggable:true,
 	            disableDefaultUI: true
 			});
+			map.setOptions({draggable: true});
 	        setTimeout(getPosition,50);
 			setTimeout(myPosition,50);
 		
@@ -543,7 +577,7 @@ google.maps.event.addListener(stationMarker[7],'click', function(){
 		}else{ 
 			
 			customerMarker[index].marker.setPosition({"lat":customerLoc.lat,"lng":customerLoc.lng});
-			customerMarker[index].marker.setVisible(true);
+	//		customerMarker[index].marker.setVisible(true);
 			customerMarker[index].timestamp=Date.now();
 	  }  
 	}
@@ -687,6 +721,7 @@ var bonhomme={url:"./assets/img/bonhomme.png"};
 	
 	var countCheckShuttleActif = 0;
 	var refreshBrokerStatus = $interval(function(){
+		
 		if(!$scope.localisationFound){
 			return;
 		}
@@ -699,7 +734,7 @@ var bonhomme={url:"./assets/img/bonhomme.png"};
  
 		}
 	//	myPosition()
-	},1000);
+	},200);
 
 	
   	function brokerConnect() {
@@ -731,7 +766,9 @@ var bonhomme={url:"./assets/img/bonhomme.png"};
 			userName: "admin@lom.fr",
 			password : "ZbJ57qe5",
 		    hosts: [ "wss://"+host+":"+port+"/" ],
-		    useSSL: true
+			useSSL: true,
+		/* 	reconnect : true,         // Enable automatic reconnect
+			reconnectInterval: 10     // Reconnect attempt interval : 10 seconds */
   	   	    });
   		}
   	}
@@ -739,11 +776,7 @@ var bonhomme={url:"./assets/img/bonhomme.png"};
 	 
 	  
   	function onMessageArrived(message) {
-		/* if($scope.rideStatus<=8 && message.destinationName.search(passengerTopic)!=-1){
-			var mess=message.payloadString;
-			console.log(mess)
-			return;
-		} */
+	
 		console.log($scope.rideStatus)
 		if($scope.rideStatus == 4 && message.destinationName.search(rideStartTopic) != -1){
 			console.log("je suis la")
@@ -754,6 +787,17 @@ var bonhomme={url:"./assets/img/bonhomme.png"};
 		$rootScope.titleBar = "La navette est arrivée";
 			return;
 		}
+		if(($scope.rideStatus==1) &&message.destinationName.search(missionTopic) != -1){
+			var mess = JSON.parse(message.payloadString);
+			preserveViewport = false;
+			if(mess.result == false) {
+				$scope.showPopup = true;
+				$scope.rideStatus = 2;
+				$scope.confirmation =0
+			}
+			return;
+		}
+
 		if($scope.rideStatus == 1 && message.destinationName.search(rideRequestTopic) != -1){
 			var mess = JSON.parse(message.payloadString);
 			$scope.wait = false;
@@ -763,11 +807,12 @@ var bonhomme={url:"./assets/img/bonhomme.png"};
 			   if(mess.result == false) {
 				$scope.rideStatus = 2;
 				$scope.confirmation =0
+				$scope.expired=0;
 			}else{  
 				
 				//$scope.rideStatus = 3;
 				
-
+				clearTimeout($scope.timer)
 				$scope.rideInfo = mess.rideInfo;
 				console.log($scope.rideInfo)
 				puStation=mess.rideInfo.puStation;
@@ -779,8 +824,10 @@ var bonhomme={url:"./assets/img/bonhomme.png"};
 				$scope.station_accueil=stationName[puStation];
 				console.log($scope.station_accueil)
 				$scope.confirmation=2;
+			//	initRidetoCustomer(1);
 				initRidetoCustomer(mess.shuttleId);
 				rideId = mess.rideId;
+				$scope.id_shuttle=mess.shuttleId
 				rideStartTopic = "/lomt/ridestart/";
 				console.log(stationLat[puStation]+","+stationLng[puStation])
 				mqttClient.subscribe(rideStartTopic+mess.shuttleId);
@@ -877,9 +924,10 @@ var bonhomme={url:"./assets/img/bonhomme.png"};
 
 
 		if($scope.rideStatus<8 && message.destinationName.search(endTopic)!=-1){
-			var data= JSON.parse(message.payloadString)
-		console.log(data.ride)
-		if(data.ride=="endride"){
+			var data= message.payloadString
+		console.log(data)
+	if(data=="endride"){
+	//	if(data.ride=="endride"){
 			$scope.showPopup = true;
 			console.log("end ride")
 			$scope.showPopup = true;
@@ -888,23 +936,13 @@ var bonhomme={url:"./assets/img/bonhomme.png"};
 		$rootScope.titleBar = "ARRIVED TO DESTINATION";
 		}
 	}
-
-	if($scope.rideStatus<8 && message.destinationName.search(cancelmissionTopic)!=-1){
-		var data= JSON.parse(message.payloadString)
-	console.log(data.ride)
-	if(data.ride=="cancel"){
-	document.getElementById("supp").disabled=true;
-	document.getElementById("buttondelete").style.visibility="hidden"
-//	$scope.delete=0;
-		console.log("cancel ride")
-		
-	}
-}
 	
 if($scope.rideStatus<8 && message.destinationName.search(inboardTopic)!=-1){
-	var data= JSON.parse(message.payloadString)
-console.log(data.ride)
-if(data.ride=="onboard"){
+	var data=message.payloadString
+console.log(data)
+if(data=="onboard"){
+	document.getElementById("supp").disabled=true;
+	document.getElementById("buttondelete").style.visibility="hidden"
 	itinerairePickUpHide();
 	
 }
@@ -916,33 +954,47 @@ if(data.ride=="onboard"){
 	  }
 	  
  $scope.confirm= function(){
-	
- 	  if(puStation==$scope.station){
-		$scope.m_erreur=1;
-	//	$scope.confirmation =3;
-		$scope.confirmation=1;
-	var mess = {
-		"confirm":$scope.confirmation+" "+shared.global.customer.customerId}
+
+ 	  
+	var mess = {				"shuttleId": $scope.id_shuttle,
+								"customerId": shared.global.customer.customerId,
+                				"userLocation" : {
+                					"lat" : userPos.lat, 
+									"lng" : userPos.lng,     
+									  /*  "lat": 36.130654,
+									"lng":-115.153077, */   
+                					"address" : $scope.useradresse
+								},
+								"pickup":{
+									"station":puStation,
+									"address": stationAdresse[puStation]
+								},
+								
+                				"destLocation" : {
+                					/* "lat" : selectedPlace.lat, 
+                					"lng" : selectedPlace.lng,  */
+									"address" : selectedPlace.address,
+									/*  "station": selectedPlace.station, */
+									"station": $scope.station,
+									"lat" : Number( stationLat[$scope.station]), 
+                					"lng" : Number(stationLng[$scope.station]), 
+                				},
+                				"userInfo" : {
+                					"firstName" : $rootScope.userFirstName,
+                					"lastName" : $rootScope.userLastName,
+                					"avatar" : shared.global.customer.avatar,
+								}
+							}
+							console.log(mess)
 	 var message = new Paho.MQTT.Message(JSON.stringify(mess));  
 	 
-	 message.destinationName = "/lomt/ride/confirm/"/* +shared.global.customer.customerId */;
-	
+	 message.destinationName = "/lomt/ride/confirmation/"+$scope.id_shuttle;
+	message.qos=2;
  	  mqttClient.send(message);
-	$scope.rideStatus=1;
+	$scope.rideStatus=3;
 //	$scope.etat=1;
-	}
-	else{  
-		$scope.confirmation=0;
-		$scope.rideStatus=3;
-	}
-	/*   var mess = {
-		"confirm":$scope.confirmation}
-	 var message = new Paho.MQTT.Message(JSON.stringify(mess));
-	 
-	 message.destinationName = "/lomt/ride/confirm/"+shared.global.customer.customerId;
-	 console.log(message.destinationName)
-	 console.log(message.payloadString)
-	 mqttClient.send(message);  */
+
+$scope.confirmation=1;
  }
 
  $scope.annule=function(){
@@ -963,17 +1015,32 @@ $scope.noannule=function(){
 	$scope.showPopup=false
 }
 
+$scope.expirer=function(){
+	
+			$state.reload(); 
+}
+
  $scope.annuler= function(){
 	 $scope.annule=0;
 	$scope.confirmation=1;
 	var mess = {
-		"confirm":$scope.confirmation+" "+shared.global.customer.customerId}
+		"confirm":shared.global.customer.customerId}
 	 var message = new Paho.MQTT.Message(JSON.stringify(mess));
 	 
 	 message.destinationName = "/lomt/ride/confirm/"/* +shared.global.customer.customerId */;
+	 message.qos=2;
 	 console.log(message.destinationName)
 	 console.log(message.payloadString)
 	 mqttClient.send(message);
+
+	 var messe = new Paho.MQTT.Message(JSON.stringify({"customerId":shared.global.customer.customerId}));
+
+	 console.log(messe.payloadString)
+	 messe.destinationName = "/lomt/suppression/"+shared.global.customer.customerId;
+	 messe.qos=2;
+	 console.log(messe.payloadString)
+	 mqttClient.send(messe);
+
 	$scope.rideStatus=1;
 	$scope.etat=1;
 	$scope.showPopup=true
@@ -986,7 +1053,8 @@ $scope.noannule=function(){
 		"confirm":$scope.confirmation+" "+shared.global.customer.customerId}
 	 var message = new Paho.MQTT.Message(JSON.stringify(mess));
 	 
-	 message.destinationName = "/lomt/ride/confirm/"/* +shared.global.customer.customerId */;
+	 message.destinationName = "/lomt/ride/confirm/"+$scope.id_shuttle;
+	 message.qos=2;
 	
 	 mqttClient.send(message);
 	$scope.rideStatus=1;
@@ -1026,14 +1094,14 @@ $scope.noannule=function(){
 	var taxiTopic = null;
 	var rideStartTopic = null;
 	//var userPosTopic=null;
-	var passengerTopic=null;
+	var missionTopic=null;
 	var noshowTopic=null;
 	var endTopic=null;
-	var cancelmissionTopic=null;
+	
 	var inboardTopic=null;
 	function subscribeTaxiTopic(shuttleId){
-		taxiTopic = "/lomt/shuttle/"+shuttleId;
-		
+		taxiTopic = "/lomt/shuttle/tablette/"+shuttleId;
+		taxiTopic = "/lomt/shuttle/tablette/"+shuttleId;
 		mqttClient.subscribe(taxiTopic+"/#");
 	} 
 	
@@ -1050,16 +1118,18 @@ $scope.noannule=function(){
 	//		unSubscribe(userPosTopic);
 			unSubscribe(rideStartTopic);
 			unSubscribe(vehiclesTopic);
+			
 			unSubscribe(noshowTopic)
 			unSubscribe(endTopic)
-			unSubscribe(cancelmissionTopic)
+			
 			unSubscribe(inboardTopic)
+			unSubscribe(missionTopic)
 			  /* userPosTopic = "/lomt/user/position/"+shared.global.customer.customerId;
 			mqttClient.subscribe(userPosTopic+"/#");  */ 
 			 var lat = latlng.lat.toFixed(1) * 10;
 			var lng = latlng.lng.toFixed(1) * 10; 
 		
-			vehiclesTopic = "/lomt/shuttle";
+			vehiclesTopic = "/lomt/shuttle/tablette";
 			mqttClient.subscribe(vehiclesTopic+"/#");
 			
 			unSubscribe(rideRequestTopic);
@@ -1067,12 +1137,13 @@ $scope.noannule=function(){
 			mqttClient.subscribe(rideRequestTopic+"/#");
 			noshowTopic="/lomt/ride/noshow/"+shared.global.customer.customerId;
 			mqttClient.subscribe(noshowTopic+"/#");
-			endTopic="/lomt/ride/end/"+shared.global.customer.customerId;
+			endTopic="/lomt/fin/"+$scope.id_shuttle+"/"+shared.global.customer.customerId;
 			mqttClient.subscribe(endTopic+"/#");
-			cancelmissionTopic="/lomt/cancelmission/"+shared.global.customer.customerId
-			mqttClient.subscribe(cancelmissionTopic+"/#");
-			inboardTopic="/lomt/inboard/"+shared.global.customer.customerId
+			inboardTopic="/lomt/inboard/"+$scope.id_shuttle+"/"+shared.global.customer.customerId
+			console.log(inboardTopic)
 			mqttClient.subscribe(inboardTopic+"/#");
+			missionTopic="/lomt/ride/result/missions"
+			mqttClient.subscribe(missionTopic+"/#");
 			mqttClient.onMessageArrived = onMessageArrived;
 		}
 	}
@@ -1141,6 +1212,16 @@ $scope.noannule=function(){
 	
 	function request(){
 		$scope.wait = true;
+		
+		/* while(currentTime.valueOf()<= expiryTime.valueOf()){
+			currentTime=new Date();
+			console.log(currentTime.valueOf())
+		console.log(expiryTime)
+		}
+		if(currentTime.valueOf()==currentTime){
+			$scope.wait=false
+			$scope.rideStatus = 0;
+		} */
 		$scope.rideStatus = 1;
 	//	$scope.confirmation=2;
 		if($scope.donnee==1){
@@ -1152,21 +1233,39 @@ $scope.noannule=function(){
 				geocoder.geocode({'address': $scope.adresse}, function(results, status) {
 	          if (status === 'OK') {
 	 	       	 selectedPlace = {
-		    			/*  "lat":results[0].geometry.location.lat(), 
-		    			 "lng":results[0].geometry.location.lng(), */
-					//	"address": $scope.destination,
+		    			
 						 "address":  $scope.adresse,
 						 "station": $scope.station,  
 						 "lat":Number(stationLat[$scope.station]), 
 		    			 "lng":Number(stationLng[$scope.station]),  
 						 };
 						 console.log(selectedPlace.lat +" "+ selectedPlace.lng)	
-						/*  document.getElementById("conf").addEventListener("click", function(){
-							sendRideRequest();
-						  });  */
-	 	      	sendRideRequest();
+						
+				   sendRideRequest();
+				  /*  setTimeout(function(){
+					   $scope.wait=false
+					//   $scope.rideStatus = 0;
+				   },12000); */
+				 //  $scope.rideStatus = 1;
+				 var currentTime=0
+
+		 var expiryTime= 20
+		
+		$scope.timer= setInterval(function(){
+			 if(currentTime<= expiryTime){
+			currentTime++;
+			console.log(currentTime)
+			
+		console.log(expiryTime)}
+		if(currentTime==expiryTime){
+			$scope.wait=false
+			$scope.expired=1
+			$scope.showPopup=true
+		}
+	},1000) 
+				   
 	          } else {
-	            alert('Geocode was not successful for the following reason: ' + status);
+	            alert('La géolocalisation a échoué. Vérifiez si la locallisation est activée' );
 	            $scope.wait = false;
 				$scope.rideStatus=0;
 			//	init_stations();
@@ -1174,10 +1273,9 @@ $scope.noannule=function(){
 	        });
 			
 		}else{
+			
 			sendRideRequest();
-		/* 	document.getElementById("conf").addEventListener("click", function(){
-				sendRideRequest();
-			  });  */
+		
 		}
 		
 	}
@@ -1186,7 +1284,7 @@ $scope.noannule=function(){
 				$scope.adresse=document.getElementById("bouton1").value;
 			document.getElementById("station").value=1;
 			$scope.station=document.getElementById("station").value;
-			 stationMarker[1].setIcon(prev_image);
+			 /* stationMarker[1].setIcon(prev_image);
 			 stationMarker[2].setIcon(image);
 			 stationMarker[3].setIcon(image);
 		 	 stationMarker[4].setIcon(image);
@@ -1199,7 +1297,7 @@ $scope.noannule=function(){
 			  document.getElementById("bouton4").style.backgroundColor=prevColor;
 			 document.getElementById("bouton5").style.backgroundColor=prevColor; 
 			 document.getElementById("bouton6").style.backgroundColor=prevColor;
-			 document.getElementById("bouton7").style.backgroundColor=prevColor;
+			 document.getElementById("bouton7").style.backgroundColor=prevColor; */
 	 }
 	
 	
@@ -1208,7 +1306,7 @@ $scope.noannule=function(){
 			document.getElementById("station").value=2;
 			$scope.adresse=document.getElementById("bouton2").value;
 			$scope.station=document.getElementById("station").value;
-			stationMarker[2].setIcon(prev_image);
+			/* stationMarker[2].setIcon(prev_image);
 			stationMarker[1].setIcon(image);
 			stationMarker[3].setIcon(image);
 			stationMarker[4].setIcon(image);
@@ -1221,7 +1319,7 @@ $scope.noannule=function(){
 			 document.getElementById("bouton4").style.backgroundColor=prevColor;
 			document.getElementById("bouton5").style.backgroundColor=prevColor; 
 			document.getElementById("bouton6").style.backgroundColor=prevColor;
-			 document.getElementById("bouton7").style.backgroundColor=prevColor;
+			 document.getElementById("bouton7").style.backgroundColor=prevColor; */
 		}
 	
 		function remplir_input3(){
@@ -1229,7 +1327,7 @@ $scope.noannule=function(){
 			document.getElementById("station").value=3;
 			$scope.adresse=document.getElementById("bouton3").value;
 			$scope.station=document.getElementById("station").value;
-			stationMarker[3].setIcon(prev_image);
+			/* stationMarker[3].setIcon(prev_image);
 			stationMarker[1].setIcon(image);
 			 stationMarker[2].setIcon(image);
 			  stationMarker[4].setIcon(image);
@@ -1242,7 +1340,7 @@ $scope.noannule=function(){
 			  document.getElementById("bouton4").style.backgroundColor=prevColor;
 			 document.getElementById("bouton5").style.backgroundColor=prevColor; 
 			document.getElementById("bouton6").style.backgroundColor=prevColor;
-			 document.getElementById("bouton7").style.backgroundColor=prevColor;
+			 document.getElementById("bouton7").style.backgroundColor=prevColor; */
 		}
 	
 	 	function remplir_input4(){
@@ -1250,7 +1348,7 @@ $scope.noannule=function(){
 			document.getElementById("station").value=4;
 			$scope.adresse=document.getElementById("bouton4").value;
 			$scope.station=document.getElementById("station").value;
-			stationMarker[4].setIcon(prev_image);
+			/* stationMarker[4].setIcon(prev_image);
 			stationMarker[1].setIcon(image);
 			stationMarker[2].setIcon(image);
 			stationMarker[3].setIcon(image);
@@ -1263,7 +1361,7 @@ $scope.noannule=function(){
 		document.getElementById("bouton1").style.backgroundColor=prevColor;
 		document.getElementById("bouton5").style.backgroundColor=prevColor;
 	document.getElementById("bouton6").style.backgroundColor=prevColor;
-			 document.getElementById("bouton7").style.backgroundColor=prevColor;
+			 document.getElementById("bouton7").style.backgroundColor=prevColor; */
 		}  
 	
 	 	function remplir_input5(){
@@ -1271,7 +1369,7 @@ $scope.noannule=function(){
 			document.getElementById("station").value=5;
 			$scope.adresse=document.getElementById("bouton5").value;
 			$scope.station=document.getElementById("station").value;
-			stationMarker[5].setIcon(prev_image);
+			/* stationMarker[5].setIcon(prev_image);
 			stationMarker[1].setIcon(image);
 			 stationMarker[2].setIcon(image);
 			 stationMarker[3].setIcon(image);
@@ -1284,7 +1382,7 @@ $scope.noannule=function(){
 		document.getElementById("bouton4").style.backgroundColor=prevColor;
 		document.getElementById("bouton1").style.backgroundColor=prevColor;
 		document.getElementById("bouton6").style.backgroundColor=prevColor;
-		document.getElementById("bouton7").style.backgroundColor=prevColor;
+		document.getElementById("bouton7").style.backgroundColor=prevColor; */
 		} 
 	 
 		function remplir_input7(){
@@ -1292,7 +1390,7 @@ $scope.noannule=function(){
 			document.getElementById("station").value=7;
 			$scope.adresse=document.getElementById("bouton7").value;
 			$scope.station=document.getElementById("station").value;
-			stationMarker[7].setIcon(prev_image);
+			/* stationMarker[7].setIcon(prev_image);
 			stationMarker[1].setIcon(image);
 			 stationMarker[2].setIcon(image);
 			 stationMarker[3].setIcon(image);
@@ -1305,14 +1403,14 @@ $scope.noannule=function(){
 		document.getElementById("bouton4").style.backgroundColor=prevColor;
 		document.getElementById("bouton1").style.backgroundColor=prevColor;
 		document.getElementById("bouton6").style.backgroundColor=prevColor;
-		document.getElementById("bouton5").style.backgroundColor=prevColor;
+		document.getElementById("bouton5").style.backgroundColor=prevColor */;
 		}
 		function remplir_input6(){
 	
 			document.getElementById("station").value=6;
 			$scope.adresse=document.getElementById("bouton6").value;
 			$scope.station=document.getElementById("station").value;
-			stationMarker[6].setIcon(prev_image);
+			/* stationMarker[6].setIcon(prev_image);
 			stationMarker[1].setIcon(image);
 			 stationMarker[2].setIcon(image);
 			 stationMarker[3].setIcon(image);
@@ -1325,7 +1423,7 @@ $scope.noannule=function(){
 		document.getElementById("bouton4").style.backgroundColor=prevColor;
 		document.getElementById("bouton1").style.backgroundColor=prevColor;
 		document.getElementById("bouton5").style.backgroundColor=prevColor;
-		document.getElementById("bouton7").style.backgroundColor=prevColor;
+		document.getElementById("bouton7").style.backgroundColor=prevColor; */
 		}
 
 	$scope.request = function(){
@@ -1357,10 +1455,12 @@ $scope.noannule=function(){
 		remplir_input7();
 	}  
 	$scope.cancelRequest = function(){
-		$scope.rideStatus = 0;
+	/* 	$scope.rideStatus = 0;
 		$scope.showPopup = false;
 		$scope.wait = false;
-		initMap()
+		$scope.debut=0;
+		initMap() */
+		$state.reload(); 
 	}
 	$scope.close = function(){
 		$scope.showPopup = false;
@@ -1380,6 +1480,7 @@ $scope.noannule=function(){
                 	$scope.$apply(function () {
 						var userAddr = results[0].formatted_address;
 						//var station=document.getElementById('adress').value;
+						$scope.useradresse=userAddr;
                 		var mess = {
                 				"control":"LOMT_RIDEREQUEST",
 								"customerId": shared.global.customer.customerId,
@@ -1409,15 +1510,25 @@ $scope.noannule=function(){
 						}
 						console.log(mess.destLocation.lat)
                 	  	var message = new Paho.MQTT.Message(JSON.stringify(mess));
-                	  	message.destinationName = "/lomt/ride/request/"+shared.global.customer.customerId;
-                	  	message.retained = false;
-                	  	mqttClient.send(message);
+						  message.destinationName = "/lomt/ride/request/"+shared.global.customer.customerId;
+						  message.qos=2;
+						  message.retained = false;
+						  near_station=getClosestStation();
+						  if(near_station==$scope.station){
+							  $scope.showPopup=true
+							$scope.m_erreur=1;
+						  }
+						  else{
+							  console.log("tipppp")
+							  mqttClient.send(message);
+						//	  document.getElementById('cancel_req').click(); 
+						  }
 						  rideRequest = mess;
 						  console.log(rideRequest.destLocation.lat)
                 	  	$scope.destAddr = rideRequest.destLocation.address;
                 	});
                 }else{
-                	alert('Geocode was not successful for the following reason: ' + status);
+					alert('La géolocalisation a échoué. Vérifiez si la locallisation est activée' );
      	            $scope.wait = false;
      	            $scope.rideStatus=0;
                 }
@@ -1461,10 +1572,12 @@ $scope.noannule=function(){
 			 unSubscribe(subscribeTaxiTopic);
 		//	 unSubscribe(subscribeUserTopic);
 			 unSubscribe(rideStartTopic);
+	
 			unSubscribe(noshowTopic);
 			unSubscribe(endTopic)
-			unSubscribe(cancelmissionTopic)
+		
 			unSubscribe(inboardTopic)
+			unSubscribe(missionTopic)
 			 mqttClient.disconnect();
 		
 		}
@@ -1497,7 +1610,8 @@ $scope.noannule=function(){
 			mess.score = $scope.score.note;
 		}
 	  	var message = new Paho.MQTT.Message(JSON.stringify(mess));
-	  	message.destinationName = "/lomt/ride/update/"+rideId;
+		  message.destinationName = "/lomt/ride/update/"+rideId;
+		  message.qos=2;
 	  	mqttClient.send(message);
 	}
    
@@ -1672,6 +1786,12 @@ var Totaltime=0;
 		clearGeoMarker();
 		customerMarker[0].marker.setVisible(false); 
 		itineraireDestination();
+		var customerId = shared.global.customer.customerId;
+		var index = getCustomerMarker(customerId);
+		
+			customerMarker[index].marker.setPosition({"lat":customerLoc.lat,"lng":customerLoc.lng});
+			customerMarker[index].marker.setVisible(false);
+		
 	
 			
 			
@@ -1866,10 +1986,7 @@ $scope.ville="";
 
 	$scope.openmap=function(){
 		
-	//	window.open("https://www.google.com");
-	//	window.open("https://www.google.com/maps/dir/?api=1&destination="+Number(stationLat[puStation])+","+Number(stationLng[puStation])+"&dir_action=navigates/data=!3m1!4b1!4m5!4m4!1m1!4e1!1m0!3e2");
-//	window.open("https://www.google.com/maps/dir/?api=1&destination="+stationLat[puStation]+","+stationLng[puStation]+"&dir_action=navigate/data=!3m1!4b1!4m5!4m4!1m1!4e1!1m0!3e2")
-	//launchnavigator.navigate([Number(stationLat[puStation]),Number(stationLng[puStation])])
+	
 	 let directionsService = new google.maps.DirectionsService;
 	let directionsDisplay = new google.maps.DirectionsRenderer({
 		map   : map,
@@ -1909,7 +2026,7 @@ directionsService.route( request, function( response, status ) {
 	}
 }); 
  $scope.rideStatus = 4;
-	//	$scope.instructions=1;
+	
 		$scope.showPopup = false; 
 
 
@@ -1917,16 +2034,56 @@ directionsService.route( request, function( response, status ) {
 
 
 	 $scope.open_nav=function(){
-		/*  var dest=rideRequest.destLocation.address;
-		 destAddr */
+		
 	 window.open("https://www.google.com/maps/dir/?api=1&destination="+$scope.destAddr+"&dir_action=navigates/data=!3m1!4b1!4m5!4m4!1m1!4e1!1m0!3e2")
 	}
 
 
 	$scope.carComing = function(){
+		let directionsService = new google.maps.DirectionsService;
+		let directionsDisplay = new google.maps.DirectionsRenderer({
+			map   : map,
+			suppressMarkers: true,
+			preserveViewport: preserveViewport,
+			polylineOptions: {"icons": [{
+				"icon": {
+				  "path": 0,
+				  "scale": 3,
+				  "fillOpacity": 0.7,
+				  "fillColor": "#0feaac",
+				  "strokeOpacity": 0.8,
+				  "strokeColor": "#3379c3",
+				  "strokeWeight": 1
+				},
+				"repeat": "10px"
+			  }],
+				strokeColor: "#0feaac",
+				strokeWeight:2 }
+		});
+	
+		var request = {
+			origin :userPos,
+	
+		  destination : stationLat[puStation]+","+stationLng[puStation],
+		  //waypoints:wayPoints,
+			travelMode  : google.maps.DirectionsTravelMode.WALKING // Mode de conduite
+	}
+	
+	directionsService.route( request, function( response, status ) {
+				
+		if ( status == google.maps.DirectionsStatus.OK ) {
+		  
+			directionsDisplay.setDirections( response );
+			directionsDisplay.setPanel(document.getElementById('instru'));
+		 
+		}
+	}); 
+	 $scope.rideStatus = 4;
 		
-		$scope.rideStatus = 4;
-		$scope.showPopup = false;
+			$scope.showPopup = false; 
+	
+	/* 	$scope.rideStatus = 4;
+		$scope.showPopup = false; */
 		shuttleMarker.marker.setVisible(false); 
 		shuttleMarker.marker1.setVisible(false);
 		setTimeout(masquernotification,3000);
@@ -1980,8 +2137,9 @@ directionsService.route( request, function( response, status ) {
 			 unSubscribe(rideStartTopic);
 			unSubscribe(noshowTopic)
 			unSubscribe(endTopic)
-			unSubscribe(cancelmissionTopic)
+		
 			unSubscribe(inboardTopic)
+			unSubscribe(missionTopic)
 			 mqttClient.disconnect();
 			 
 		}
@@ -2047,5 +2205,33 @@ function calculTU(){
 	
 	
 } 
+
+
+function getClosestStation(){
+	var distances = [];
+	var closest = -1;
+//	if(rideRequest.userLocation){
+	var userpos = new google.maps.LatLng(userPos.lat,userPos.lng);
+	console.log(userpos)
+	
+	for (var i = 1; i < stationLat.length; i++) {
+			var stationLatLng = new google.maps.LatLng(stationLat[i],stationLng[i]);
+			console.log(stationLatLng);
+		var d = google.maps.geometry.spherical.computeDistanceBetween(stationLatLng, userpos);
+		distances[i] = d;
+		console.log(i+" "+d)
+		//console.log(stationName[i]+"="+distances[i]);
+		if (closest == -1 || d < distances[closest]) {
+			closest = i;
+		}
+	}
+//}
+	console.log('Closest marker is: ' + stationName[closest]);
+	return closest;
+
+}
+
+
+
 
 });

@@ -129,11 +129,17 @@ angular.module('ngApp')
 
      $scope.CGU = function ($event) {
         $event.stopPropagation();
-        //    window.open("/app/components/cgu.html");
+          //  window.open("https://millagroup.fr/conditions-generales-dutilisation/");
+            cordova.InAppBrowser.open("https://millagroup.fr/conditions-generales-dutilisation/",'_self','closebuttoncaption=Fermer')
         $scope.cgu = 1;
-
+        document.getElementById("input").style.visibility="hidden"
+        
 
     } 
+
+   /*  function window.onback(){
+
+    } */
 /*
     $scope.onFileSelect = function($files) {
     	if($scope.user.file == null) return;
